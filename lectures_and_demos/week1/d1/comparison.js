@@ -31,3 +31,24 @@ if (5 > 2) {
     console.log(7)
 }
 
+// LOOPS
+// FOR
+var arr = [0,1,2,3] 
+for (var i = 0; i < arr.length; i++) {
+
+}
+
+while (2 < 5) {
+
+}
+
+for (var i = 50; i < 70; i++) {
+    print(i)
+}
+
+//FUNCTIONS
+function sumTwoNums(a, b) {
+    // do some work
+}
+
+sumTwoNums(3, 7)
