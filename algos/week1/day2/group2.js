@@ -11,8 +11,30 @@ const expected1 = "TNFL-GPYW";
 const str2 = "Live from New York, it's Saturday Night!";
 const expected2 = "LFNYISN";
 
+var x=0;
+var y=" ";
+function acronymize(str) {
+	for (var i = 0; i < str.length; i++) {
+		str=str.split(" ")
+		y+=str[i][0];
+	}
+return y;
+}
+console.log(acronymize(" there's no free lunch - gotta pay yer way. "))
 
-function acronymize(str) {}
+// -------------------------------------------------------------------
+
+// var string1rr = string.split(" ");
+function acronymize(string) {
+    var string = string.split(" ");
+    var acronym = " ";
+    for (var i = 0; i < string.length; i++) {
+    	acronym += string[i][0];
+    }
+    return acronym;
+}
+console.log(acronymize("there's no free lunch - gotta pay yer way."));
+console.log(acronymize("Live from New York, it's Saturday Night!"));
 
 
 /*****************************************************************************/

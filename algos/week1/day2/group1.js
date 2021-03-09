@@ -12,7 +12,9 @@ const str2 = "Live from New York, it's Saturday Night!";
 const expected2 = "LFNYISN";
 
 
-function acronymize(str) {}
+function acronymize(str) {
+	st
+}
 
 
 /*****************************************************************************/

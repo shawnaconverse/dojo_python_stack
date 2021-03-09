@@ -12,7 +12,30 @@ const str2 = "Live from New York, it's Saturday Night!";
 const expected2 = "LFNYISN";
 
 
-function acronymize(str) {}
+function acronymize(str) {
+	str = str.split(" ");
+  var new_string;
+  for(i = 0; i < str.length-1; i++)
+  {
+    new_string += str[i][0];
+  }
+  new_string = new_string.toUpperCase();
+  
+	return new_string;
+}
+
+console.log(acronymize(str1));
+console.log(acronymize(str2));
+
+
+// function acronymize2(str1) {
+	//	var expected = ""
+	// for(i=0;i<str1.length;i++){
+	// 		if (str1[i]==" "){
+	//			
+	//}
+	//}
+// }
 
 
 /*****************************************************************************/

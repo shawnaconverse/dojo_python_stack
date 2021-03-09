@@ -12,8 +12,19 @@ const str2 = "Live from New York, it's Saturday Night!";
 const expected2 = "LFNYISN";
 
 
-function acronymize(str) {}
-
+function acronymize2(str) {
+	var acronym = '';
+	var strings = str.split(" ");
+	for (var i = 0; i < strings.length; i++){
+		var word = strings[i];
+		var letter = word[0];
+		if(letter){
+			acronym += letter.toUpperCase();
+		}
+	}
+	return acronym;
+}
+console.log(acronymize2(str1));
 
 /*****************************************************************************/
 
@@ -31,5 +42,11 @@ const str2 = "dog";
 const expected2 = "god";
 
 
-function reverseString(str) {}
+function reverseString(str) {
+	var newString = "";
+	for (var i = str.length -1 ; i >= 0; i--){
+		newString.push(str[i]);
+	}
+}
 
+reverseString(str1)
