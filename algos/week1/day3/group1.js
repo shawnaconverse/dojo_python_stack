@@ -21,7 +21,27 @@ const expected4 = false;
 // Explanation: same number of opens and closes but the 2nd closing closes nothing
 
 
-function parensValid(str) {}
+function parensValid(str) {
+    var counter = 0
+    for(var i = 0; i < str.length; i++){
+        if(str[i] == "("){
+            counter++
+        }
+        else if(str[i] == ")"){
+            counter--
+        }
+        if(counter < 0){
+            return false
+        }
+    }
+    if(counter == 0){
+        return true
+    }
+    else{
+        return false
+    }
+}
+parensValid("Y(3(p)p(3)r)s")
 
 
 /*****************************************************************************/
@@ -29,7 +49,7 @@ function parensValid(str) {}
 
 /* 
     Braces Valid
-    Given a string sequence of parentheses, braces and brackets, determine whether it is valid. 
+    Given a str sequence of parentheses, braces and brackets, determine whether it is valid. 
 */
 
 const str1 = "W(a{t}s[o(n{ c}o)m]e )h[e{r}e]!";
@@ -42,4 +62,53 @@ const str3 = "A(1)s[O (n]0{t) 0}k";
 const expected3 = false;
 
 
-function bracesValid(str) {}
+function bracesValidd(str) {
+    var braceStack = []
+    var checker = {
+        "(": ")",
+        "{": "}",
+        "[": "]"
+    }
+    for (var char of str) {
+        if (char == "(" || char == "{" || char == "[") {
+            braceStack.push(char)
+        }
+        else {
+            if (checker[braceStack[braceStack.length - 1]] == char) {
+                braceStack.pop()
+            }
+            else {
+                return false
+            }
+        }
+    }
+    if(braceStack.length != 0){
+        return false
+    }
+    return true
+    }
+
+// OR
+
+    function parensValid(str) {
+        var counter = 0
+        for(var i = 0; i < str.length; i++){
+            if(str[i] === "("||str[i] === "{"||str[i] === "["){
+                counter++
+            }
+            else if(str[i] === ")"||str[i] === "}"||str[i] === "]"){
+                counter--
+            }
+            if(counter < 0){
+                return false
+            }
+        }
+        if(counter == 0){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+    console.log(parensValid("W(a{t}s[o(n{ c}o)m]e )h[e{r}e]!"))
+    console.log(parensValid("D(i{a}l[ t]o)n{e"))

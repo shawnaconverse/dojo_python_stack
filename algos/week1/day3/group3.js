@@ -5,7 +5,7 @@
 	return whether the parenthesis are valid
 */
 
-const str1 = "Y(3(p)p(3)r)s";
+const str1 = " ";
 const expected1 = true;
 
 const str2 = "N(0(p)3";
@@ -21,9 +21,27 @@ const expected4 = false;
 // Explanation: same number of opens and closes but the 2nd closing closes nothing
 
 
-function parensValid(str) {}
-
-
+function parensValid(str) {
+    var x = 0
+    for(i=0; i<str.length; i++){
+        if(")"){
+            x-=1;
+        }
+        if(x<0){
+            return false
+        }
+        if("("){
+            x+=1;
+        }
+    }
+    if(x==0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+console.log(parensValid('N(0(p)3'))
 /*****************************************************************************/
 
 
@@ -42,4 +60,24 @@ const str3 = "A(1)s[O (n]0{t) 0}k";
 const expected3 = false;
 
 
-function bracesValid(str) {}
+function bracesValid(str) {
+    var x = 0
+    for(i=0; i<str.length; i++){
+        if(")" || "}" || "]"){
+            x-=1;
+        }
+        if(x<0){
+            return false
+        }
+        if("(" || "{" || "["){
+            x+=1;
+        }
+    }
+    if(x===0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+console.log(bracesValid('D(i{a}l[ t]o)n{e'))

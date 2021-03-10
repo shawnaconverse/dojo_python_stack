@@ -1,4 +1,4 @@
-
+ 
 /* 
     Parens Valid
 	Given an str that has parenthesis in it
@@ -8,8 +8,7 @@
 const str1 = "Y(3(p)p(3)r)s";
 const expected1 = true;
 
-const str2 = "N(0(p)3";
-const expected2 = false;
+const str2 = "N(0(p)3";const expected2 = false;
 // Explanation: not every parenthesis is closed.
 
 const str3 = "N(0)t ) 0(k";
@@ -21,8 +20,40 @@ const expected4 = false;
 // Explanation: same number of opens and closes but the 2nd closing closes nothing
 
 
-function parensValid(str) {}
+function parensValid(str) {
+    var countParen=countBracket=countCurly=0;
+    for (i=0;i<str.length;i++){
+        if (str[i]=="("){
+            countParen++;
+        }
+        else if (str[i]==")"){
+            countParen--;
+        }
+        else if (str[i]=="{"){
+            countCurly++;
+        }
+        else if (str[i]=="}"){
+            countCurly--;
+        }
+        else if (str[i]=="["){
+            countBracket++;
+        }
+        else if (str[i]=="]"){
+            countBracket--;
+        }
+        else if (countBracket<0 || countCurly<0 || countParen<0){
+            return false;
+        }
+    }
+    if(countBracket==0 && countCurly==0 && countParen==0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
+parensValid(str1);
 
 /*****************************************************************************/
 
@@ -42,4 +73,4 @@ const str3 = "A(1)s[O (n]0{t) 0}k";
 const expected3 = false;
 
 
-function bracesValid(str) {}
+// function bracesValid(str) {}
