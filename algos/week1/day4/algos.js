@@ -19,9 +19,23 @@ const str4 = "oho!";
 const expected4 = false;
 
 
-function isPalindrome(str) {}
+function isPalindrome(str) {
+    for (var i = 0; i < Math.floor(str.length / 2); i++) {
+        var leftChar = str[i];
+        var rightChar = [str.length - 1 - i];
+        if (leftChar !== rightChar) {
+            return false;
+        }
+    }
+    return true;
+}
 
+function isPalindromeShort(str) {
+    return str === str.split("").reverse().join("");
+}
 
+// 'racecar' => ['r','a','c','e','c','a','r']
+// 'racecar'
 /*****************************************************************************/
 
 
@@ -43,4 +57,18 @@ const str3 = "Yikes! my favorite racecar erupted!";
 const expected3 = "e racecar e";
 
 
-function longestPalindromicSubstring(str) {}
+function longestPalindromicSubstring(str) {
+    var longestPalindrome = str[0]
+
+    // loop through the string check  all possible substrings
+    for (var i = 0; i < str.length; i++) {
+        for (var j = i + 1; j < str.length + 1; j++) {
+            var subStr = str.slice(i, j);
+
+            if (subStr.length > longestPalindrome.length && isPalindrome(subStr)) {
+                longestPalindrome = subStr;
+            }
+        }
+    }
+    return longestPalindrome;
+}

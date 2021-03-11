@@ -19,10 +19,20 @@ const str4 = "oho!";
 const expected4 = false;
 
 
-function isPalindrome(str) {}
+function isPalindrome(str) {
+    console.log(str.split("").reverse().join(""));
+    if((str.split("").reverse().join("")) === str){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+x = isPalindrome(str3);
+console.log(x);
 
 
-/*****************************************************************************/
+*****************************************************************************/
 
 
 /* 

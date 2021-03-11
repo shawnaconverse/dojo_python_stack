@@ -19,8 +19,21 @@ const str4 = "oho!";
 const expected4 = false;
 
 
-function isPalindrome(str) {}
+function isPalindrome(str) {
+    var newString = ""
+    for(var i = 0; i < str.length ; i++){
+        newString = str[i] + newString;
+    }
+    if(newString === str){
+        return true;
+    }
+    return false;
+}
 
+x = isPalindrome(str4)
+console.log(x)
+
+// I think what we need to do here is create a for look and use if statements to return a boolean. ~ does that sound right?
 
 /*****************************************************************************/
 
@@ -43,4 +56,7 @@ const str3 = "Yikes! my favorite racecar erupted!";
 const expected3 = "e racecar e";
 
 
-function longestPalindromicSubstring(str) {}
+function longestPalindromicSubstring(str) {
+    for(var i = 0, b = str.length - 1; i <= (str.length/2)
+
+}

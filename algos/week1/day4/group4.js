@@ -19,8 +19,16 @@ const str4 = "oho!";
 const expected4 = false;
 
 
-function isPalindrome(str) {}
+function isPalindrome(str) {
+    reverse_str = str.split("").reverse().join("");
+    return str == reverse_str;
+}
 
+
+console.log(isPalindrome(str1));
+console.log(isPalindrome(str2));
+console.log(isPalindrome(str3));
+console.log(isPalindrome(str4));
 
 /*****************************************************************************/
 
@@ -43,4 +51,42 @@ const str3 = "Yikes! my favorite racecar erupted!";
 const expected3 = "e racecar e";
 
 
-function longestPalindromicSubstring(str) {}
+function longestPalindromicSubstring(str) {
+maxp = '';
+if(isPalindrome(str) != true){
+    for(i = 0; i < str.length;i++){
+        //subs = str1.substr(i, str1.length)
+        //for(j=subs.length; j>=0;j--)
+        //{
+        //  subs_subs_tr = subs.substr(0,j);
+        //  if(subs_subs_str.length <= 1)
+        //  continue;
+        //}
+        if(str[i-1-j] == str[i+1+j]){
+            for(var j = 0;j<str.length;j++){
+            
+            }
+        }
+    }
+}
+return str;
+}
+
+function longestPalindromicSubstring(str) {
+
+    var rev = [];
+    for (var i = str.length - 1; i >= 0; i--) {
+        rev += str[i];
+    }
+    console.log(rev)
+    for(i = 0; i < str.length; i++) {
+        for(u= 0; u<str.length; u++) {
+            tempstr = 0;
+            if(str[i] == rev[u]) {
+            tempstr += rev[u];
+        }
+        rev += tempstr;
+        }
+    }
+}
+console.log(longestPalindromicSubstring(str1))
