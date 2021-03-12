@@ -5,7 +5,7 @@
     Default the separator to a comma with a space after it if no separator is provided
 */
 
-const arr1 = [1, 2, 3];
+const arr1 = [1, 2, 3]; 
 const separator1 = ", ";
 const expected1 = "1, 2, 3";
 
@@ -26,8 +26,20 @@ const separator5 = ", ";
 const expected5 = "";
 
 
-function join(arr, separator) {}
-
+function join(arr, separator) {
+    var newstr = "";
+    for(i=0; i<arr.length; i++) {
+        if(i<arr.length-1){
+            newstr += arr[i];
+            newstr += separator;
+        }
+        else if(i=arr.length-1){
+            newstr += arr[i];
+        }
+    }
+    console.log(newstr)
+}
+;
 
 /*****************************************************************************/
 
@@ -42,4 +54,6 @@ const nums1 = [1, 13, 14, 15, 37, 38, 70];
 const expected1 = "1, 13-15, 37-38, 70";
 
 
-function bookIndex(nums) {}
+function bookIndex(nums) {
+    
+}

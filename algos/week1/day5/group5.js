@@ -9,7 +9,7 @@ const arr1 = [1, 2, 3];
 const separator1 = ", ";
 const expected1 = "1, 2, 3";
 
-const arr2 = [1, 2, 3];
+const arr2 = [1, 2, 3]; 
 const separator2 = "-";
 const expected2 = "1-2-3";
 
@@ -42,4 +42,6 @@ const nums1 = [1, 13, 14, 15, 37, 38, 70];
 const expected1 = "1, 13-15, 37-38, 70";
 
 
-function bookIndex(nums) {}
+function bookIndex(nums) {
+    
+}

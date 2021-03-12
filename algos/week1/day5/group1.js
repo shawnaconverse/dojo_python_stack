@@ -26,8 +26,14 @@ const separator5 = ", ";
 const expected5 = "";
 
 
-function join(arr, separator) {}
-
+function join(arr, separator) {
+    console.log(arr.join(separator))
+}
+join(arr1, separator1)
+join(arr2, separator2)
+join(arr3, separator3)
+join(arr4, separator4)
+join(arr5, separator5)
 
 /*****************************************************************************/
 
@@ -42,4 +48,21 @@ const nums1 = [1, 13, 14, 15, 37, 38, 70];
 const expected1 = "1, 13-15, 37-38, 70";
 
 
-function bookIndex(nums) {}
+function bookIndex(nums) {
+    var temp = [];
+    for (var i=0; i<nums.length; i++){
+        if(nums[i]+1 == nums[i + 1]){
+            while (nums[i]+1 == nums[i+1]) {
+                i++;
+                if(nums[i+1] < nums[i]) {
+                    nums[i-1] + "-" + nums[i];
+                }
+            }
+        }
+        if(nums[i+1]>nums[i]){
+            nums[i+1] + "-" + nums[i];
+        }
+        return join(temp,',');
+    }
+}
+console.log(bookIndex(nums1))

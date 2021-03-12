@@ -34,12 +34,30 @@ function join(arr, separator) {}
 
 /* 
     Book Index
-    Given an arry of ints representing page numbers
-    return a string with the page numbers formatted as page ranges when the nums span a consecutive range
+    Given an arry of ints representing page numsbers
+    return a string with the page numsbers formatted as page ranges when the numss1 span a consecutive range
 */
 
 const nums1 = [1, 13, 14, 15, 37, 38, 70];
 const expected1 = "1, 13-15, 37-38, 70";
 
 
-function bookIndex(nums) {}
+function bookIndex(nums) {
+	var temp = [];
+	for (var i = 0; i < nums.length; i++) {
+		if (nums[i]+1 == nums[i+1]) {
+			var start = nums[i];
+			while (nums[i]+1 == nums[i+1]) {
+				i++;
+			}
+		var end = nums[i];
+		temp.push(start + "-" + end);
+		} else {
+			temp.push(nums[i]);
+		}
+	}
+	var newstring = temp.join(',');
+	return newstring
+}
+
+console.log(bookIndex(nums1));
