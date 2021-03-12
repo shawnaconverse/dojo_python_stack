@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <!-- <style>
+        p {
+            background-color: aquamarine;
+        }
+    </style> -->
+</head>
+<body>
+    <h1>Vicky is a good girl.</h1>
+    <p>She really likes:</p>
+    <ul>
+        <li>Treats</li>
+        <li>Hikes</li>
+        <li>Belly Rubs</li>
+    </ul>
+
+    <!-- <p>{{ dogs }}</p> -->
+    <ul>
+        {% for dog in dogs %}
+            {% if "Vicky" == dog %}
+                <li style="color: red;">{{ dog }}</li>
+            {% else %}
+                <li>{{ dog }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>
