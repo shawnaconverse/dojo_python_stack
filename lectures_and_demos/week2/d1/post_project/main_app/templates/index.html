@@ -15,8 +15,46 @@
             <input type="text" name="name" id="">
         </p>
         <p>
+            Age:
+            <input type="number" name="age" id="">
+        </p>
+        <p>
+            Birthday:
+            <input type="date" name="birthday" id="">
+        </p>
+        <p>
             Email:
-            <input type="text" name="email" id="">
+            <input type="email" name="email" id="">
+        </p>
+        <p>
+            Favorite Dog:
+            <select name="favorite_dog" id="">
+                {% for dog in dogs %}
+                    <option value="{{ dog }}">{{ dog }}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <p>
+            Favorite Monty Python Skit:
+            <label for="">Miniistry of Silly Walks</label>
+            <input type="radio" name="favorite_skit" id="" value="Ministry of Silly Walks">
+            <label for="">The Cheese Shop</label>
+            <input type="radio" name="favorite_skit" id="" value="The Cheese Shop">
+            <label for="">The Spanish Inquisition</label>
+            <input type="radio" name="favorite_skit" id="" value="The Spanish Inquisition">
+            <label for="">The Argument Clinic</label>
+            <input type="radio" name="favorite_skit" id="" value="The Argument Clinic">
+        </p>
+        <p>
+            What do Knights Say?
+            <label for="">Ni!</label>
+            <input type="checkbox" name="knights" id="" value="Ni!">
+            <label for="">Ekke Ekke Ekke Ekke Ptang Zoo Boing!</label>
+            <input type="checkbox" name="knights" id="" value="Ekke Ekke Ekke Ekke Ptang Zoo Boing!">
+        </p>
+        <p>
+            Comment:
+            <textarea name="comment" id="" cols="30" rows="10"></textarea>
         </p>
         <button>Submit</button>
     </form>
