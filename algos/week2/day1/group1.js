@@ -22,7 +22,39 @@ const str4 = "bbcc";
 const expected4 = "bbcc";
 
 
-function encodeStr(str) {}
+function encodeStr(str) {
+    var count ={
+    "a":0,
+    "b":0,
+    "c":0,
+    "d":0
+    };
+    var newString ="";
+    for(var i =0; i < str.length; i++){
+        if (str[i]=="a"){
+            count["a"]+=1;
+        }
+        else if (str[i]=="b"){
+            count["b"]+=1;
+        }
+        else if (str[i]=="c"){
+            count["c"]+=1;
+        }
+        else if (str[i]=="d"){
+            count["d"]+=1;
+        }
+    }
+//create new string
+    for (var key in count){
+        newString+=`${key} ${count[key]}`;
+    };
+//compare new vs old string & return shorter
+    if( newString.length<str.length){
+        return newString;
+    }
+    return str;
+
+}
 
 
 /*****************************************************************************/

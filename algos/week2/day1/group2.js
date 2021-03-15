@@ -22,7 +22,38 @@ const str4 = "bbcc";
 const expected4 = "bbcc";
 
 
-function encodeStr(str) {}
+function encodeStr(str) {
+    var splitString = str.split("")
+    var table = {
+        a:0,
+        b:0,
+        c:0,
+        d:0,
+    }
+    for(var i=0; i<str.length; i++){
+        if (splitString[i]== 'a'){
+            table.a +=1
+        }
+        if (splitString[i]=='b'){
+            table.b +=1
+        }
+        if (splitString[i]=='c'){
+            table.c +=1;
+        }
+        if (splitString[i]=='d'){
+            table.d +=1;
+        }
+    }
+    if(str.length>splitString.length){
+        return str
+    }
+    else {
+        return table
+        return "a" + table.a + "b" + table.b+ "c" + table.c +"d" + table.d;
+}
+}
+console.log(encodeStr("aaaabbcddd"))
+
 
 
 /*****************************************************************************/
