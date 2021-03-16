@@ -8,5 +8,17 @@
 </head>
 <body>
     <h1>Hello There</h1>
+    <form action="/process" method="post">
+        {% csrf_token %}
+        <p>
+            Name:
+            <input type="text" name="name">
+        </p>
+        <p>
+            Email:
+            <input type="text" name="email">
+        </p>
+        <button>Submit</button>
+    </form>
 </body>
 </html>
