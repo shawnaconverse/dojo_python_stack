@@ -5,20 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
 </head>
 <body>
     <h1>Hello There</h1>
-    <form action="/process" method="post">
-        {% csrf_token %}
-        <p>
-            Name:
-            <input type="text" name="name">
-        </p>
-        <p>
-            Email:
-            <input type="text" name="email">
-        </p>
-        <button>Submit</button>
-    </form>
+    <div class="wrapper">
+        <form action="/process" method="post">
+            <h2>Register</h2>
+            {% csrf_token %}
+            <input type="hidden" name="which_form" value="register">
+            <p>
+                Name:
+                <input type="text" name="name">
+            </p>
+            <p>
+                Email:
+                <input type="text" name="email">
+            </p>
+            <p>
+                Password:
+                <input type="password" name="password" id="">
+            </p>
+            <button>Register</button>
+        </form>
+        <form action="/process" method="post">
+            <h2>Login</h2>
+            {% csrf_token %}
+            <input type="hidden" name="which_form" value="login">
+            <p>
+                Email:
+                <input type="email" name="email" id="">
+            </p>
+            <p>
+                Password:
+                <input type="password" name="password" id="">
+            </p>
+            <button>Login</button>
+        </form>
+    </div>
 </body>
 </html>

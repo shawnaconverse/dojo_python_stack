@@ -6,12 +6,27 @@ def index(request):
 
 
 def process(request):
+    if request.POST["which_form"] == "register":
+        # handle the register
+        print(request.POST['name'])
+        print(request.POST['email'])
+        print(request.POST['password'])
+
+    elif request.POST["which_form"] == "login":
+        # handle login
+        print(request.POST['email'])
+        print(request.POST['password'])
+    
+    else:
+        return redirect("/")
     # print("Hello There") 
-    request.session['name'] = request.POST['name']
-    request.session["email"] = request.POST['email']
-    print(request.session) # is just a disctionary
-    print(request.session['name'])
-    print(request.session['email'])
+    # request.session['name'] = request.POST['name']
+    # request.session["email"] = request.POST['email']
+    # request.session['password'] = request.POST['password']
+    # print(request.session) # is just a disctionary
+    # print(request.session['name'])
+    # print(request.session['email'])
+    # print(request.session['password'])
     return redirect("/show") # NEW GET REQUEST
 
 
