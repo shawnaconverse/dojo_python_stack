@@ -19,13 +19,26 @@ const expected2 = {
     c: 3,
     B: 1,
     d: 1,
-};
+}; 
 
 const arr3 = [];
 const expected3 = {};
 
-
-function frequencyTableBuilder(arr) {}
+function frequencyTableBuilder(arr) {
+    // SETUP
+    var freqTable = {};
+    // WORK
+    for (var i = 0; i < arr.length; i++) {
+        var str = arr[i];
+        if (freqTable.hasOwnProperty(str) === false) {
+            freqTable[str] = 1;
+        } else {
+            freqTable[str]++;
+        }
+    }
+    // RETURN
+    return freqTable;
+}
 
 
 /*****************************************************************************/
@@ -40,5 +53,23 @@ function frequencyTableBuilder(arr) {}
 const str1 = "This is a test";
 const expected1 = "test a is This";
 
+// .split()
+// BONUS try to solve without .split()
+function reverseWordOrder(wordsStr) {
+    var words = wordsStr.split(" ");
+    var reversed = "";
 
-function reverseWordOrder(wordsStr) {}
+    for (var i = words.length - 1; i >= 0; i--) {
+        reversed += words[i];
+
+        if (i !== 0) {
+            reversed += " ";
+        }
+    }
+
+    return reversed;
+}
+
+function oneLine(wordsStr) {
+    return wordsStr.split(" ").reverse().join(" ")
+}

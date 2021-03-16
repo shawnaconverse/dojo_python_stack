@@ -25,7 +25,31 @@ const arr3 = [];
 const expected3 = {};
 
 
-function frequencyTableBuilder(arr) {}
+function frequencyTableBuilder(arr) {
+    var charFreq = {};
+    var count = "";
+
+    // if (arr.length = 0){ // if list is empty  
+    //     return count;
+    // }
+    for (var char in arr) {
+        if (charFreq[char] == charFreq[char+1]){
+            charFreq[char]++;
+        } else {
+            charFreq[char] = 1;
+        }
+    }
+
+    for (var char in arr) {
+        if (charFreq[char]) {
+            count += char + charFreq[char];
+            charFreq[char] = 0
+        }
+    }
+    return charFreq[char] + count;
+}
+
+console.log(frequencyTableBuilder(arr1));
 
 
 /*****************************************************************************/

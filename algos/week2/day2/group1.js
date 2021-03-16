@@ -24,8 +24,23 @@ const expected2 = {
 const arr3 = [];
 const expected3 = {};
 
+function frequencyTableBuilder(arr) {
+    var letterholder = {
+    }
+    for(i = 0; i < arr.length; i++){
+        if(arr[i] in letterholder) {
+            console.log('Here already!');
+            letterholder[arr[i]] += 1;
+        }
+        else {
+            letterholder[arr[i]] = 1;
+        }
+    }
+    console.log(letterholder)
+}
 
-function frequencyTableBuilder(arr) {}
+frequencyTableBuilder(arr1)
+
 
 
 /*****************************************************************************/

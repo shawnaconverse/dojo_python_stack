@@ -25,7 +25,20 @@ const arr3 = [];
 const expected3 = {};
 
 
-function frequencyTableBuilder(arr) {}
+function frequencyTableBuilder(arr) {
+    var count = 0
+    var dic = {}
+    for(var i = 0;i<arr.length;i++){
+        if(dic[arr[i]]){
+            dic[arr[i]] += 1
+        }
+        else{
+            dic += arr[i] + 1
+        }
+    }
+    return dic
+}
+console.log(frequencyTableBuilder(arr1))
 
 
 /*****************************************************************************/
