@@ -11,7 +11,38 @@ const str2 = "helloo";
 const expected2 = "helo";
 
 
-function stringDedupe(str) {}
+function stringDedupe(str) {
+    var freqTable = {};
+    for(var i=0; i<str.length; i++){
+        var arr = str[i];
+        if(freqTable.hasOwnProperty(arr)===false){
+            freqTable[arr] = 1;
+    } else { freqTable[arr]++
+}
+    }
+    return freqTable;
+}
+console.log(stringDedupe("helloo"))
+
+
+function frequencyTableBuilder(arr) {
+    var freqTable = {};
+    var newStr = ""
+    for (var i=0; i < arr.length; i++) {
+        var str = arr[i];
+        if (freqTable.hasOwnProperty(str) === false) {
+            freqTable[str] = 1;
+        } else {
+            freqTable[str]++;
+        }
+    }
+    for (key in freqTable) {
+        newStr += key
+    }
+    return newStr
+}
+x = frequencyTableBuilder(str2);
+console.log(x);
 
 
 /*****************************************************************************/
@@ -33,4 +64,11 @@ const str3 = "abc def ghi";
 const expected3 = "cba fed ihg";
 
 
-function reverseWords(str) {}
+function reverseWords(str) {
+    var result = "";
+    str.split(' ');
+    for(i=0; i<str.length; i++){
+        str.reverse();
+    }
+}
+console.log(str1)

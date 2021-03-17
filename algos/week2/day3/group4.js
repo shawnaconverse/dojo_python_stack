@@ -11,8 +11,30 @@ const str2 = "helloo";
 const expected2 = "helo";
 
 
-function stringDedupe(str) {}
+function stringDedupe(str) {
+    // SETUP
+    var freqTable = {},value;
+    var str1;
+    // WORK
+    for (var i = 0; i < str.length; i++) {
+        var str1 = str[i];
+        if (freqTable.hasOwnProperty(str1) === false) {
+            freqTable[str1] = 1;
+        } else {
+            freqTable[str1]++;
+        }
+    }
+    var new_str = '';
+    for(var key in freqTable)
+    {
+        new_str += key;
+    }
+    // RETURN
+    return new_str;
+}
 
+console.log(stringDedupe(str1));
+console.log(stringDedupe(str2));
 
 /*****************************************************************************/
 

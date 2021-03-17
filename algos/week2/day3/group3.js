@@ -11,8 +11,24 @@ const str2 = "helloo";
 const expected2 = "helo";
 
 
-function stringDedupe(str) {}
-
+function stringDedupe(str) {
+    var charFreq = {};
+    var newStr ="";
+    for(var char in str) {
+        if(charFreq[char] === true){
+            charFreq[char]++;
+        } 
+        else if (charFreq[char] === false) {
+            newStr += char;
+            charFreq[char] = 0
+        }
+        else {
+            charFreq[char] = 1;
+        }
+    }
+    return newStr;
+}
+console.log(stringDedupe(str1))
 
 /*****************************************************************************/
 
