@@ -20,7 +20,23 @@ const rotateAmnt4 = 4;
 const expected4 = "orldHello W";
 
 
-function rotateStr(str, n) {}
+function rotateStr(str, n) {
+    var rest = "";
+    var rotatedSubStr = "";
+
+    for (var i = 0; i < str.length; i++) {
+        if (i >= str.length - n) {
+            rotatedSubStr += str[i]
+        } else {
+            rest += str[i]
+        }
+    }
+    return rotatedSubStr + rest;
+}
+
+function rotateStrOneLine(str, n) {
+    return str.slice(str.length - n) + str.slice(0, str.length - n)
+}
 
 
 /*****************************************************************************/
@@ -42,4 +58,23 @@ const expected2 = false;
 // Explanation: all same letters in 2nd string, but out of order
 
 
-function isRotation(s1, s2) {}
+function isRotation(s1, s2) {
+    if (s1.length !== s2.length || s1 === s2) {
+        return false;
+    }
+    return (s1 + s1).includes(s2);
+}
+
+// "ABCD" + "ABCD" = "ABCDABCD"
+
+function isAnotherRotation(s1, s2) {
+    if (s1.length !== s2.length) {
+        return false;
+    }
+    for (var i = 0; i < s1.length; i++) {
+        if (rotateStr(s1, i) === s2) {
+            return true;
+        }
+    }
+    return false;
+}

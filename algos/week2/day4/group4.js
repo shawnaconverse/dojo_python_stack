@@ -20,7 +20,9 @@ const rotateAmnt4 = 4;
 const expected4 = "orldHello W";
 
 
-function rotateStr(str, n) {}
+function rotateStr(str, n) {
+    tempstr = ''
+}
 
 
 /*****************************************************************************/
