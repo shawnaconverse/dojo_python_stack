@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Info page for {{ dog.name }}</h1>
+    <p>{{ dog.name }} is a {{ dog.size }} dog.</p>
+    <p>{{ dog.name }} is {{ dog.age }} years old.</p>
+    <p>{{ dog.name }}'s hair color is {{ dog.hair_color }}</p>
+    <p>{{ dog.name }}'s toys:</p>
+    <ul>
+        {% for toy in dog.toys.all %}
+            <li>{{ toy.name }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Go Back</a>
+</body>
+</html>

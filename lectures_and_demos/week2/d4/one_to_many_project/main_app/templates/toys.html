@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All the Toys</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Texture</th>
+                <th>Size</th>
+                <th>Dog Name</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for toy in toys %}
+                <tr>
+                    <td>{{ toy.id }}</td>
+                    <td>{{ toy.name }}</td>
+                    <td>{{ toy.texture }}</td>
+                    <td>{{ toy.size }}</td>
+                    <td><a href="/dogs/{{ toy.dog.id }}">{{ toy.dog.name }}</a></td>
+                    <td>{{ toy.created_at }}</td>
+                    <td>{{ toy.updated_at }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>Make a Toy</h1>
+    <form action="/toys/new" method="post">
+        {% csrf_token %}
+        <p>
+            Name:
+            <input type="text" name="name" id="">
+        </p>
+        <p>
+            Texture:
+            <input type="text" name="texture" id="">
+        </p>
+        <p>
+            Size:
+            <input type="text" name="size" id="">
+        </p>
+        <p>
+            Dog:
+            <select name="dog_id" id="">
+                {% for dog in dogs %}
+                    <option value="{{ dog.id }}">{{ dog.name }}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <button>Create</button>
+    </form>
+    <a href="/">Make a Dog!</a>
+</body>
+</html>
