@@ -39,4 +39,6 @@ function isAnagram(s1, s2) {}
 const str1 = "   hello world     ";
 const expected1 = "hello world";
 
-function trim(str) {}
+function trim(str) {
+    
+}

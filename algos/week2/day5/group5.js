@@ -23,7 +23,15 @@ const strB4 = "listen";
 const expected4 = true;
 
 
-function isAnagram(s1, s2) {}
+function isAnagram(s1, s2) {
+    if(s1.length > s2.length || s1.length < s2.length){
+        return false
+    }
+    freqtab = {}
+    for(var i = 0;i<s1;i++){
+        
+    }
+}
 
 
 /*****************************************************************************/

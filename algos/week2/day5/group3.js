@@ -23,7 +23,46 @@ const strB4 = "listen";
 const expected4 = true;
 
 
-function isAnagram(s1, s2) {}
+function isAnagram(s1, s2) {
+    
+    freqTable = {};
+    s1 = s1.toUpperCase();
+    s2 = s2.toUpperCase();
+    for(var i = 0; i < s1.length; i++)
+    {
+        var str =s1[i];
+        if(freqTable.hasOwnProperty(str) == false)
+        {
+            freqTable[str] = 1;
+        }
+        else
+        {
+            freqTable[str]++;
+        }
+    }
+    if( s1.length == s2.length)
+    {
+        for(var j = 0; j < s2.length; j++)
+        {
+            var str =s2[j];
+            if(freqTable.hasOwnProperty(str) == false)
+            {
+                return false;
+            }
+            else
+            {
+                freqTable[str]++;
+            }
+        }
+        return true;
+    }
+    return false;
+}
+    // if (freqTable.length !== freqTable2.length) {
+    //     return false
+    // }
+    
+
 
 
 /*****************************************************************************/
@@ -39,4 +78,19 @@ function isAnagram(s1, s2) {}
 const str1 = "   hello world     ";
 const expected1 = "hello world";
 
-function trim(str) {}
+function trim(str) {
+    return str.split(' ').slice(' ').join(' ')
+}
+
+function trim(str) 
+{
+    new_str = "";
+    for(i = 0; i < str.length; i++)
+    {
+        if(str[i] != " ")
+        {
+            new_str += str[i]
+        }
+    }
+    return new_str;
+}
