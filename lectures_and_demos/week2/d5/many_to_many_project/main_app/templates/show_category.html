@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{ category.name }}</h1>
+    <p>Products:</p>
+    <ul>
+        {% for product in category.products.all %}
+            <li>Name: {{ product.name }}, Price: {{ product.price }} </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Go Back</a>
+    <form action="/categories/{{ category.id }}/add_product" method="post">
+        {% csrf_token %}
+        <p>
+            <select name="product_id" id="">
+                {% for product in products %}
+                    <option value="{{ product.id }}">{{ product.name }}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

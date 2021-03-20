@@ -7,6 +7,84 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div style="display: flex; justify-content: space-between; border: 2px solid black; margin: 10px;">
+        <form action="/categories/create" method="post">
+            {% csrf_token %}
+            <p>
+                Name:
+                <input type="text" name="name" id="">
+            </p>
+            <p>
+                Product:
+                <select name="product_id" id="">
+                    {% for product in products %}
+                        <option value="{{ product.id }}">{{ product.name }}</option>
+                    {% endfor %}
+                </select>
+            </p>
+            <button>Create Category</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for category in categories %}
+                    <tr>
+                        <td>{{ category.id }}</td>
+                        <td>{{ category.name }}</td>
+                        <td><a href="/categories/{{ category.id }}">View</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; border: 2px solid black; margin: 10px;">
+        <form action="/products/create" method="post">
+            {% csrf_token %}
+            <p>
+                Name:
+                <input type="text" name="name" id="">
+            </p>
+            <p>
+                Price:
+                <input type="number" name="price" id="" min="0.00" step="0.01">
+            </p>
+            <p>
+                Category:
+                <select name="category_id" id="">
+                    {% for category in categories %}
+                        <option value="{{ category.id }}">{{ category.name }}</option>
+                    {% endfor %}
+                </select>
+            </p>
+            <button>Create Product</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td>{{ product.id }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price }}</td>
+                        <td><a href="/products/{{ product.id }}">View</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
