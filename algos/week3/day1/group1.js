@@ -13,7 +13,11 @@ const nums2 = [1, 2, 4, 2, 1];
 const expected2 = false;
 
 
-function balancePoint(nums) {}
+function balancePoint(nums) {
+    for(var i = 0;i<nums.length;i++){  
+        
+    }
+}
 
 
 /*****************************************************************************/

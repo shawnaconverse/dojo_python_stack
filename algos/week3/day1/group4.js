@@ -13,7 +13,25 @@ const nums2 = [1, 2, 4, 2, 1];
 const expected2 = false;
 
 
-function balancePoint(nums) {}
+function balancePoint(arr) {
+    if(arr.length<2){
+        return false;
+    }
+    var countRight = countLeft = 0;
+    for(var i=0; i<arr.length; i++){
+            countRight += arr[i];
+        for(var j=i+1; j<arr.length; j++){
+            countLeft += arr[j];
+        }
+        if(countLeft === countRight){
+            return true;
+        }
+        countLeft = 0;
+    }
+    return false;
+}
+
+console.log(balancePoint(nums1));
 
 
 /*****************************************************************************/
@@ -36,4 +54,23 @@ const nums2 = [9, 9];
 const expected2 = -1;
 
 
-function balanceIndex(nums) {}
+function balanceIndex(arr) {
+
+    if( arr.length < 3){
+        return -1;
+    }
+    var countRight = countLeft = 0;
+
+    for(var i=0; i<arr.length; i++){
+            countRight += arr[i];
+
+        for(var j=i+2; j<arr.length; j++){
+            countLeft += arr[j];
+        }
+        if(countLeft === countRight){
+            return i+1;
+        }
+        countLeft = 0;
+    }
+    return -1;
+}
