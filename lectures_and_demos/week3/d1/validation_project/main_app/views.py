@@ -53,3 +53,31 @@ def delete_dog(request, id):
     dog.delete()
 
     return redirect('/dogs')
+
+
+def edit_dog(request, id):
+    context = {
+        'dog': Dog.objects.get(id = id)
+    }
+
+    return render(request, "edit_dog.html", context)
+
+
+def update_dog(request, id):
+    errors = Dog.objects.validator(request.POST)
+
+    if len(errors) > 0:
+        for key, value in errors.items():
+            messages.error(request, value)
+
+        return redirect(f"/dogs/{id}/edit")
+    else:
+        dog = Dog.objects.get(id = id)
+        dog.name = request.POST['name']
+        dog.hair_length = request.POST['hair_length']
+        dog.hair_color = request.POST['hair_color']
+        dog.save()
+        
+        return redirect(f"/dogs/{id}")
+
+
