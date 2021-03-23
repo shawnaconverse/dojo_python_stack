@@ -6,7 +6,6 @@ from django.contrib import messages
 
 from .models import *
 
-DAYS_FOR_13_YEARS = 410248800
 
 # Create your views here.
 def index(request):
@@ -37,14 +36,18 @@ def register(request):
 
 
 def login(request):
-    users_list = User.objects.filter(email = request.POST['email']) #FILTER RETURNS A LIST
-    if len(users_list) > 0:
-        logged_user = users_list[0]
-        if bcrypt.checkpw(request.POST['password'].encode(), logged_user.password.encode()):
-            request.session['uuid'] = logged_user.id
-            return redirect('/dashboard')
-    return redirect('/')
+    errors = User.objects.login_validator(request.POST)
 
+    if len(errors) > 0:
+        for key, value in errors.items():
+            messages.error(request, value)
+        
+        return redirect("/")
+    else:
+        user_list = User.objects.filter(email = request.POST['email'])
+        user = user_list[0]
+        request.session['uuid'] = user.id
+        return redirect('/dashboard')
 
 
 def logout(request):
