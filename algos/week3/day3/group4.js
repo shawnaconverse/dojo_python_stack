@@ -3,9 +3,6 @@
     Because array elements are already in order, all duplicate values will be grouped together.
     Ok to use a new array
     Bonus: do it in O(n) time (no nested loops, new array ok)
-    Bonus: Do it in-place (no new array)
-    Bonus: Do it in-place in O(n) time and no new array
-    Bonus: Keep it O(n) time even if it is not sorted
 */
 
 const nums1 = [1, 1, 1, 1];
@@ -24,11 +21,23 @@ const expected3 = [1, 2, 3, 4];
  * @param {Array<number>} nums
  * @return {Array<number>} The given array deduped.
  */
-function dedupeSorted(nums) {}
 
+ function dedupeSorted(nums) {
+    var arr = []
+    new_value = nums[0];
 
+    for(i = 0; i < nums.length; i++)
+    {
+        if(nums[i] != nums[i-1])
+        {
+            new_value = nums[i]
+            arr.push(new_value)
+        }
+    }
+    return arr;
+}
+.
 /*****************************************************************************/
-
 
 /* 
     Array: Mode
@@ -56,6 +65,5 @@ const expected4 = [1];
 const nums5 = [5, 1, 4, 1, 5];
 const expected5 = [5, 1];
 //  - order doesn't matter
-
 
 function mode(nums) {}

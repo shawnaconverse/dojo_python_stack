@@ -3,9 +3,6 @@
     Because array elements are already in order, all duplicate values will be grouped together.
     Ok to use a new array
     Bonus: do it in O(n) time (no nested loops, new array ok)
-    Bonus: Do it in-place (no new array)
-    Bonus: Do it in-place in O(n) time and no new array
-    Bonus: Keep it O(n) time even if it is not sorted
 */
 
 const nums1 = [1, 1, 1, 1];
@@ -24,11 +21,23 @@ const expected3 = [1, 2, 3, 4];
  * @param {Array<number>} nums
  * @return {Array<number>} The given array deduped.
  */
-function dedupeSorted(nums) {}
-
+function dedupeSorted(nums) {
+  returnArr = [];
+  if (nums.length < 1) {
+    return returnArr;
+  }
+  for (let i = 0; i < array.length; i++) {
+    if (nums[i] != returnArr[returnArr.length - 1]) {
+      returnArr += nums[i];
+    }
+    return returnArr;
+  }
+}
+console.log(dedupdeSorted([1, 1, 1, 1]));
+console.log(dedupdeSorted([1, 1, 2, 2, 3, 3]));
+console.log(dedupdeSorted([1, 1, 2, 3, 3, 4]));
 
 /*****************************************************************************/
-
 
 /* 
     Array: Mode
@@ -57,5 +66,24 @@ const nums5 = [5, 1, 4, 1, 5];
 const expected5 = [5, 1];
 //  - order doesn't matter
 
+function mode(nums) {
+    if (nums.length < 1) {
+        return returnArr;
+    }
+    freq = {};
+    array.forEach(item => {
+        if (freq[item]){
+            freq[item]++;
+        }
+        else{
+            freq[item]=1;
+        });
 
-function mode(nums) {}
+    }
+    for (key, value in freq.items) {
+    if key.
+        
+    }
+    
+
+}
