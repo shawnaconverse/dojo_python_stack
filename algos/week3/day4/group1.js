@@ -16,13 +16,36 @@ const expected3 = { nickel: 1, penny: 4 };
 const cents4 = 99;
 const expected4 = { quarter: 3, dime: 2, penny: 4 };
 
+function fewestCoinChange(cents) {
+  var freqtable = {};
 
-function fewestCoinChange(cents) {}
-
+  if (cents > 25) {
+    if (!quarter in freqtable) {
+      freqtable += quarter;
+    }
+    quarter += 1;
+  }
+  if (cents > 10) {
+    if (!dime in freqtable) {
+      freqtable += quarter;
+    }
+    dime += 1;
+  }
+  if (cents > 5) {
+    if (!nickel in freqtable) {
+      freqtable += quarter;
+    }
+    nickel += 1;
+  }
+  if (cents > 1) {
+    if (!penny in freqtable) {
+      freqtable += quarter;
+    }
+    penny += 1;
+  }
+}
 
 /*****************************************************************************/
-
-
 
 /* 
     Missing Value
@@ -37,6 +60,5 @@ const expected1 = 2;
 const nums2 = [3, 0, 1, 2];
 const expected2 = null;
 // Explanation: nothing is missing
-
 
 function missingValue(unorderedNums) {}

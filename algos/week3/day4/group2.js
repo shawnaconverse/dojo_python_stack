@@ -16,13 +16,29 @@ const expected3 = { nickel: 1, penny: 4 };
 const cents4 = 99;
 const expected4 = { quarter: 3, dime: 2, penny: 4 };
 
+function fewestCoinChange(cents) {
+  var change = {
+    quarter: 0,
+    dime: 0,
+    nickle: 0,
+    penny: 0,
+  };
 
-function fewestCoinChange(cents) {}
+  while (cents >= 25) {
+    (cents -= 25), quarter++;
+  }
+  while (cents >= 10) {
+    (cents -= 10), dime++;
+  }
+  while (cents >= 5) {
+    (cents -= 5), nickle++;
+  }
+  penny = cents;
 
+  return change;
+}
 
 /*****************************************************************************/
-
-
 
 /* 
     Missing Value
@@ -37,6 +53,5 @@ const expected1 = 2;
 const nums2 = [3, 0, 1, 2];
 const expected2 = null;
 // Explanation: nothing is missing
-
 
 function missingValue(unorderedNums) {}

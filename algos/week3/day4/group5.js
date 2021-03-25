@@ -16,14 +16,41 @@ const expected3 = { nickel: 1, penny: 4 };
 const cents4 = 99;
 const expected4 = { quarter: 3, dime: 2, penny: 4 };
 
-
-function fewestCoinChange(cents) {}
-
+function fewestCoinChange(cents) {
+  var change = {};
+  while (cents >= 25) {
+    if (change.hasOwnProperty("quarters")) {
+      change["quarters"]++;
+      cents -= 25;
+    } else {
+      change["quarters"] = 1;
+      cents -= 25;
+    }
+  }
+  while (cents >= 10) {
+    if (change.hasOwnProperty("dimes")) {
+      change["dimes"]++;
+      cents -= 10;
+    } else {
+      change["dimes"] = 1;
+      cents -= 10;
+    }
+  }
+  while (cents >= 5) {
+    if (change.hasOwnProperty("nickels")) {
+      change["nickels"]++;
+      cents -= 5;
+    } else {
+      change["nickels"] = 1;
+      cents -= 5;
+    }
+  }
+  change["pennies"] = cents;
+  return change;
+}
+console.log(fewestCoinChange(cents4));
 
 /*****************************************************************************/
-
-
-
 /* 
     Missing Value
     You are given an array of length N that contains, in no particular order,
@@ -37,6 +64,5 @@ const expected1 = 2;
 const nums2 = [3, 0, 1, 2];
 const expected2 = null;
 // Explanation: nothing is missing
-
 
 function missingValue(unorderedNums) {}
