@@ -23,12 +23,21 @@ const expected2 = 720;
 const num3 = 0;
 const expected3 = 1;
 
+function factorial(n) {
+  // Edge Case - given something that isnt a number
+  if (isNaN(parseInt(n))) {
+    return null;
+  }
+  n = Math.floor(n);
 
-function factorial(n) {}
-
-
+  // Base Case
+  if (n <= 1) {
+    return 1;
+  }
+  // Forward progress / recursive call
+  return n * factorial(n - 1);
+}
 /*****************************************************************************/
-
 
 /* 
     Return the fibonacci number at the nth position, recursively.
@@ -56,5 +65,48 @@ const expected5 = 3;
 const num6 = 8;
 const expected6 = 21;
 
+function fibonacci(n) {
+  // Edge Case
+  if (n < 0) {
+    return null;
+  }
+  // Base Case
+  if (n < 2) {
+    return n;
+  }
+  // Forward progress / recursive call
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
 
-function fibonacci(num) {}
+/* Memoization
+ * In computing, memoization or memoisation is an optimization technique used
+ * primarily to speed up computer programs by storing the results of expensive
+ * function calls and returning the cached result when the same inputs occur
+ * again.
+ */
+
+function fibMemo(n, memo = { 0: 0, 1: 1 }) {
+  if (n < 0) {
+    return null;
+  }
+
+  if (memo[n] !== undefined) {
+    return memo[n];
+  }
+
+  memo[n] = fibMemo(n - 1, memo) + fibMemo(n - 2, memo);
+
+  return memo[n];
+}
+
+memo = {
+  0: 0,
+  1: 1,
+  2: 1,
+  3: 2,
+  4: 3,
+  5: 5,
+  6: 8,
+  7: 13,
+  8: 21,
+};

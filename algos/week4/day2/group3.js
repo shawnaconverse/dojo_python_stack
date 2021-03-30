@@ -23,12 +23,9 @@ const expected2 = 720;
 const num3 = 0;
 const expected3 = 1;
 
-
 function factorial(n) {}
 
-
 /*****************************************************************************/
-
 
 /* 
     Return the fibonacci number at the nth position, recursively.
@@ -56,5 +53,8 @@ const expected5 = 3;
 const num6 = 8;
 const expected6 = 21;
 
-
-function fibonacci(num) {}
+function fibonacci(num) {
+  if (num < 2) {
+    return 1;
+  }
+}

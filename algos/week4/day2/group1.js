@@ -23,12 +23,22 @@ const expected2 = 720;
 const num3 = 0;
 const expected3 = 1;
 
+function factorial(num) {
+  // base case
+  num = Math.floor(num);
+  if (num < 2) {
+    return 1;
+  }
 
-function factorial(n) {}
+  // forward progress / recursive call
+  return num * factorial(num - 1);
+}
 
+console.log(factorial(num1));
+console.log(factorial(num2));
+console.log(factorial(num3));
 
 /*****************************************************************************/
-
 
 /* 
     Return the fibonacci number at the nth position, recursively.
@@ -56,5 +66,27 @@ const expected5 = 3;
 const num6 = 8;
 const expected6 = 21;
 
+function fibonacci(num) {
+  //setup
+  var a = 0;
+  var b = 1;
+  var c = a + b;
+  a = b;
+  b = c;
 
-function fibonacci(num) {}
+  return c + fibonacci1(num - 1, a, b);
+}
+
+function fibonacci1(num, a, b) {
+  //setup
+  if (num == 0) {
+    return 0;
+  }
+  var c = a + b;
+  a = b;
+  b = c;
+  num = num - 1;
+  return c + fibonacci1(num, a, b);
+}
+
+console.log(fibonacci(num1));

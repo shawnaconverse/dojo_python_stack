@@ -23,14 +23,19 @@ const expected2 = 720;
 const num3 = 0;
 const expected3 = 1;
 
-
-function factorial(n) {}
-
+function factorial(n) {
+  //Edge Cases
+  if (num < 1) {
+    return 0;
+  }
+  num = Math.floor(num);
+  //Base Case
 
 /*****************************************************************************/
 
-
 /* 
+    
+
     Return the fibonacci number at the nth position, recursively.
     
     Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
@@ -55,6 +60,5 @@ const expected5 = 3;
 
 const num6 = 8;
 const expected6 = 21;
-
 
 function fibonacci(num) {}
