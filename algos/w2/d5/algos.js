@@ -1,9 +1,9 @@
 /* 
-    An anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
-    typically using all the original letters exactly once.
-    Is there a quick way to determine if they aren't an anagram before spending more time?
-    Given two strings
-    return whether or not they are anagrams
+  An anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
+  typically using all the original letters exactly once.
+  Is there a quick way to determine if they aren't an anagram before spending more time?
+  Given two strings
+  return whether or not they are anagrams
 */
 
 const strA1 = "yes";
@@ -27,9 +27,9 @@ function isAnagram(s1, s2) {}
 /*****************************************************************************/
 
 /* 
-    Given a string that may have extra spaces at the start and the end,
-    return a new string that has the extra spaces at the start and the end trimmed (removed)
-    do not remove any other spaces.
+  Given a string that may have extra spaces at the start and the end,
+  return a new string that has the extra spaces at the start and the end trimmed (removed)
+  do not remove any other spaces.
 */
 
 const str1 = "   hello world     ";

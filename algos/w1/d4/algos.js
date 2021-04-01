@@ -1,9 +1,9 @@
 /* 
-    String: Is Palindrome
-    Create a function that returns a boolean whether the string is a strict palindrome. 
-        - palindrome = string that is same forwards and backwards
-    
-    Do not ignore spaces, punctuation and capitalization
+  String: Is Palindrome
+  Create a function that returns a boolean whether the string is a strict palindrome. 
+    - palindrome = string that is same forwards and backwards
+  
+  Do not ignore spaces, punctuation and capitalization
  */
 
 const str1 = "a x a";

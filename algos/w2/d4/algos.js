@@ -1,6 +1,6 @@
 /* 
-    String: Rotate String
-    Create a standalone function that accepts a string and an integer, and rotates the characters in the string to the right by that given integer amount.
+  String: Rotate String
+  Create a standalone function that accepts a string and an integer, and rotates the characters in the string to the right by that given integer amount.
 */
 
 const str1 = "Hello World";
@@ -24,8 +24,8 @@ function rotateStr(str, n) {}
 /*****************************************************************************/
 
 /* 
-    Create the function isRotation(str1,str2) that
-    returns whether the second string is a rotation of the first.
+  Create the function isRotation(str1,str2) that
+  returns whether the second string is a rotation of the first.
 */
 
 const strA1 = "ABCD";

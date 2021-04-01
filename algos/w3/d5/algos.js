@@ -1,8 +1,8 @@
 /* 
-    Given an array of integers
-    return the first integer from the array that is not repeated anywhere else
-    If there are multiple non-repeated integers in the array,
-    the "first" one will be the one with the lowest index.
+  Given an array of integers
+  return the first integer from the array that is not repeated anywhere else
+  If there are multiple non-repeated integers in the array,
+  the "first" one will be the one with the lowest index.
 */
 
 const nums1 = [3, 5, 4, 3, 4, 6, 5];

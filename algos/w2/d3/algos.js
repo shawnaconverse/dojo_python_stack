@@ -1,6 +1,6 @@
 /* 
-    Given a string,
-    return a new string with the duplicates excluded
+  Given a string,
+  return a new string with the duplicates excluded
 */
 
 const str1 = "abcABC";
@@ -14,9 +14,9 @@ function stringDedupe(str) {}
 /*****************************************************************************/
 
 /* 
-    Given a string containing space separated words
-    Reverse each word in the string.
-    If you need to, use .split to start, then try to do it without.
+  Given a string containing space separated words
+  Reverse each word in the string.
+  If you need to, use .split to start, then try to do it without.
 */
 
 const str1 = "hello";

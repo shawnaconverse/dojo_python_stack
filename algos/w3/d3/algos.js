@@ -1,9 +1,8 @@
 /* 
-    Given a SORTED array of integers, dedupe the array 
-    Because array elements are already in order, all duplicate values will be grouped together.
-    Ok to use a new array
-    Bonus: do it in O(n) time (no nested loops, new array ok)
-
+  Given a SORTED array of integers, dedupe the array 
+  Because array elements are already in order, all duplicate values will be grouped together.
+  Ok to use a new array
+  Bonus: do it in O(n) time (no nested loops, new array ok)
 */
 
 const nums1 = [1, 1, 1, 1];
@@ -20,14 +19,14 @@ function dedupeSorted(nums) {}
 /*****************************************************************************/
 
 /* 
-    Array: Mode
-    
-    Create a function that, given an array of ints,
-    returns the int that occurs most frequently in the array.
-    What if there are multiple items that occur the same number of time?
-        - return all of them (in an array)
-        - what if all items occur the same number of times?
-        - return empty array
+  Array: Mode
+  
+  Create a function that, given an array of ints,
+  returns the int that occurs most frequently in the array.
+  What if there are multiple items that occur the same number of time?
+    - return all of them (in an array)
+    - what if all items occur the same number of times?
+    - return empty array
 */
 
 const nums1 = [];

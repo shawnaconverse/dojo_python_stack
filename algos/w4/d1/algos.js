@@ -1,5 +1,5 @@
 /* 
-    Recursively sum an arr of ints
+  Recursively sum an arr of ints
 */
 
 const nums1 = [1, 2, 3];
@@ -10,9 +10,9 @@ function sumArr(nums) {}
 /*****************************************************************************/
 
 /* 
-    Recursive Sigma
-    Input: integer
-    Output: sum of integers from 1 to Input integer
+  Recursive Sigma
+  Input: integer
+  Output: sum of integers from 1 to Input integer
 */
 
 const num1 = 5;

@@ -1,5 +1,5 @@
 /* 
-    Parens Valid
+  Parens Valid
 	Given an str that has parenthesis in it
 	return whether the parenthesis are valid
 */
@@ -24,8 +24,8 @@ function parensValid(str) {}
 /*****************************************************************************/
 
 /* 
-    Braces Valid
-    Given a string sequence of parentheses, braces and brackets, determine whether it is valid. 
+  Braces Valid
+  Given a string sequence of parentheses, braces and brackets, determine whether it is valid. 
 */
 
 const str1 = "W(a{t}s[o(n{ c}o)m]e )h[e{r}e]!";

@@ -26,7 +26,7 @@ function encodeStr(str) {}
 /*****************************************************************************/
 
 /* 
-    String Decode  
+  String Decode  
 */
 
 const str1 = "a3b2c1d3";

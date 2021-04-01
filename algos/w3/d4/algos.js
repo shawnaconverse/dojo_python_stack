@@ -1,7 +1,7 @@
 /* 
-    Given an int to represent how much change is needed
-    calculate the fewest number of coins needed to create that change,
-    using the standard US denominations
+  Given an int to represent how much change is needed
+  calculate the fewest number of coins needed to create that change,
+  using the standard US denominations
 */
 
 const cents1 = 25;
@@ -21,10 +21,10 @@ function fewestCoinChange(cents) {}
 /*****************************************************************************/
 
 /* 
-    Missing Value
-    You are given an array of length N that contains, in no particular order,
-    integers from 0 to N . One integer value is missing.
-    Quickly determine and return the missing value.
+  Missing Value
+  You are given an array of length N that contains, in no particular order,
+  integers from 0 to N . One integer value is missing.
+  Quickly determine and return the missing value.
 */
 
 const nums1 = [3, 0, 1];

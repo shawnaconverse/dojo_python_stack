@@ -1,8 +1,8 @@
 /* 
-    Balance Point
-    Write a function that returns whether the given
-    array has a balance point BETWEEN indices, 
-    where one side’s sum is equal to the other’s. 
+  Balance Point
+  Write a function that returns whether the given
+  array has a balance point BETWEEN indices, 
+  where one side’s sum is equal to the other’s. 
 */
 
 const nums1 = [1, 2, 3, 4, 10];
@@ -17,13 +17,12 @@ function balancePoint(nums) {}
 /*****************************************************************************/
 
 /* 
-    Balance Index
-    Here, a balance point is ON an index, not between indices.
-    Return the balance index where sums are equal on either side
-    (exclude its own value).
-    
-    Return -1 if none exist.
-    
+  Balance Index
+  Here, a balance point is ON an index, not between indices.
+  Return the balance index where sums are equal on either side
+  (exclude its own value).
+  
+  Return -1 if none exist.
 */
 
 const nums1 = [-2, 5, 7, 0, 3];
