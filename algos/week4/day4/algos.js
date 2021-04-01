@@ -11,12 +11,18 @@ const expected1 = "cba";
 const str2 = "";
 const expected2 = "";
 
-
-function reverseStr(str) {}
-
+function reverseStr(str) {
+  // first character of the string
+  // the rest of the string
+  // some for of concatination
+  if (str === "") {
+    return "";
+  }
+  var strMinusFirst = str.slice(1);
+  return reverseStr(strMinusFirst) + str[0];
+}
 
 /*****************************************************************************/
-
 
 /*
     Sum To One Digit
@@ -39,5 +45,16 @@ const expected2 = 1;
 const num3 = 25;
 const expected3 = 7;
 
+// Bonus
+const num4 = 57; // 5 + 7 = 12 => 1 + 2
+const expected4 = 3;
 
-function sumToOneDigit(num) {}
+function sumToOneDigit(num) {
+  // Edge case
+  if (isNaN(parseInt(num))) {
+    return null;
+  }
+  if (num < 10) {
+    return num;
+  }
+}
