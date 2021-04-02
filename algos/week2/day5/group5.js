@@ -27,11 +27,25 @@ function isAnagram(s1, s2) {
     if(s1.length > s2.length || s1.length < s2.length){
         return false
     }
+    lower1 =s1.toLowerCase()
+    lower2 =s2.toLowerCase()
     freqtab = {}
-    for(var i = 0;i<s1;i++){
-        
+    for(var i = 0;i<lower1.length;i++){
+        freqtab[lower1[i]] = 1
     }
+    for(var j = 0;j<lower1.length;j++){
+        freqtab[lower2[j]] += 1
+        if(freqtab[lower2[j]] != 2){
+            return false
+        }
+    }
+    console.log(freqtab)
+    return true
 }
+console.log(isAnagram(strA1,strB1))
+console.log(isAnagram(strA2,strB2))
+console.log(isAnagram(strA3,strB3))
+console.log(isAnagram(strA4,strB4))
 
 
 /*****************************************************************************/
@@ -47,4 +61,8 @@ function isAnagram(s1, s2) {
 const str1 = "   hello world     ";
 const expected1 = "hello world";
 
-function trim(str) {}
+function trim(str) {
+    str.split('').slice(' ').join('')
+    return str
+}
+console.log(trim(str1))

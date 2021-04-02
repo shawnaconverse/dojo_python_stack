@@ -3,14 +3,14 @@
     return the integers all under ONE array.
 */
 
-const arr1 = [1, 2, 3, 4, 5, 6]
-const expected1 = [1, 2, 3, 4, 5, 6]
+const arr1 = [1, 2, 3, 4, 5, 6];
+const expected1 = [1, 2, 3, 4, 5, 6];
 
-const arr2 = [1, 2, [4, 5], 6]
-const expected2 = [1, 2, 4, 5, 6]
+const arr2 = [1, 2, [4, 5], 6];
+const expected2 = [1, 2, 4, 5, 6];
 
-const arr3 = [1, 2, [3, 4, [5]], 6]
-const expected3 = [1, 2, 3, 4, 5, 6]
+const arr3 = [1, 2, [3, 4, [5]], 6];
+const expected3 = [1, 2, 3, 4, 5, 6];
 
 /* 
     Two useful built in functions:
@@ -23,4 +23,16 @@ const expected3 = [1, 2, 3, 4, 5, 6]
         - arr1.concat(arr2) => [1, 2, 3, 4, 5, 6, 1, 2, [4, 5], 6]
 */
 
-function recursiveFlatten(arr) {}
+function recursiveFlatten(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    answer = Array.isArray().concat();
+  }
+  return answer;
+}
+console.log(recursiveFlatten(arr1));
+
+function recursiveFlatten(arr) {
+  if (arr.length <= 0) {
+    return null;
+  }
+}

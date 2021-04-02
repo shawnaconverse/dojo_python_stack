@@ -23,7 +23,62 @@ const strB4 = "listen";
 const expected4 = true;
 
 
-function isAnagram(s1, s2) {}
+function isAnagram(s1, s2) {
+    // Use some form or frequecy table
+    var str1 = s1.toUpperCase();
+    var str2 = s2.toUpperCase();
+
+    if (str1.length !==  str2.length) {
+        return false;
+    }
+    var freq = {};
+    for (let i = 0; i < str1.length; i++) {
+        let char = str1[i];
+        freq[char] = freq[char] ? freq[char] += 1 : freq[char] = 1;
+    }
+
+    for (let i = 0; i < str2.length; i++) {
+        let char = str2[i];
+        if (!freq[char]) {
+            return false;
+        } else {
+            freq[char] = -1;
+        }
+    }
+    return true;
+}
+
+console.log(isAnagram(strA4, strB4));
+
+
+function isAnagram(s1, s2) {
+    var freqTable={};
+    var str1 = s1.toLowerCase();
+    var str2 = s2.toLowerCase();
+    for (var i=0; i<str1.length; i++){
+        var str = str1[i];
+        if (freqTable.hasOwnProperty(str) === false) {
+            freqTable[str] = 1
+        } else {
+            freqTable[str] ++;
+        }
+    }
+    for (var j=0; j<str2.length; j++){
+        var str = str2[j];
+        if (freqTable.hasOwnProperty(str) === false){
+            freqTable[str] =1
+        } else {
+            freqTable[str] --;
+        }
+    }
+    for (item in freqTable){
+        if (freqTable[item] != 0){
+            return false;
+        }
+    }
+    return true;    
+}
+console.log(isAnagram(strA4, strB4));
 
 
 /*****************************************************************************/
@@ -36,7 +91,7 @@ function isAnagram(s1, s2) {}
     do not remove any other spaces.
 */
 
-const str1 = "   hello world     ";
-const expected1 = "hello world";
+// const str1 = "   hello world     ";
+// const expected1 = "hello world";
 
-function trim(str) {}
+// function trim(str) {}

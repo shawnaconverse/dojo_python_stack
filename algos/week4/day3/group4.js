@@ -20,5 +20,23 @@ const nums3 = [3, 4, 6, 8, 12];
 const searchNum3 = 3;
 const expected3 = true;
 
+function binarySearch(sortedNums, searchNum) {
+  var start = 0;
+  var end = sortedNums.length - 1;
 
-function binarySearch(sortedNums, searchNum) {}
+  if (start > end) return false;
+
+  var midIdx = Math.floor(sortedNums.length / 2);
+
+  if (sortedNums[midIdx] === searchNum) return true;
+
+  if (sortedNums[midIdx] > searchNum) {
+    var newArr = sortedNums.slice(start, midIdx);
+    return binarySearch(newArr, searchNum);
+  } else if (sortedNums[midIdx] < searchNum) {
+    var newArr = sortedNums.slice(midIdx + 1, sortedNums.length);
+    return binarySearch(newArr, searchNum);
+  } else {
+    return midIdx;
+  }
+}

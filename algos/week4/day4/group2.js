@@ -11,12 +11,9 @@ const expected1 = "cba";
 const str2 = "";
 const expected2 = "";
 
-
 function reverseStr(str) {}
 
-
 /*****************************************************************************/
-
 
 /*
     Sum To One Digit
@@ -39,5 +36,7 @@ const expected2 = 1;
 const num3 = 25;
 const expected3 = 7;
 
-
-function sumToOneDigit(num) {}
+function sumToOneDigit(num) {
+  num.toString().split("");
+  for (var i = 0; i < num.length; i++) {}
+}

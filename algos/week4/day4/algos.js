@@ -54,7 +54,17 @@ function sumToOneDigit(num) {
   if (isNaN(parseInt(num))) {
     return null;
   }
+  // Base Case
   if (num < 10) {
     return num;
   }
+  // Forward Progress / Logic
+  var strNum = num.toString();
+  var sum = 0;
+
+  for (var strDigit of strNum) {
+    sum += parseInt(strDigit);
+  }
+
+  return sumToOneDigit(sum);
 }

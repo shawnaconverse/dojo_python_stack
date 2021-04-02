@@ -23,7 +23,28 @@ const strB4 = "listen";
 const expected4 = true;
 
 
-function isAnagram(s1, s2) {}
+function isAnagram(str1, str2) {
+    str1 = str1.replace(/[^\w]/g, "").toLowerCase();
+    str2 = str2.replace(/[^\w]/g, "").toLowerCase();
+
+    if (str1.length !== str2.length) {
+      return false;
+    }
+  
+    let arrB = str2.split("");
+  
+    for (let char of str1) {
+      if (!arrB.includes(char)) {
+        return false;
+        break;
+      } else {
+        arrB.splice(arrB.indexOf(char), 1);
+      }
+    }
+  
+    return true;
+    }
+  console.log(isAnagram("I am Lord Voldemort", "Tom Marvolo Riddle"));
 
 
 /*****************************************************************************/
@@ -39,4 +60,8 @@ function isAnagram(s1, s2) {}
 const str1 = "   hello world     ";
 const expected1 = "hello world";
 
-function trim(str) {}
+function trim(str) {
+    for (var i = 0; i <str.length; i++){
+
+    }
+}

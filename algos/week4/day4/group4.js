@@ -40,7 +40,29 @@ const expected1 = 5;
 const num2 = 10;
 const expected2 = 1;
 
-const num3 = 25;
-const expected3 = 7;
+const num3 = 25347;
+const expected3 = 3;
 
-function sumToOneDigit(num) {}
+function sumToOneDigit(num) {
+  if (isNaN(num)) {
+    return "not a number";
+  }
+  if (num < 10) {
+    return num;
+  }
+  var str = num.toString;
+  var sum = 0;
+  if (str.length % 2 == 0) {
+    for (var i = 0; i < str.length; i += 2) {
+      sum += str.slice(i, i + 1) + str.slice(i + 1, i + 2);
+    }
+  } else {
+    for (var i = 0; i < str.length; i += 2) {
+      sum += str.slice(i, i + 1) + str.slice(i + 1, i + 2);
+    }
+    sum += str.slice(str.length - 1);
+  }
+  return sum + sumToOneDigit(sum);
+}
+
+sumToOneDigit(num3);

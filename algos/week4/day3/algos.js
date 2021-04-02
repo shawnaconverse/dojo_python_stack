@@ -20,5 +20,25 @@ const nums3 = [3, 4, 6, 8, 12];
 const searchNum3 = 3;
 const expected3 = true;
 
+function binarySearch(sortedNums, searchNum) {
+  // Edge Case / Base Case
+  if (sortedNums.length <= 0) {
+    return false;
+  }
 
-function binarySearch(sortedNums, searchNum) {}
+  var mid = Math.floor(sortedNums.length / 2);
+  if (sortedNums[mid] === searchNum) {
+    return true;
+  }
+
+  // Forward Progress / Recursive Call
+  if (sortedNums[mid] > searchNum) {
+    return binarySearch(sortedNums.slice(0, mid), searchNum);
+  } else {
+    // meaning sortedNums[mid] < searchNum
+    return binarySearch(
+      sortedNums.slice(mid + 1, sortedNums.length),
+      searchNum
+    );
+  }
+}

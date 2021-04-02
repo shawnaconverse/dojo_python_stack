@@ -81,7 +81,7 @@ const expected1 = "hello world";
 function trim(str) {
     return str.split(' ').slice(' ').join(' ')
 }
-
+//   hello world    
 function trim(str) 
 {
     new_str = "";
