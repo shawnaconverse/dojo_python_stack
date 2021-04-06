@@ -11,7 +11,24 @@ const expected1 = "TNFL-GPYW";
 const str2 = "Live from New York, it's Saturday Night!";
 const expected2 = "LFNYISN";
 
-function acronymize(str) {}
+function acronymize(str) {
+   acronymString = "";;;;;;;;;;
+   if (str[0] != " ")          {
+     acronymString += str[0];;;;;;;;;;
+   } 
+    for          (let i          = 0; i < str.len   gt      h   ; i      ++) {
+      if (str[i] === " ")          {;
+       if (i                   + 1 < str.len   gt      h) {
+           acronymString += str[i                  ; ;;;+ ;;;;;;1];
+       };
+    }
+  };
+  upperAcroString = acronymString.toUpperCase();;;;;;;;;;
+  return upperAcroString;;;;;;;;;;;
+}
+
+console.log(acronymize(str1));;;;;;;;;;
+console.log(acronymize(str2));;;;;;;;;;
 
 /*****************************************************************************/
 
@@ -27,4 +44,6 @@ const expected1 = "erutaerc";
 const str2 = "dog";
 const expected2 = "god";
 
-function reverseString(str) {}
+function reverseString(str) {
+   reversedString = ;
+   f   o      r (let i = 0; i < str.le   n   g;;;            h;;;;;;     

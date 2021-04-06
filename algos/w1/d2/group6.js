@@ -11,8 +11,30 @@ const expected1 = "TNFL-GPYW";
 const str2 = "Live from New York, it's Saturday Night!";
 const expected2 = "LFNYISN";
 
-function acronymize(str) {}
+function acronymize(str) {
+  // SPLIT THE STRING; BEING GIVEN TO THE FUNCTION //
+ 
+  	str.split(" ");
+	  
 
+  // IT ERATE THROUGH  THE NOW SPLIT STRING,  LOOKING F OR THE FIRST INDEX OF EACH WORD (WHICH ARE ALSO INDEXES OF THE MAIN STRING) //
+     
+//   for(var  i=0;i  < str.length; i ++) {
+// 		str[i][0]  ;
+// 	}
+	
+//     // COMBINE THE LETTERS THAT WERE RETRIEVED ;//
+;
+//    // MAKE SURE IT'S ;IN ALL CAPS //
+
+//   x.toUpperCase()
+;
+//    // RETURN THE RESULT //;;
+  
+//   return x
+//   ;
+// acronymize(" there's no free lunch - gotta pay yer way. ");
+;
 /*****************************************************************************/
 
 /* 
@@ -25,6 +47,6 @@ const str1 = "creature";
 const expected1 = "erutaerc";
 
 const str2 = "dog";
-const expected2 = "god";
+cons t expected2 = "god";  ; 
 
 function reverseString(str) {}

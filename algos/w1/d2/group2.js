@@ -11,7 +11,19 @@ const expected1 = "TNFL-GPYW";
 const str2 = "Live from New York, it's Saturday Night!";
 const expected2 = "LFNYISN";
 
-function acronymize(str) {}
+function acronymize(str) {
+	var newArr = str.split(" ");
+	var newStr = "";
+
+	for (var i = 0; i < newArr.length; i++) {
+    var word = newArr[i];
+    var firstLet = word[0];
+    newStr += firstLet.toUpperCase();
+}
+	return newStr;
+}
+
+console.log(acronymize(str1));
 
 /*****************************************************************************/
 
@@ -27,4 +39,13 @@ const expected1 = "erutaerc";
 const str2 = "dog";
 const expected2 = "god";
 
-function reverseString(str) {}
+function reverseString(str) {
+	var temp = str1[0]
+	for(var i=0; i<str1.length; i++){
+        temp = 
+		
+        
+    }
+
+}
+reverseString(str1)

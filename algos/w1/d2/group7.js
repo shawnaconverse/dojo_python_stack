@@ -11,7 +11,22 @@ const expected1 = "TNFL-GPYW";
 const str2 = "Live from New York, it's Saturday Night!";
 const expected2 = "LFNYISN";
 
-function acronymize(str) {}
+function acronymize(str) {
+   str.split(" ;
+
+;
+
+;
+
+;
+
+;;
+
+;
+
+turn str;;;;;;;;
+}
+console.log(acronymize("there's no free lunch - gotta pay yer way."));;;;;;;;
 
 /*****************************************************************************/
 
