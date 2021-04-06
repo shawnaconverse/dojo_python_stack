@@ -80,20 +80,26 @@ dog4 = Dog("Rufus", 7, "black")
 dog4 = Dog("Spot", 7, "black")
 dog5 = Dog(1, 1, 1)
 
-print(dog1.name)
-print(dog2.name)
-print(dog3.name)
-print(dog4.name)
-print(dog5.name)
+# print(dog1.name)
+# print(dog2.name)
+# print(dog3.name)
+# print(dog4.name)
+# print(dog5.name)
 
-dog1.roll_over()
-dog1.bark()
-dog2.roll_over()
-dog2.bark()
+# dog1.roll_over()
+# dog1.bark()
+# dog2.roll_over()
+# dog2.bark()
 
 
-cat1 = Cat("Shelby", 1, "gray")
-print(cat1.name)
-print(cat1.age)
-print(cat1.hair_color)
-cat1.meow()
+# cat1 = Cat("Shelby", 1, "gray")
+# print(cat1.name)
+# print(cat1.age)
+# print(cat1.hair_color)
+# cat1.meow()
+
+
+
+
+
+
