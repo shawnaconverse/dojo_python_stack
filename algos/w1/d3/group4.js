@@ -19,8 +19,30 @@ const str4 = "a(b))(c";
 const expected4 = false;
 // Explanation: same number of opens and closes but the 2nd closing closes nothing
 
-function parensValid(str) {}
+function parensValid(str) {
+  var openParen= 0;
+  var paren= [];
+  for(var i=0; i<str.length; i++){
+    if(str[i]==="("){
+      openParen+=1;
+      paren.push(str[i])
+    }
+    if(str[i]===")"){
+      openParen+=1;
+      paren.push(str[i]);
+    }
+}
+    if(openParen%2!==0 || paren[paren.length-1]!==")"){
+      return false;
+    }
+    return true;
+    
 
+}
+console.log(parensValid(str1));
+console.log(parensValid(str2));
+console.log(parensValid(str3));
+console.log(parensValid(str4));
 /*****************************************************************************/
 
 /* 

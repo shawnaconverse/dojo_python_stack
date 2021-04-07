@@ -7,7 +7,7 @@
 const str1 = "Y(3(p)p(3)r)s";
 const expected1 = true;
 
-const str2 = "N(0(p)3";
+const str2 = "N(0(p)3";/
 const expected2 = false;
 // Explanation: not every parenthesis is closed.
 

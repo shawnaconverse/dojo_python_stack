@@ -1,4 +1,4 @@
-/* 
+                                                    /* 
   Parens Valid
 	Given an str that has parenthesis in it
 	return whether the parenthesis are valid
@@ -6,6 +6,7 @@
 
 const str1 = "Y(3(p)p(3)r)s";
 const expected1 = true;
+
 
 const str2 = "N(0(p)3";
 const expected2 = false;
@@ -19,8 +20,20 @@ const str4 = "a(b))(c";
 const expected4 = false;
 // Explanation: same number of opens and closes but the 2nd closing closes nothing
 
-function parensValid(str) {}
-
+function parensValid(str){
+    var counter = 0
+    for(var i = 0; i<str.length+1; i++){
+      if(str[i]=='(')
+        counter+=1;
+      if(str[i]==')')
+        counter-=1;
+      if(counter == 0)
+        return true;
+      else
+        return false;
+    }
+}
+console.log(parensValid(str1))
 /*****************************************************************************/
 
 /* 
@@ -37,4 +50,17 @@ const expected2 = false;
 const str3 = "A(1)s[O (n]0{t) 0}k";
 const expected3 = false;
 
-function bracesValid(str) {}
+function bracesValid(str){
+  var counter = 0
+    for(var i = 0; i<str.length+1; i++){
+      if(str[i]=='(')
+        counter+=1;
+      if(str[i]==')')
+        counter-=1;
+      if(counter == 0)
+        return true;
+      else
+        return false;
+    }
+}
+}

@@ -19,7 +19,26 @@ const str4 = "a(b))(c";
 const expected4 = false;
 // Explanation: same number of opens and closes but the 2nd closing closes nothing
 
-function parensValid(str) {}
+function parensValid(str) {
+  var count1 = 0;
+  var count2 = 0;
+  for(var i = 0; i < str1.length; i++){
+      if(str1[i] = "("){
+          count1 += 1;
+      }
+      else if(str[i] = ")"){
+          count2 += 1;
+      }
+  }
+  if(count1 = count2){
+      expected1 = true;
+      console.log("Parenthesis are Valid!")
+  }
+  else{ console.log("Parenthesis are not Valid!")
+  }
+}
+
+parensValid()
 
 /*****************************************************************************/
 

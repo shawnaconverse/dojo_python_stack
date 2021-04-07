@@ -19,22 +19,7 @@ const str4 = "a(b))(c";
 const expected4 = false;
 // Explanation: same number of opens and closes but the 2nd closing closes nothing
 
-function parensValid(str){
-  var count = 0
-  for(var i = 0; i < str.length; i++){
-    if(str[i]==')' && count == 0){
-      return false;
-    }
-    if(str[i]=='(')
-      count++;
-    if(str[i]==')')
-      count--;
-    if(count == 0)
-      return true;
-    else
-      return false;
-  }
-}
+function parensValid(str) {}
 
 /*****************************************************************************/
 
@@ -53,3 +38,32 @@ const str3 = "A(1)s[O (n]0{t) 0}k";
 const expected3 = false;
 
 function bracesValid(str) {}
+
+
+
+// var validBraces = (s) => {
+//   let objO  = {'(': 0, '[': 1, '{': 2};
+//   let objC  = {')': 0, ']': 1, '}': 2};
+//   let stack = [];
+
+//   for (let i=0; i<s.length; i++) {
+//       if (objO.hasOwnProperty(s[i])) {
+//           if (stack.length === 0 || stack[stack.length-1].idx!==objO[s[i]])
+//               stack.push({idx: objO[s[i]], count: 1});
+//           else
+//               stack[stack.length-1].count++;
+//       }
+//       else if (objC.hasOwnProperty(s[i])) {
+//           if (stack.length === 0 || stack[stack.length-1].idx!==objC[s[i]])
+//               return false;
+//           else {
+//               stack[stack.length-1].count--;
+//               if (stack[stack.length-1].count===0)
+//                   stack.pop();
+//           }
+//       }
+//   }
+//   return stack.length === 0;
+// };
+
+// console.log(validBraces("Y(3(p)p(3))rs"))
