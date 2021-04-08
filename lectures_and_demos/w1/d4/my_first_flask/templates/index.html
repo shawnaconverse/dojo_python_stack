@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/my_style.css') }}">
+  <style>
+    div {
+      color: {{ color_on_template }};
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>This is a page about Dogs!</h1>
+    <p>My dog's name is {{ dog_name }}!</p>
+    <p>She is a:</p>
+    <ul>
+      <li>Good Girl</li>
+      <li>Treat Lover</li>
+      <li>Fast Runner</li>
+    </ul>
+  </div>
+
+  <div>
+    <ul>
+      {% for instructor in instructors %}
+        <li>Name: {{ instructor.name }}, Age: {{ instructor.age }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>
