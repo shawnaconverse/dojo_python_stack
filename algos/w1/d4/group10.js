@@ -18,7 +18,36 @@ const expected3 = false;
 const str4 = "oho!";
 const expected4 = false;
 
-function isPalindrome(str) {}
+function isPalindrome(str) {
+  // get string into array
+  var new_str = str.split("");
+  // reverse original string
+  var rev_new_str = new_str.reverse();  // This is still reversing "new_str" for whatever reason.  According to Google results, this function just sucks and will retroactively mutate the array.  Yes, even in the code above where its mutating. Way to go, you wasted the entire time on a bad line of thought.
+
+  console.log(new_str);
+  console.log(rev_new_str);
+
+  new_str = new_str.reverse();  //  And this reverses both new_str and rev_new_str....for some reason.
+
+  console.log(new_str);
+  console.log(rev_new_str);
+  // compare new, reversed string to original string
+
+  if (new_str === rev_new_str){  
+    return true;
+  }
+  else {
+    return false;
+  }
+  // return true or false based on results
+}
+
+// console.log(isPalindrome("a x a"))
+// console.log(isPalindrome("racecar"))
+// console.log(isPalindrome("Dud"))
+console.log(isPalindrome("oho!"))
+
+
 
 /*****************************************************************************/
 

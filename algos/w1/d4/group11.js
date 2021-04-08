@@ -19,19 +19,17 @@
   const expected4 = false;
   
   function isPalindrome(str) {
-    for (var x=0; x<parseInt(str.length/2); x++) {
-      if (str[x] != str[str.length-1-x]) {
-          return false
-      } 
+      for(var i = 0; i < str.length/2; i++){
+          if (str[i] != str[str.length-1-i]){
+              return false
+          }
+      }
+      return true
   }
-  return true
-  }
-  console.log(isPalindrome(str1));
-  console.log(isPalindrome(str2));
-  console.log(isPalindrome(str3));
-  console.log(isPalindrome(str4));
-
-// return str == str.split ('').reverse().join('');
+  console.log(isPalindrome(str1))
+  console.log(isPalindrome(str2))
+  console.log(isPalindrome(str3))
+  console.log(isPalindrome(str4))
 
 /*****************************************************************************/
 
@@ -52,5 +50,31 @@ const expected2 = "u";
 const str3 = "Yikes! my favorite racecar erupted!";
 const expected3 = "e racecar e";
 
-function longestPalindromicSubstring(str) {}
- 
+function longestPalindrome(str){
+  var arr = str.split("");
+  var endArr = [];
+  for(var i = 0; i < arr.length; i++){
+      var temp = arr[i];
+      endArr.push(temp);
+      for(var j = i + 1; j < arr.length; j++){
+          temp += arr[j];
+          if(isPalindrome(temp)){
+              endArr.push(temp);
+          }
+      }
+  }
+
+  var count = 0;
+  var longestPalindrome = "";
+  for(var i = 0; i < endArr.length; i++){
+      if(count < endArr[i].length){
+          longestPalindrome = endArr[i]; 
+          count = endArr[i].length;
+      }
+  }
+  return longestPalindrome;
+}
+
+console.log(longestPalindrome(str1));
+console.log(longestPalindrome(str2));
+console.log(longestPalindrome(str3));

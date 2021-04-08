@@ -18,14 +18,26 @@ const expected3 = false;
 const str4 = "oho!";
 const expected4 = false;
 
-function isPalindrome(str) {}
+function isPalindrome(str) {
+  var revStr = str.split("").reverse().join("")
+  console.log(str,"reversed: ", revStr);
+  return revStr === str
+}
+
+console.log(isPalindrome(str1))
+console.log(isPalindrome(str2))
+console.log(isPalindrome(str3))
+console.log(isPalindrome(str4))
 
 /*****************************************************************************/
 
 /* 
     Longest Palindrome
     For this challenge, we will look not only at the entire string provided, but also at the substrings within it. Return the longest palindromic substring. 
-    Strings longer or shorter than complete words are OK.
+    console.log(isPalindrome(str1))
+    console.log(isPalindrome(str2))
+    console.log(isPalindrome(str3))
+    console.log(isPalindrome(str4))    Strings longer or shorter than complete words are OK.
     All the substrings of "abc" are:
     a, ab, abc, b, bc, c
 */

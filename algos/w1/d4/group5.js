@@ -18,7 +18,17 @@ const expected3 = false;
 const str4 = "oho!";
 const expected4 = false;
 
-function isPalindrome(str) {}
+
+function isPalindrome(str) {
+  const reverseCharacters = str.split('').reverse('').join('');
+  if (str === reverseCharacters) {
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+console.log(isPalindrome(str3))
 
 /*****************************************************************************/
 
@@ -39,4 +49,9 @@ const expected2 = "u";
 const str3 = "Yikes! my favorite racecar erupted!";
 const expected3 = "e racecar e";
 
-function longestPalindromicSubstring(str) {}
+function longestPalindromicSubstring(str) {
+  // Iterate through with for loop
+  //for i in str check if letter in front of i is == letter behind i
+  // if letters match .push letters to var end and var front
+}
+

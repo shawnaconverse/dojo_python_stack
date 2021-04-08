@@ -18,7 +18,26 @@ const expected3 = false;
 const str4 = "oho!";
 const expected4 = false;
 
-function isPalindrome(str) {}
+function isPalindrome(str) {
+
+    var reversed_str = ""
+
+    for(var i = str.length - 1; i >= 0; i--) {
+      var char = str[i];
+      reversed_str += char
+    }
+
+if(reversed_str === str) {
+  return true;
+}
+    return false;
+}
+
+// console.log(isPalindrome(str1))
+// console.log(isPalindrome(str2))
+// console.log(isPalindrome(str3))
+// console.log(isPalindrome(str4))
+
 
 /*****************************************************************************/
 
@@ -39,4 +58,24 @@ const expected2 = "u";
 const str3 = "Yikes! my favorite racecar erupted!";
 const expected3 = "e racecar e";
 
-function longestPalindromicSubstring(str) {}
+function longestPalindromicSubstring(str) {
+  var substr = "";
+  var longestPalindrome = str[0];
+  // loop through the string
+  for(var i = 0; i < str.length; i++) {
+    for(var j = i; j < str.length; j++) {
+      var char = str[j]
+      substr += char
+    }
+    // check each substring to see if its a palindrome
+    if(isPalindrome(substr)) {
+      if(substr.length > longestPalindrome.length) {
+        longestPalindrome = substr;
+      }
+    }
+  }
+  // return longest palindromic substring
+  return longestPalindrome;
+}
+
+console.log(longestPalindromicSubstring(str1))

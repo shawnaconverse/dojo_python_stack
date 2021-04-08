@@ -8,17 +8,32 @@
 
 const str1 = "a x a";
 const expected1 = true;
-
 const str2 = "racecar";
 const expected2 = true;
-
 const str3 = "Dud";
 const expected3 = false;
-
 const str4 = "oho!";
 const expected4 = false;
 
-function isPalindrome(str) {}
+// need a palindromeTrue boolean variable set to False
+var palindromeTrue = false
+// need to loop through the string and compare index i to index legnth -1 - i
+for (let i = 0; i < str.length; i++) {
+        if (str[i]==str[str.length-1-i]){
+            palindromeTrue=true
+        }
+        else {
+            return palindromeTrue
+        }
+    return palindromeTrue
+}
+}
+// if == then palindromeTrue === 0
+// else return palindromTrue
+console.log(isPalindrome(str1))
+console.log(isPalindrome(str2))
+console.log(isPalindrome(str3))
+console.log(isPalindrome(str4))
 
 /*****************************************************************************/
 
@@ -39,4 +54,15 @@ const expected2 = "u";
 const str3 = "Yikes! my favorite racecar erupted!";
 const expected3 = "e racecar e";
 
-function longestPalindromicSubstring(str) {}
+var palindrome_string="";
+function longestPalindromicSubstring(str) {
+  for(var i = str.length-1; i >0; i++) {
+    palindrome_string = str[i];
+    if(palindrome_string===str){
+      return palindrome_string;
+    }
+    else if()
+
+  }
+    
+}

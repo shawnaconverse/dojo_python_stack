@@ -18,7 +18,15 @@ const expected3 = false;
 const str4 = "oho!";
 const expected4 = false;
 
-function isPalindrome(str) {}
+function isPalindrome(str) {
+  compareItem = str[i.length];
+  for(var i = 0; i < str.length; i ++){   //loop through string
+    if(str[i] = compareItem){    //check to see if value at last index is the same as index[0]
+      compareItem = compareItem[i.length -  1];   //decrease compareItem to next index
+    }
+    return;
+  }
+}
 
 /*****************************************************************************/
 
@@ -39,4 +47,17 @@ const expected2 = "u";
 const str3 = "Yikes! my favorite racecar erupted!";
 const expected3 = "e racecar e";
 
-function longestPalindromicSubstring(str) {}
+function longestPalindromicSubstring(str) 
+  compareItem = str[i.length];
+  newString = [];
+  for(var i = 0; i < str.length; i ++){   //loop through string
+    if(str[i] = compareItem){    //check to see if value at last index is the same as index[0]
+      //need to add to new string but stop when it fails
+      //need to create new strings and then compare all the lengths and return the longest one
+      compareItem = compareItem[i.length -  1];   //decrease compareItem to next index
+      return;
+    }
+
+}
+
+

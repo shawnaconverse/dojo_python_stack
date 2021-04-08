@@ -18,7 +18,21 @@ const expected3 = false;
 const str4 = "oho!";
 const expected4 = false;
 
-function isPalindrome(str) {}
+function isPalindrome(str) {
+  let reverseString = ""
+  for (let i = str.length -1; i >= 0; i--){
+    reverseString += str[i] 
+  } 
+  return (reverseString === str)
+}
+
+console.log(isPalindrome(str1))
+console.log(isPalindrome(str2))
+console.log(isPalindrome(str3))
+console.log(isPalindrome(str4))
+
+//parse original string going backwards
+
 
 /*****************************************************************************/
 
@@ -39,4 +53,44 @@ const expected2 = "u";
 const str3 = "Yikes! my favorite racecar erupted!";
 const expected3 = "e racecar e";
 
-function longestPalindromicSubstring(str) {}
+function isPalindrome(str) {
+  let reverseString = ""
+  for (let i = str.length -1; i >= 0; i--){
+    reverseString += str[i]
+  } 
+  return (reverseString === str)
+}
+
+function longestPalindromicSubstring(str) {
+  let palindromeArray=[]
+  for (let i = 0; i < str.length ;i++){
+    let testString = ""
+    for (let j = i; j < str.length; j++){
+      testString += str[j]
+      if (isPalindrome(testString)){
+        palindromeArray.push(testString)
+      }
+    }
+  }
+  let palindromeLongest = ""
+  for (let i = 0; i < palindromeArray;i++){
+    if (palindromeArray[i].length > palindromeLongest){
+      palindromeLongest = palindromeArray[i]
+    }
+  }
+  return palindromeLongest
+}
+
+console.log(longestPalindromicSubstring(str1))
+console.log(longestPalindromicSubstring(str2))
+console.log(longestPalindromicSubstring(str3))
+
+
+  //variable to store a test substring
+  //for loop to iterate through each value of the function
+  //for loop nested inside that adds each additional character after i, one at a time
+  //call our ispalindrome function
+  //if it returns true, store that palindrome in a array of all found palindromes
+  //close all for loops
+  //compare the length of each palindrome returned with another for loop
+  //return the longest
