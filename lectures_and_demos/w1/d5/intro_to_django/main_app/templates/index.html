@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'my_style.css' %}">
+</head>
+<body>
+  <h1>This is a HTML page rendered by my first Django server!!!!!</h1>
+  <p>Hi! My name is: {{ name }}</p>
+  <p>I am {{ age }} years old!</p>
+  <p>{{ basnanas }}</p>
+  <p>My address is:</p>
+  <ul>
+    {% for monkey, water_bear in address.items %}
+      <li>{{ monkey }}: {{ water_bear }}</li>
+    {% endfor %}
+  </ul>
+
+    <p>My Interests are:</p>
+    <ul>
+      {% for interest in interests %}
+      <li>{{ interest }}{% if "slappa da bass" == interest %}Ah i see you are a man of culture as well.{% endif %}</li>
+      {% endfor %}
+    </ul>
+</body>
+</html>
