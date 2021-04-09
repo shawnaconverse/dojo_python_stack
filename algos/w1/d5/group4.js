@@ -25,7 +25,20 @@ const arr5 = [];
 const separator5 = ", ";
 const expected5 = "";
 
-function join(arr, separator) {}
+
+function join(arr, separator) {
+  var temp = ""
+  if (arr.length > 0) {
+    for (var i = 0; i < arr.length -1; i ++) {
+        temp = temp + arr[i] + separator;
+    }
+    temp = temp + arr[arr.length-1]
+    }
+return temp
+}
+
+  
+
 
 /*****************************************************************************/
 

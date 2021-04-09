@@ -25,7 +25,24 @@ const arr5 = [];
 const separator5 = ", ";
 const expected5 = "";
 
-function join(arr, separator) {}
+function join(arr, separator) {
+  // Declare expected variable if empty string
+  var expected = "";
+  if(arr.length == 0){
+    return expected;
+  }
+  // Loop through array, concat values at index of array to expected string, and concat separator
+  for(var i = h0; i < arr.length; i++){
+    if(i == arr.length-1){
+      expected += arr[i];
+    }
+    else{
+      expected += arr[i];
+      expected += separator
+    }
+  }
+  return expected;
+}
 
 /*****************************************************************************/
 
@@ -34,8 +51,32 @@ function join(arr, separator) {}
   Given an arry of ints representing page numbers
   return a string with the page numbers formatted as page ranges when the nums span a consecutive range
 */
-
-const nums1 = [1, 13, 14, 15, 37, 38, 70];
-const expected1 = "1, 13-15, 37-38, 70";
-
-function bookIndex(nums) {}
+ var expected = "";
+  var samePages = [];
+  //work
+  for (var i = 0; i < nums.length; i++){
+    if(nums[i+1]==nums[i]+1){
+      samePages.push(nums[i]);
+      samePages.push("-");
+      samePages.push("end");
+      for(var j = i+1; j < nums.length; j++){
+        if(nums[j]+1==nums[j+1]){
+          samePages.pop();
+          samePages.push(nums[j]);
+          i = j; 
+        } 
+        else if{
+          (nums[j]+1!==nums[j+1]){
+            j = nums.length;
+          }
+        }
+        expected += samePages.join("");
+        samePages = [];
+      }
+    }
+    else{
+      expected += nums[i];
+      expected +=",";
+    }
+  }
+  return expected;

@@ -25,8 +25,24 @@ const arr5 = [];
 const separator5 = ", ";
 const expected5 = "";
 
-function join(arr, separator) {}
-
+function join(arr, separator) {
+  if(arr.length == 0){           //check to see if array is empty
+    return "";                    //print out ""
+  }
+  elseif(arr.length == 1){           //check to see if array has one item
+    return arr[0];                  //print only item
+  }          
+  var str = ""
+  for(i = 0; i < arr.length, i++){
+    str = str + arr[i];             //add to string
+    if(i != arr.length - 1){
+      str = str + separator;
+    }
+  }
+  return str
+}
+console.log(join(arr1,separator1));
+ 
 /*****************************************************************************/
 
 /* 
@@ -39,3 +55,10 @@ const nums1 = [1, 13, 14, 15, 37, 38, 70];
 const expected1 = "1, 13-15, 37-38, 70";
 
 function bookIndex(nums) {}
+//go through array
+//make a string variable
+//starting at arr[i]
+    //add arr[i] to string
+//compare arr[i] to arr[i]+ 1
+// if arr[i + 1] == next digit
+    //when if fails, add separator and the numbeto the string
