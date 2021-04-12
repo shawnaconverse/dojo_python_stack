@@ -18,30 +18,13 @@ const expected2 = "";
 const str3 = "a";
 const expected3 = "a";
 
-const str4 = "bbcc"; 
+const str4 = "bbcc";
 const expected4 = "bbcc";
 
-function encodeStr(str) {
-    //SETUP
-    var dict = {}
-    //PULL THE CHARACTER AND PUT IT AS A KEY INTO A DICT
-    var repeats = [];
-    //THE RETURNED STRING
-    var coded_sting = " "
-    //WORK
-    //edge case
-    if(str.length < 1)
-      return str
-    //ITERATE THROUGH STR
-    for(x = 0, length = str.length; x < length; x++) {
-        //
-        var l = str.charAt(x)
-        dict[l] = (isNaN(dict[l]) ? 1 : dict[l] + 1);
-    }
-    //RETURN
-    console.log(dict)
-}
-encodeStr(str1)
+function encodeStr(str) {}
+
+
+
 /*****************************************************************************/
 
 /* 

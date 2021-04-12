@@ -21,7 +21,24 @@ const expected3 = "a";
 const str4 = "bbcc";
 const expected4 = "bbcc";
 
-function encodeStr(str) {}
+function encodeStr(str) {
+  var newString="";
+  var count=0;
+  var letter=str[0];
+  for(i=1; i< str.length; i++){
+    if(letter = str[i]){      //if letter is the same as the next letter
+      newString.concat(str[i]);   //add to newString
+      count = count + 1;          //keep track of how many of this letter
+    }
+    else{
+      newString.concat(count);    //add count number to string
+      letter = str[i];            //change letter value to next string[i]to compare
+
+    }
+
+  }
+
+}
 
 /*****************************************************************************/
 

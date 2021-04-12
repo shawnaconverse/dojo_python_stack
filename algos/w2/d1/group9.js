@@ -21,7 +21,36 @@ const expected3 = "a";
 const str4 = "bbcc";
 const expected4 = "bbcc";
 
-function encodeStr(str) {}
+
+
+
+function encodeStr(str) {
+  // Iterate through the string
+  var newStr = "";
+  var letterCount = 1;
+  newStr = str[0]
+  if(str.length == 0){
+    return str
+  }
+  if(str.length == str.length-1){
+    return str
+  }
+  for ( var i = 0; i < str.length; i++){
+    // For each letter count how many times it shows up in its sequence. 
+    if(str[i] == str[i+1]){
+      letterCount ++;
+    }
+    else{
+      newStr += letterCount;
+      letterCount = 1;
+    }
+    if(str[i] != str[i+1]){
+      newStr += str[i+1];
+    }
+  }
+  return newStr
+}
+console.log(encodeStr(str3))
 
 /*****************************************************************************/
 

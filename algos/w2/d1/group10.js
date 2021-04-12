@@ -21,7 +21,11 @@ const expected3 = "a";
 const str4 = "bbcc";
 const expected4 = "bbcc";
 
-function encodeStr(str) {}
+function encodeStr(str) {
+  //for loop through the string
+  //need counter variable for numbers
+  
+}
 
 /*****************************************************************************/
 
