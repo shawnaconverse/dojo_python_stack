@@ -28,6 +28,33 @@
       Hair Color:
       <input type="text" name="hair_color" id="">
     </p>
+    <p>
+      Favorite Toy:
+      <select name="favorite_toy" id="">
+        {% for toy in toys %}
+          <option value="{{ toy }}">{{ toy }}</option>
+        {% endfor %}
+      </select>
+    </p>
+    <p>
+      Favorite Meat:
+      <label for="beef">Beef</label>
+      <input type="radio" name="favorite_meat" id="beef" value="beef">
+      <label for="pork">Pork</label>
+      <input type="radio" name="favorite_meat" id="pork" value="pork">
+      <label for="chicken">Chicken</label>
+      <input type="radio" name="favorite_meat" id="chicken" value="chicken">
+      <label for="lamb">Lamb</label>
+      <input type="radio" name="favorite_meat" id="lamb" value="lamb">
+    </p>
+    <p>
+      Description:
+      <textarea name="description" id="" cols="30" rows="10"></textarea>
+    </p>
+    <p>
+      Is it a large dog?
+      <input type="checkbox" name="size" id="">
+    </p>
     <button>Submit</button>
   </form>
 </body>
