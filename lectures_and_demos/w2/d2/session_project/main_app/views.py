@@ -11,10 +11,20 @@ def process(request):
 
     # some_dict = {}
     # some_dict['dog'] = "Vicky"
-
-    request.session['name'] = request.POST['name']
-    request.session['email'] = request.POST['email']
-
+    
+    if request.POST['which_form'] == "register":
+        print(request.POST['name'])
+        print(request.POST['email'])
+        print(request.POST['password'])
+        request.session['name'] = request.POST['name']
+        request.session['email'] = request.POST['email']
+    elif request.POST['which_form'] == "login":
+        print(request.POST['email'])
+        print(request.POST['password'])
+    else:
+        print("Stop changing my website you jerk")
+        return redirect("/")
+    
 
     return redirect("/another")
 
