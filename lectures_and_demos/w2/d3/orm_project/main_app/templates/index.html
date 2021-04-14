@@ -8,5 +8,59 @@
 </head>
 <body>
   <h1>Hello There!</h1>
+  <div class="table">
+    <h3>All Dogs:</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Breed</th>
+          <th>Size</th>
+          <th>Hair Color</th>
+          <th>Favorite Toy</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for dog in dogs %}
+          <tr>
+            <td>{{ dog.id }}</td>
+            <td>{{ dog.name }}</td>
+            <td>{{ dog.breed }}</td>
+            <td>{{ dog.size }}</td>
+            <td>{{ dog.hair_color }}</td>
+            <td>{{ dog.favorite_toy }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="form">
+    <h3>Create a dog!</h3>
+    <form action="/dogs/create" method="post">
+      {% csrf_token %}
+      <p>
+        Name:
+        <input type="text" name="jasjdjlkfasfhas" id="">
+      </p>
+      <p>
+        Breed:
+        <input type="text" name="breed" id="">
+      </p>
+      <p>
+        Size:
+        <input type="text" name="size" id="">
+      </p>
+      <p>
+        Hair Color:
+        <input type="text" name="hair_color" id="">
+      </p>
+      <p>
+        Favorite Toy:
+        <input type="text" name="toy" id="">
+      </p>
+      <button>Create</button>
+    </form>
+  </div>
 </body>
 </html>
