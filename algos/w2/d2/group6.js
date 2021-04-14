@@ -23,8 +23,26 @@ const expected2 = {
 
 const arr3 = [];
 const expected3 = {};
-
-function frequencyTableBuilder(arr) {}
+// DO YOU KNOW DE WAY?
+function frequencyTableBuilder(arr) {
+  var obj = {};
+  for(var i = 0; i < arr.length ;i++) {
+      if (!arr.hasOwnProperty(arr[i]))
+      {
+          var counter = 0;
+          var j = i;
+          while (j < arr.length) {
+              if (arr[i] = arr[j]) {
+                  counter++
+              }
+          j++ 
+          }
+      obj[arr[i]] = counter;
+      }
+  }   
+  
+  return obj
+}   
 
 /*****************************************************************************/
 

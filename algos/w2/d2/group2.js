@@ -23,8 +23,24 @@ const expected2 = {
 
 const arr3 = [];
 const expected3 = {};
+// DO YOU KNOW DE WAY?
 
-function frequencyTableBuilder(arr) {}
+function frequencyTableBuilder(arr) {
+  var object = {}
+  for (var i = 0; i < arr.length; i++){
+      var letter = arr[i]
+      // console.log("letter is: ", letter)
+      // console.log(letter)
+      if (object.hasOwnProperty(letter)){ // if letter exists in obj
+          // console.log("here")
+          object[letter] += 1
+      }
+      else {  // if letter doesn't exist in obj yet 
+          object[letter] = 1
+      }
+  }
+  return object
+}
 
 /*****************************************************************************/
 

@@ -23,10 +23,8 @@ const expected2 = {
 
 const arr3 = [];
 const expected3 = {};
-
-function frequencyTableBuilder(arr) {
-  //
-}
+// 
+function frequencyTableBuilder(arr) {}
 
 /*****************************************************************************/
 
@@ -37,6 +35,6 @@ function frequencyTableBuilder(arr) {
 */
 
 const str1 = "This is a test";
-condst expected1 = "test a is This";
+const expected1 = "test a is This";
 
 function reverseWordOrder(wordsStr) {}

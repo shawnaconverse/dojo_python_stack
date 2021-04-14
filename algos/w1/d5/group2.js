@@ -66,7 +66,7 @@ function bookIndex(nums) {
     for(var j = i + 1; j < nums.length; j++) {
       var num2 = nums[j]
       if(num2 == num1 + 1) {
-        
+
       }
     }
   }

@@ -24,7 +24,29 @@ const expected2 = {
 const arr3 = [];
 const expected3 = {};
 
-function frequencyTableBuilder(arr) {}
+function frequencyTableBuilder(arr) {
+  // SETUP
+  result = {};
+  // WORK
+  // If there are elements in the array
+  if (arr.length > 0) {
+      // Loop through the array
+      for (var i = 0; i < arr.length; i++) {
+          // If the current character has not been found before, initialize the value with 0
+          if(!result[arr[i]]) {
+              result[arr[i]] = 0;
+          }
+          // Add the key value pair to the object and increase the number of occurences by 1
+          ++result[arr[i]];
+      }
+  }
+  // RETURN
+  return result;
+}
+
+console.log(frequencyTableBuilder(arr1));
+console.log(frequencyTableBuilder(arr2));
+console.log(frequencyTableBuilder(arr3));
 
 /*****************************************************************************/
 
@@ -37,4 +59,6 @@ function frequencyTableBuilder(arr) {}
 const str1 = "This is a test";
 const expected1 = "test a is This";
 
-function reverseWordOrder(wordsStr) {}
+function reverseWordOrder(wordsStr) {
+  return wordsStr.split(" ").reverse().join(" ")
+}

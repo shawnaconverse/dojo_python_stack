@@ -10,18 +10,24 @@ const str2 = "helloo";
 const expected2 = "helo";
 
 function stringDedupe(str) {
-//   var newStr = "";
-//   for (var i = 0; i < str.length, i ++;){
-//     if (str[i] == str[i + 1]){
-//         newStr.splice
-//     }
-//     else{
-//         return newStr
-//     }
-//   }
-}
+  var newStr= ""
+  var dict = [str[0]]
+  for (var i=0; i < str.length; i++){
+    if ( str[i] == str[i + 1]){
+      newStr += str[i]
+    } 
+    for (j=0; j<str.length; j++){
+      if (str[i] != str[j]){
 
-// console.log(newStr)
+        }
+      }    
+    }
+  }
+
+
+
+
+
 
 /*****************************************************************************/
 
@@ -40,6 +46,4 @@ const expected2 = "olleh dlrow";
 const str3 = "abc def ghi";
 const expected3 = "cba fed ihg";
 
-function reverseWords(str) {
-  var n = str.split(" ");
-}
+function reverseWords(str) {}

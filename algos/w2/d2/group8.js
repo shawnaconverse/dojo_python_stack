@@ -24,7 +24,22 @@ const expected2 = {
 const arr3 = [];
 const expected3 = {};
 
-function frequencyTableBuilder(arr) {}
+function frequencyTableBuilder(arr) {
+  var countDictionary = {}
+  for (var i =0; i < arr.length; i++) {
+      if (countDictionary.hasOwnProperty(arr[i])) {
+          countDictionary[arr[i]] += 1;
+      }
+// DO YOU KNOW DE WAY?
+      else {
+          countDictionary[arr[i]] = 1;
+      }
+  }
+  return countDictionary
+}
+
+console.log(frequencyTableBuilder(arr1))
+console.log(frequencyTableBuilder(arr2))
 
 /*****************************************************************************/
 
@@ -37,4 +52,8 @@ function frequencyTableBuilder(arr) {}
 const str1 = "This is a test";
 const expected1 = "test a is This";
 
-function reverseWordOrder(wordsStr) {}
+function reverseWordOrder(wordsStr) {
+  return wordsStr.split(' ').reverse().join(' ')
+}
+
+console.log(reverseWordOrder(str1))

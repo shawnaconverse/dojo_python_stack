@@ -23,12 +23,35 @@ const expected2 = {
 
 const arr3 = [];
 const expected3 = {};
+// DO YOU KNOW DE WAY?
+function frequencyTableBuilder(arr) {
+  //setup
+  var obj = {};
+  var counter = 1;
+  //work
+  for(var i = 0; i < arr.length; i++) {
+    var char = arr[i];
+    if(obj.hasOwnProperty(char)) {    // check if obj has property 
+      counter++;
 
-function frequencyTableBuilder(arr) {}
+      
+      obj[char] = counter;
+    } else {
+      obj[char] = 1;
+    }
+  }
+
+  //return
+  return obj;
+}
+
+console.log(frequencyTableBuilder(arr1))
+console.log(frequencyTableBuilder(arr2))
 
 /*****************************************************************************/
 
-/* 
+/*
+   
   Reverse Word Order
   Given a string of words (with spaces)
   return a new string with words in reverse sequence.
@@ -37,4 +60,15 @@ function frequencyTableBuilder(arr) {}
 const str1 = "This is a test";
 const expected1 = "test a is This";
 
-function reverseWordOrder(wordsStr) {}
+function reverseWordOrder(wordsStr) {
+  var words = wordsStr.split(" ");
+  var newArr = []
+
+  for(var i = words.length - 1; i >= 0; i--) {
+    newArr.push(words[i]);
+  }
+
+  return newArr.join(' ');
+}
+
+console.log(reverseWordOrder(str1))

@@ -9,19 +9,7 @@ const expected1 = "abcABC";
 const str2 = "helloo";
 const expected2 = "helo";
 
-function stringDedupe(str) {
-//   var newStr = "";
-//   for (var i = 0; i < str.length, i ++;){
-//     if (str[i] == str[i + 1]){
-//         newStr.splice
-//     }
-//     else{
-//         return newStr
-//     }
-//   }
-}
-
-// console.log(newStr)
+function stringDedupe(str) {}
 
 /*****************************************************************************/
 
@@ -40,6 +28,4 @@ const expected2 = "olleh dlrow";
 const str3 = "abc def ghi";
 const expected3 = "cba fed ihg";
 
-function reverseWords(str) {
-  var n = str.split(" ");
-}
+function reverseWords(str) {}

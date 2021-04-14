@@ -77,9 +77,25 @@ some_dict = {
         "street": "123 Shawn St",
         "city": "San Jose",
         "state": "CA"
-    }
+    },
+    "interests": ["food", "coding", "video games"]
 }
 print(some_dict["name"])
+some_dict['address']['street']
+some_dict["interests"][1]
+
+some_dict['age'] = 27
+
+if "shirt_color" in some_dict:
+    print("yay")
+else:
+    print("add a shirt color")
+
+some_key = "age"
+
+some_dict[some_key]
+some_dict.some_key
+
 
 
 # Conditionals

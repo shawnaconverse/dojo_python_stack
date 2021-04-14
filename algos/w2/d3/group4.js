@@ -9,7 +9,27 @@ const expected1 = "abcABC";
 const str2 = "helloo";
 const expected2 = "helo";
 
-function stringDedupe(str) {}
+function stringDedupe(str) {
+    var stringMap = {};
+    var ch, count;
+    var newString = "";
+    // Loop through the string...
+    for (var i = 0; i < str.length; i++) {
+        // Get this character
+        ch = str.charAt(i);
+        // Get the count for it, if we have encountered the character already
+        count = stringMap[ch]; 
+        // If count for that char is greater than 0, store that count plus one; if not, store one
+        stringMap[ch] = count ? count + 1 : 1;
+    }
+    // Loop through the map and construct the new string
+    for (ch in stringMap) {
+        newString += ch ;
+    }
+    return newString;
+}
+console.log(stringDedupe(str1))
+console.log(stringDedupe(str2))
 
 /*****************************************************************************/
 
@@ -28,4 +48,10 @@ const expected2 = "olleh dlrow";
 const str3 = "abc def ghi";
 const expected3 = "cba fed ihg";
 
-function reverseWords(str) {}
+function reverseWords(str) {
+  return str.split("").reverse().join("").split(" ").reverse().join(" ")
+}
+
+console.log(reverseWords(str1))
+console.log(reverseWords(str2))
+console.log(reverseWords(str3))

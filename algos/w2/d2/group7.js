@@ -24,7 +24,25 @@ const expected2 = {
 const arr3 = [];
 const expected3 = {};
 
-function frequencyTableBuilder(arr) {}
+function frequencyTableBuilder(arr) {
+  // add return object
+  var new_obj = {};
+  // iterate through array and find each unique value
+  for(var i = 0; i < arr.length; i++){
+    var counter = 1;
+    if(!(arr[i] in new_obj)){
+      for(var j = i+1; j < arr.length; j++){
+        if(arr[j] == arr[i]){
+          counter++;
+        }
+      }
+      new_obj[arr[i]] = counter;
+      counter = 1;
+    }
+  }
+  return new_obj;
+}
+console.log(frequencyTableBuilder([]))
 
 /*****************************************************************************/
 
@@ -34,7 +52,10 @@ function frequencyTableBuilder(arr) {}
   return a new string with words in reverse sequence.
 */
 
-const str1 = "This is a test";
-const expected1 = "test a is This";
+var str1 = "This is a test";
+var expected1 = "test a is This";
 
-function reverseWordOrder(wordsStr) {}
+function reverseWordOrder(wordsStr) {
+  return wordsStr.split(" ").reverse().join(" ")
+}
+console.log(reverseWordOrder("This is a test"))

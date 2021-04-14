@@ -9,7 +9,21 @@ const expected1 = "abcABC";
 const str2 = "helloo";
 const expected2 = "helo";
 
-function stringDedupe(str) {}
+function stringDedupe(str) {
+  var newStr = ""
+
+  for(var i = 0; i < str.length; i++) {
+    if (newStr.indexOf(str[i]) === -1) {
+      newStr += str[i]
+    } 
+  }
+
+  return newStr;
+}
+
+console.log(stringDedupe(str1))
+console.log(stringDedupe(str2))
+
 
 /*****************************************************************************/
 
@@ -28,4 +42,17 @@ const expected2 = "olleh dlrow";
 const str3 = "abc def ghi";
 const expected3 = "cba fed ihg";
 
-function reverseWords(str) {}
+function reverseWords(str) {
+  var words = str.split(' ');
+
+  for(var i = 0; i < words.length; i++) {
+    var splitWord = words[i].split("").reverse().join("")
+    words[i] = splitWord
+  }
+
+  return words.join(" ");
+}
+
+console.log(reverseWords(str1))
+console.log(reverseWords(str2))
+console.log(reverseWords(str3))
