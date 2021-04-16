@@ -35,4 +35,15 @@ function isAnagram(s1, s2) {}
 const str1 = "   hello world     ";
 const expected1 = "hello world";
 
-function trim(str) {}
+function trim(str) {
+    newStr = str.split(" ")
+    var temp=[]
+    for (var i=0; i<newStr.length; i++) {
+        if (newStr[i] != '') {
+            temp.push(newStr[i])
+        }
+    }
+    newStr = temp.join(' ')
+
+    return newStr;
+}

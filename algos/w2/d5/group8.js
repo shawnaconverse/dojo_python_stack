@@ -22,7 +22,31 @@ const strA4 = "silent";
 const strB4 = "listen";
 const expected4 = true;
 
-function isAnagram(s1, s2) {}
+function isAnagram(s1, s2) {
+  if (s1.length !== s2.length) {
+      return false
+  }
+  s1 = s1.toLowerCase()
+  s2 = s2.toLowerCase()    
+
+  let arr2 = s2.split("")
+
+  for (let char of s1 ){ 
+      if (!arr2.includes(char)) {
+          return false
+          break;
+      } else {
+          arr2.splice(arr2.indexOf(char), 1)
+      }
+  }
+
+  return true
+
+}
+console.log(isAnagram(strA1, strB1))
+console.log(isAnagram(strA2, strB2))
+console.log(isAnagram(strA3, strB3))
+console.log(isAnagram(strA4, strB4))
 
 /*****************************************************************************/
 

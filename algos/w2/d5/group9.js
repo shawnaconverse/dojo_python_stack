@@ -22,7 +22,28 @@ const strA4 = "silent";
 const strB4 = "listen";
 const expected4 = true;
 
-function isAnagram(s1, s2) {}
+function isAnagram(s1, s2) {
+
+  //check if strings are the same
+  if (str1.length == str2.lenght) {
+    return true
+  }
+
+  //check if strings have the same elements
+  newArr = []
+  for (var i = 0; 1 < arr1.length; 1++) {
+    if s1[i] == s2[i]
+      
+  }
+  isAnagram(strA2, strB2)
+  
+
+  //loop through string once get elements
+    //loop through again and compare element to new string
+}
+
+
+
 
 /*****************************************************************************/
 

@@ -22,7 +22,11 @@ const strA4 = "silent";
 const strB4 = "listen";
 const expected4 = true;
 
-function isAnagram(s1, s2) {}
+function isAnagram(s1, s2) {
+  if (s1.length !== self.length) {
+    return false;
+  }
+}
 
 /*****************************************************************************/
 
@@ -32,3 +36,7 @@ function isAnagram(s1, s2) {}
   do not remove any other spaces.
 */
 
+const str1 = "   hello world     ";
+const expected1 = "hello world";
+
+function trim(str) {}

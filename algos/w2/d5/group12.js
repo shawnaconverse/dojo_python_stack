@@ -32,3 +32,7 @@ function isAnagram(s1, s2) {}
   do not remove any other spaces.
 */
 
+const str1 = "   hello world     ";
+const expected1 = "hello world";
+
+function trim(str) {}

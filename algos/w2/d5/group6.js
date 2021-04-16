@@ -22,7 +22,28 @@ const strA4 = "silent";
 const strB4 = "listen";
 const expected4 = true;
 
-function isAnagram(s1, s2) {}
+function isAnagram(s1, s2) 
+  var string1 = s1.toLowerCase()
+  var string2 = s2.toLowerCase()
+
+  if(s1.length !== s2.length) {
+    return false;
+  }
+  for(var i = 0; i < string1.length; i++) {
+    var char = string1[i];
+    if(string2.indexOf(char) === -1) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+console.log(isAnagram(strA1, strB1))
+console.log(isAnagram(strA2, strB2))
+console.log(isAnagram(strA3, strB3))
+console.log(isAnagram(strA4, strB4))
+
 
 /*****************************************************************************/
 
@@ -35,4 +56,19 @@ function isAnagram(s1, s2) {}
 const str1 = "   hello world     ";
 const expected1 = "hello world";
 
-function trim(str) {}
+function trim(str) {
+  var newStr = str.split(' ')
+  var finalStr = []
+
+  for(var i = 0; i < newStr.length; i++) {
+    if(newStr[i] === " ") {
+      continue;
+    } else {
+      finalStr += newStr[i]
+    }
+  }
+
+  return newStr;
+}
+
+console.log(trim(str1))

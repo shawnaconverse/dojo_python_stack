@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Name: {{ jedi.name }}</h1>
+    <p>Light Saber Color: {{ jedi.light_saber_color }}</p>
+    <p>Age: {{ jedi.age }}</p>
+    <p>Is Master: {{ jedi.is_master }}</p>
+    <a href="/">GO BACK</a>
+
+    <h2>Force Powers:</h2>
+    <ul>
+      {% for power in jedi.force_powers.all %}
+        <li>{{ power.name }} | <a href="/jedis/{{ jedi.id }}/remove_power/{{ power.id }}">Remove</a></li>
+      {% endfor %}
+    </ul>
+    <form action="/jedis/{{ jedi.id }}/add_power" method="post">
+      {% csrf_token %}
+      <select name="power_id" id="">
+        {% for power in force_powers %}
+          {% if power not in jedi.force_powers.all %}
+            <option value="{{ power.id }}">{{ power.name }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+      <button>Add</button>
+    </form>
+  </div>
+</body>
+</html>

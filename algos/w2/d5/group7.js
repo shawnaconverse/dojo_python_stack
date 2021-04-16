@@ -22,7 +22,7 @@ const strA4 = "silent";
 const strB4 = "listen";
 const expected4 = true;
 
-function isAnagram(s1, s2) {}
+
 
 /*****************************************************************************/
 
