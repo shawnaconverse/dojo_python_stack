@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Hello There</h1>
+  <form action="/dogs/{{ dog.id }}/update" method="post">
+    {% csrf_token %}
+    <p>
+      Name:
+      <input type="text" name="name" id="" value="{{ dog.name }}">
+    </p>
+    <p>
+      Age:
+      <input type="number" name="age" id="" value="{{ dog.age }}">
+    </p>
+    <button>Update Dog</button>
+  </form>
+  {% if messages %}
+    <ul class="messages">    
+      {% for message in messages %}    
+        <li style='color: red;'>{{ message }}</li>    
+      {% endfor %}
+    </ul>
+  {% endif %}
+  <a href="/dogs">Cancel</a>
+</body>
+</html>

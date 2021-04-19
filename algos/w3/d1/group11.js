@@ -6,7 +6,7 @@
 */
 
 const nums1 = [1, 2, 3, 4, 10];
-const expected1 = true;
+const sexpected1 = true;
 // Explanation: between indices 3 & 4
 
 const nums2 = [1, 2, 4, 2, 1];
@@ -14,35 +14,8 @@ const expected2 = false;
 
 function balancePoint(nums) {
 
-//setup
-
-  var counterI = 0
-  var counterJ = 0
-
-  //work
-  for (var i = 0; i < nums.length; i++ ) {
-    var num = nums[i]
-    counterI += num
-
-    //we should compare the sum of the elements with the next element
-
-    
-
-
-    for(var j = nums.length; j >= 0; j--) {
-      counterJ += nums[j]
-
-      if(counter === counterJ) {
-        return true
-      }
-    }
-  }
-//return
-  return false;
-
+  
 }
-
-console.log(balancePoint(nums1))
 
 /*****************************************************************************/
 

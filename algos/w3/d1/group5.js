@@ -12,7 +12,9 @@ const expected1 = true;
 const nums2 = [1, 2, 4, 2, 1];
 const expected2 = false;
 
-function balancePoint(nums) {}
+function balancePoint(nums) {
+  
+}
 
 /*****************************************************************************/
 
