@@ -17,4 +17,28 @@ const nums3 = [3, 4, 6, 8, 12];
 const searchNum3 = 3;
 const expected3 = true;
 
-function binarySearch(sortedNums, searchNum) {}
+function binarySearch(sortedNums, searchNum) {
+  // var found = false;
+  var idx = Math.floor(sortedNums.length / 2);
+
+  while (true) {
+    if (sortedNums[idx] === searchNum) {
+      return true;
+    }
+
+    // BASE CASE
+    if (sortedNums.length < 2) return false;
+
+    if (sortedNums[idx] > searchNum) {
+      sortedNums = sortedNums.slice(0, idx);
+      idx = Math.floor(sortedNums.length / 2);
+    }
+
+    if (sortedNums[idx] < searchNum) {
+      sortedNums = sortedNums.slice(idx + 1, sortedNums.length);
+      idx = Math.floor(sortedNums.length / 2);
+    }
+  }
+
+  // return found;
+}

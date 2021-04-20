@@ -17,4 +17,16 @@ const nums3 = [3, 4, 6, 8, 12];
 const searchNum3 = 3;
 const expected3 = true;
 
-function binarySearch(sortedNums, searchNum) {}
+
+
+function binarySearch(sortedNums, searchNum) {
+  var midIndex = Math.floor(sortedNums.length/2)
+
+  if (sortedNums[midIndex] == searchNum){
+    console.log(sortedNums[midIndex])
+    return true
+  }
+
+}
+
+console.log(binarySearch([4,5,6,8,12], 6))
