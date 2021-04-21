@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'fullCRUDapp/css/style.css' %}">
+    <title>Edit PArty</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1>Edit Party: {{party.name}}</h1>
+    <form action="/party/{{party.id}}/update" method="POST">
+        {% csrf_token %}
+        <section>
+            <label for="name">Name </label>
+            <input type="text" name="name" value="{{party.name}}">
+        </section>
+        <section>
+            <label for="loc">Location </label>
+            <input type="text" name="loc" value="{{party.location}}">
+        </section>
+        <section>
+            <label for="date">Date </label>
+            <input type="date" name="date" value="2020-12-01">
+        </section>
+        <section>
+            <label for="time">Time </label>
+            <input type="time" name="time" value="{{party.time}}">
+        </section>
+        <section>
+            <label for="theme">Theme </label>
+            <input type="text" name="theme" value="{{party.theme}}">
+        </section>
+        <button>update PARTY!</button>
+    </form>
+</body>
+</html>
