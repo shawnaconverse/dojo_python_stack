@@ -11,6 +11,9 @@
 <body>
     {% include 'navbar.html' %}
     <h1>Create Party</h1>
+    {% for message in messages %}
+        {{message}}
+    {% endfor %}
     <form action="/party/create" method="POST">
         {% csrf_token %}
         <section>

@@ -74,14 +74,24 @@ def add_party_view(request):
 
 # CRUD C for create
 def add_party_process(request):
-    new_party = Party.objects.create(
-        name = request.POST['name'],
-        location = request.POST['loc'],
-        date = request.POST['date'],
-        time = request.POST['time'],
-        theme = request.POST['theme'],
-    )
-    return redirect('/dashboard')
+
+    errors = Party.objects.party_validator(request.POST)
+
+    if len(errors) > 0:
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect("/party/new")
+    else:
+        logged_in_user = User.objects.get(id=request.session['uuid'])
+        new_party = Party.objects.create(
+            name = request.POST['name'],
+            location = request.POST['loc'],
+            party_master = logged_in_user,
+            date = request.POST['date'],
+            time = request.POST['time'],
+            theme = request.POST['theme'],
+        )
+        return redirect('/dashboard')
 
 # CRUD U for update
 def update_party_view(request, party_id):

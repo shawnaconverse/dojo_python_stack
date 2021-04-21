@@ -1,6 +1,7 @@
 from django.db import models
 
 import bcrypt
+import datetime
 from datetime import datetime
 import re
 
@@ -67,12 +68,21 @@ class User(models.Model):
     updated_at = models.DateTimeField(auto_now = True)
     objects = UserManager()
 
+class PartyManager(models.Manager):
+    def party_validator(self, post_data):
+        errors = {}
+        form_date = datetime.strptime(post_data['date'], "%Y-%m-%d")
+        if datetime.now() > form_date:
+            errors["date"] = "You cannot enter a past date for birth date."
+        return errors
+
 class Party(models.Model):
     name = models.CharField(max_length=255)
     location = models.CharField(max_length = 255)
-    #  guest_list # future dev
+    party_master = models.ForeignKey(User, related_name='parties', on_delete=models.CASCADE)
     date = models.DateField()
     time = models.TimeField()
     theme = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
+    objects = PartyManager()

@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 header {
-    padding: 0 1em;
+    margin-bottom: 0.5em;
+    padding: 0.5em 1em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,6 +28,22 @@ button:hover {
     color: white;
     box-shadow: 2px 2px 9px white;
     border-radius: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table td, th{
+    padding: 0.5em;
+    border: 1px solid black;
 }
 
 .my-dflex {
