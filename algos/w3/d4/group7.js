@@ -16,7 +16,21 @@ const expected3 = { nickel: 1, penny: 4 };
 const cents4 = 99;
 const expected4 = { quarter: 3, dime: 2, penny: 4 };
 
-function fewestCoinChange(cents) {}
+function fewestCoinChange(cents) {
+    arr = []
+    num = 0
+    if (num % 25 === 0) { 
+        for (i = 0; i <= arr.length; i++) {
+            num = num/25
+            arr.push(num)
+        }
+    }
+    return num
+}
+console.log(fewestCoinChange(25))
+console.log(fewestCoinChange(50))
+console.log(fewestCoinChange(9))
+console.log(fewestCoinChange(99))
 
 /*****************************************************************************/
 

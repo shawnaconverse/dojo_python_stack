@@ -16,7 +16,25 @@ const expected3 = { nickel: 1, penny: 4 };
 const cents4 = 99;
 const expected4 = { quarter: 3, dime: 2, penny: 4 };
 
-function fewestCoinChange(cents) {}
+function fewestCoinChange(cents) {
+  
+}
+// if change is less than 0 return nothing
+// while loop n is >= .25 subtract .25 from n and pop quarter
+    // if n is < than 25 
+  // 
+  quarter = 0
+  dime = 0
+  nickle = 0
+  penny = 0
+while (n >= 25) {
+  n - 25 == n
+  quarter++
+
+  
+}
+
+
 
 /*****************************************************************************/
 
