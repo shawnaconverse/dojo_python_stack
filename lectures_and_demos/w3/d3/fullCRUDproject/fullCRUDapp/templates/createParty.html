@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'fullCRUDapp/css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1>Create Party</h1>
+    {% for message in messages %}
+        {{message}}
+    {% endfor %}
+    <form action="/party/create" method="POST">
+        {% csrf_token %}
+        <section>
+            <label for="name">Name </label>
+            <input type="text" name="name">
+        </section>
+        <section>
+            <label for="loc">Location </label>
+            <input type="text" name="loc">
+        </section>
+        <section>
+            <label for="date">Date </label>
+            <input type="date" name="date">
+        </section>
+        <section>
+            <label for="time">Time </label>
+            <input type="time" name="time">
+        </section>
+        <section>
+            <label for="theme">Theme </label>
+            <input type="text" name="theme">
+        </section>
+        <button>Create PARTY!</button>
+    </form>
+</body>
+</html>

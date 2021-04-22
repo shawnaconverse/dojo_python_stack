@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'fullCRUDapp/css/style.css' %}">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      {% include 'navbar.html' %}
+      <main>
+        <a class="my-dflex my-justify-end" href="/party/new">+ Add New Party</a>
+        <div class="all_partys">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>date</th>
+                        <th>time</th>
+                        <th>theme</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for party in all_parties %}
+                    <tr>
+                        <td>{{party.name}}</td>
+                        <td>{{party.location}}</td>
+                        <td>{{party.date}}</td>
+                        <td>{{party.time}}</td>
+                        <td>{{party.theme}}</td>
+                        {% if party.party_master == logged_in_user %}
+                        <td>
+                          <a href="/party/{{party.id}}/edit">Edit</a>
+                          <a href="/party/{{party.id}}/confirm">Delete</a>
+                        </td>
+                        {% else %}
+                        <td>
+                          <a href="#">Join</a>
+                        </td>
+                        {% endif  %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

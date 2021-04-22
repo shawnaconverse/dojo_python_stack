@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    margin-bottom: 0.5em;
+    padding: 0.5em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rebeccapurple;
+}
+
+button {
+    margin: 0.5em;
+    padding: 0.15em 0.5em;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow: 4px 4px 9px black;
+}
+
+button:hover {
+    background-color: rgb(61, 43, 80);
+    color: white;
+    box-shadow: 2px 2px 9px white;
+    border-radius: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table td, th{
+    padding: 0.5em;
+    border: 1px solid black;
+}
+
+.my-dflex {
+    display: flex;
+}
+
+.my-dflex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.my-justify-end {
+    justify-content: end;
+}
