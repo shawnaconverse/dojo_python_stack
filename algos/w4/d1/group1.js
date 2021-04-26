@@ -5,7 +5,17 @@
 const nums1 = [1, 2, 3];
 const expected1 = 6;
 
-function sumArr(nums) {}
+function sumArr(nums){
+  if (nums.length <1 ) return 0
+  let addVal=nums.pop()
+  return addVal + sumArr(nums)
+}
+
+console.log(sumArr(nums1))
+
+
+
+
 
 /*****************************************************************************/
 
@@ -26,4 +36,12 @@ const expected2 = 3;
 const num3 = -1;
 const expected3 = 0;
 
-function recursiveSigma(num) {}
+function recursiveSigma(num) {
+  if (num < 1) return 0
+  num = Math.floor(num)
+  return num + recursiveSigma(num - 1)
+}
+
+console.log(recursiveSigma(num1))
+console.log(recursiveSigma(num2))
+console.log(recursiveSigma(num3))
