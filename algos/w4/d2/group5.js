@@ -23,7 +23,11 @@ const expected2 = 720;
 const num3 = 0;
 const expected3 = 1;
 
-function factorial(n) {}
+function factorial(n) {
+  if (n<=1) return 1
+
+  return Math.floor(n) * factorial(n-1)
+}
 
 /*****************************************************************************/
 
@@ -53,4 +57,21 @@ const expected5 = 3;
 const num6 = 8;
 const expected6 = 21;
 
-function fibonacci(num) {}
+
+function fibonacci(num) {
+  
+  if(num < 2){
+    return num;
+  }
+
+  return fibonacci(num - 1) + fibonacci(num - 2);
+  
+  
+}
+
+console.log(fibonacci(num1))
+console.log(fibonacci(num2))
+console.log(fibonacci(num3))
+console.log(fibonacci(num4))
+console.log(fibonacci(num5))
+console.log(fibonacci(num6))

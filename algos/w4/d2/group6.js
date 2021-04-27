@@ -23,7 +23,17 @@ const expected2 = 720;
 const num3 = 0;
 const expected3 = 1;
 
-function factorial(n) {}
+function factorial(n) {
+  // Base case
+  if (n <= 0) return 1
+
+  // Forward progress
+  n = Math.floor(n)
+  newN = n -1
+
+  // recursive call
+  return n * factorial(newN)
+}
 
 /*****************************************************************************/
 
@@ -53,4 +63,16 @@ const expected5 = 3;
 const num6 = 8;
 const expected6 = 21;
 
-function fibonacci(num) {}
+function fibonacci(num) {
+  // edge case
+  if (num == 0) return 0
+  // base case
+  if (num == 1){
+    zeroIdxVal = 0
+    firstIdxVal = 1
+    return zeroIdxVal + firstIdxVal
+  }
+  // forward progress & recrusive call
+  nextIdxVal = fibonacci(num-1) + fibonacci(num-2)
+  return nextIdxVal
+}

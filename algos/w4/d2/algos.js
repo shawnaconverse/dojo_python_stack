@@ -16,6 +16,9 @@ const num1 = 3;
 const expected1 = 6;
 // Explanation: 1*2*3 = 6
 
+// 7!
+// 7 * 6 * 5 * 4 * 3 * 2 * 1
+
 const num2 = 6.8;
 const expected2 = 720;
 // Explanation: 1*2*3*4*5*6 = 720
@@ -23,7 +26,16 @@ const expected2 = 720;
 const num3 = 0;
 const expected3 = 1;
 
-function factorial(n) {}
+
+function factorial(n) {
+  var int = parseInt(n); // truncate the decimal
+  // BASE CASE
+  if (int < 0) int = abs(int); // negative numbers are turned positive
+  if (int < 2) return 1;
+  // FORWARD PROGRESS
+  // RECURSIVE CALL - return
+  return int * factorial(int - 1);
+}
 
 /*****************************************************************************/
 
@@ -35,22 +47,47 @@ function factorial(n) {}
   starting with 0 and 1 as the first two numbers of the sequence.
 */
 
-const num1 = 0;
-const expected1 = 0;
+// const num1 = 0;
+// const expected1 = 0;
 
-const num2 = 1;
-const expected2 = 1;
+// const num2 = 1;
+// const expected2 = 1;
 
-const num3 = 2;
-const expected3 = 1;
+// const num3 = 2;
+// const expected3 = 1;
 
-const num4 = 3;
-const expected4 = 2;
+// const num4 = 3;
+// const expected4 = 2;
 
-const num5 = 4;
-const expected5 = 3;
+// const num5 = 4;
+// const expected5 = 3;
 
-const num6 = 8;
-const expected6 = 21;
+// const num6 = 8;
+// const expected6 = 21;
 
-function fibonacci(num) {}
+function fibonacci(num) {
+  // EDGE CASE
+  if (num < 0) return null;
+
+  // BASE CASE
+  if (num < 2) return num;
+
+  // FORWARD PROGRESS
+  // RECURSIVE CALL
+  return fibonacci(num - 1) + fibonacci(num - 2)
+}
+
+console.log(fibonacci(42))
+
+// Memoization
+function fibMemoized(num, memo = {0:0, 1:1}) {
+  if (num < 0) return null;
+
+  if (memo[num] !== undefined) return memo[num];
+
+  memo[num] = fibMemoized(num - 1, memo) + fibMemoized(num - 2, memo)
+
+  return memo[num];
+}
+console.log(fibMemoized(1000))
+
