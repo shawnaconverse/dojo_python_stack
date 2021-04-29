@@ -11,8 +11,18 @@ const expected1 = "cba";
 const str2 = "";
 const expected2 = "";
 
-function reverseStr(str) {}
+function reverseStr(str) {
+  var newStr = '';
+  if (str.length <= 1) {
+    return str
+  }
+  var last_letter = str.slice(str.length -1);
+  newStr = str.slice(0,str.length -1)
+  return last_letter + reverseStr(newStr)
+}
 
+console.log(reverseStr(str1))
+console.log(reverseStr(str2))
 /*****************************************************************************/
 
 /*

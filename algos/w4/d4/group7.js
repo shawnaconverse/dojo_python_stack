@@ -11,7 +11,16 @@ const expected1 = "cba";
 const str2 = "";
 const expected2 = "";
 
-function reverseStr(str) {}
+function reverseStr(str) {
+  if (str === "")
+      return "";
+  else
+  return reverseStr(str.substring(1)) + str.charAt(0);
+}
+
+console.log(reverseStr(str1))
+console.log(reverseStr(str2))
+
 
 /*****************************************************************************/
 
@@ -36,4 +45,16 @@ const expected2 = 1;
 const num3 = 25;
 const expected3 = 7;
 
-function sumToOneDigit(num) {}
+function sumToOneDigit(num) {
+  // BASE CASE
+  if (num <= 9) return num;
+  if (typeof(num) != "number" ) return null
+
+  return sumToOneDigit(num%10 + Math.floor(sumToOneDigit((num/10))));
+}
+console.log (sumToOneDigit(num1))
+
+console.log (sumToOneDigit(num2))
+console.log (sumToOneDigit(num3))
+console.log (sumToOneDigit(num4))
+console.log (sumToOneDigit(num5))

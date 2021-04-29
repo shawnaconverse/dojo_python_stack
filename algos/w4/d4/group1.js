@@ -11,9 +11,16 @@ const expected1 = "cba";
 const str2 = "";
 const expected2 = "";
 
-function reverseStr(str) {}
-
-/*****************************************************************************/
+function reverseStr(str) {
+  
+}
+  if (str === "")
+        return "";
+    else
+    return reverseStr(str.substring(1)) + str.charAt(0);
+/
+console.log(reverseStr(str1))
+console.log(reverseStr(str2))*****************************************************************************/
 
 /*
   Sum To One Digit
