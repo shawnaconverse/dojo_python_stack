@@ -23,4 +23,17 @@ const expected3 = [1, 2, 3, 4, 5, 6];
     - arr1.concat(arr2) => [1, 2, 3, 4, 5, 6, 1, 2, [4, 5], 6]
 */
 
-function recursiveFlatten(arr) {}
+function recursiveFlatten(arr) {
+  let result = []
+  for (var i = 0; i < arr.length; i++) {
+      if (Array.isArray(arr[i])) {
+          result.push(...recursiveFlatten(arr[i]))
+      } else {
+          result.push(arr[i]);
+      }
+  }
+  return result;
+}
+console.log(recursiveFlatten(arr1))
+console.log(recursiveFlatten(arr2))
+console.log(recursiveFlatten(arr3))

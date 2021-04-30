@@ -23,4 +23,33 @@ const expected3 = [1, 2, 3, 4, 5, 6];
     - arr1.concat(arr2) => [1, 2, 3, 4, 5, 6, 1, 2, [4, 5], 6]
 */
 
-function recursiveFlatten(arr) {}
+function recursiveFlatten(arr) {
+  // BASE CASE 
+
+  var newArr = []
+
+  if(arr.length <= 0) {
+    return newArr
+  }
+
+  // var firstIdx = 0
+  // if (firstIdx == arr.length) {
+  //   return arr;
+  // }
+
+  // SETUP
+
+
+// FORWARD PROGRESS 
+  if(Array.isArray(arr[firstIdx]) == false){
+  newArr.push(arr[firstIdx])
+  arr.slice(0,1)
+  // firstIdx++
+  return recursiveFlatten(arr)
+  }
+
+  else {
+    return newArr.concat(recursiveFlatten(arr))
+  }
+
+}

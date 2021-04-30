@@ -23,4 +23,31 @@ const expected3 = [1, 2, 3, 4, 5, 6];
     - arr1.concat(arr2) => [1, 2, 3, 4, 5, 6, 1, 2, [4, 5], 6]
 */
 
-function recursiveFlatten(arr) {}
+function recursiveFlatten(arr) {
+  // BASE CASE
+  if (arr.length < 1){
+    return 'Not a valid array'
+  }
+  // FORWARD PROGRESS
+  return arr.reduce((acc, cur) => acc.concat(Array.isArray(cur) ? recursiveFlatten(cur) : cur), []);
+
+}
+console.log(recursiveFlatten(arr1))
+console.log(recursiveFlatten(arr2))
+console.log(recursiveFlatten(arr3))
+
+
+
+
+// BUILT IN .flat
+
+function recursiveFlatten(arr) {
+  // BASE CASE
+  if (arr.length < 1){
+    return 'Not a valid array'
+  }
+  return arr
+}
+console.log(recursiveFlatten(arr1.flat(Infinity)))
+console.log(recursiveFlatten(arr2.flat(Infinity)))
+console.log(recursiveFlatten(arr3.flat(Infinity)))
