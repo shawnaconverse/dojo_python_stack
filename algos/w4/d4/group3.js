@@ -42,13 +42,26 @@ function sumToOneDigit(num) {
   if (parseInt(num) == NaN) return null 
 
   // BASE CASE
-  if (num < 10) return num 
+  if (num < 10) return num
 
-  // FORWARD PRGORESS & RECURSIVE CALL
+  // FORWARD PROGRESS & RECURSIVE CALL
   num = num.toString()
   strArr = num.split("")
-    // split into each digit (array)
-    // in each
+  last_digit = strArr[strArr.length-1] // string '8'
+  strArr.pop() // strArr = ['3']
+  if (parseInt(last_digit) + parseInt(sumToOneDigit(strArr)) < 10){
+      return parseInt(last_digit) + parseInt(sumToOneDigit(strArr)) // return 8 + parseInt(['3'])
+  }
+  else {
+      newArr = parseInt(last_digit) + parseInt(sumToOneDigit(strArr))
+      console.log("here", parseInt(last_digit) + parseInt(sumToOneDigit(newArr)))
+      strArr = strArr.toString() // ['1', '1']
+      secondStrArr = strArr.split("")
+      last_digit = secondStrArr[secondStrArr.length-1] // string '8'
+      console.log("last_digit: " , last_digit)
+      console.log("secondStrArr: " , secondStrArr)
+      return parseInt(last_digit) + parseInt(sumToOneDigit(secondStrArr))
+  }
 }
 
 const num1 = 5;

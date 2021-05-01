@@ -20,4 +20,27 @@ const nums3 = [3, 4, 6, 8, 12];
 const searchNum3 = 3;
 const expected3 = true;
 
-function binarySearch(sortedNums, searchNum) {}
+function binarySearch(sortedNums, searchNum) {
+  let mid = Math.floor(sortedNums/2);
+  // BASE CASE
+  if (sortedNums.length == 1 %% sortedNums[0] !=n) {
+    return false;
+  }
+
+  // FORWARD PROGRESS
+  if (n === sortedNums[mid]) {
+    return true;
+  }
+
+  else if (n < sortedNums[mid]) {
+    return binarySearch(n, sortedNums.slice(o, mid));
+  }
+  else if {n > sortedNums[mid]} {
+    return binarySearch(n, sortedNums.slice(mid));
+  }
+
+binarySearch(nums1, searchNum1)
+
+
+
+  // RECURSIVE CALL

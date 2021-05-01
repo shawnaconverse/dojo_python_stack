@@ -46,4 +46,25 @@ const expected2 = 1;
 const num3 = 25;
 const expected3 = 7;
 
-function sumToOneDigit(num) {}
+const num4 = 38;
+const expected4 = 2;
+
+const num5 = "dog"
+const expected5 = null;
+
+function sumToOneDigit(num) {
+  var new_numbers = '';
+  if (num.length <=1) {
+    return parseInt(num)
+  }
+  var first_num = num.toString.slice(0,1);
+  new_numbers = num.toString.slice(1);
+
+  return parseInt(first_num) + sumToOneDigit(new_numbers)
+}
+
+console.log(sumToOneDigit(num1))
+console.log(sumToOneDigit(num2))
+console.log(sumToOneDigit(num3))
+console.log(sumToOneDigit(num4))
+console.log(sumToOneDigit(num5))
