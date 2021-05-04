@@ -11,8 +11,10 @@ const expected1 = "TNFL-GPYW";
 const str2 = "Live from New York, it's Saturday Night!";
 const expected2 = "LFNYISN";
 
+str1.split("")
+print(str1)
 function acronymize(str) {}
-
+/
 /*****************************************************************************/
 
 /* 
@@ -21,10 +23,10 @@ function acronymize(str) {}
 	return a new string that is the given string reversed
 */
 
-const str1 = "creature";
-const expected1 = "erutaerc";
+const str3 = "creature";
+const expected3 = "erutaerc";
 
-const str2 = "dog";
-const expected2 = "god";
+const str4 = "dog";
+const expected4 = "god";
 
 function reverseString(str) {}

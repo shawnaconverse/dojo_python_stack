@@ -11,7 +11,21 @@ const expected1 = "TNFL-GPYW";
 const str2 = "Live from New York, it's Saturday Night!";
 const expected2 = "LFNYISN";
 
-function acronymize(str) {}
+function acronymize(str) {
+	var newstr = [];
+	var arr = str.split("")
+	for(var i = 0; i < arr.length; i++){
+		if(arr[i] == ""){
+			newstr.append(arr[i + 1])
+		}
+	}
+	newstr.join("");
+	console.log(newstr)
+	var returnstr = newstr.toUpperCase();
+	return returnstr;
+}
+
+console.log(acronymize(str1))
 
 /*****************************************************************************/
 
