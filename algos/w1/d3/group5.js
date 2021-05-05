@@ -3,7 +3,7 @@
 	Given an str that has parenthesis in it
 	return whether the parenthesis are valid
 */
-
+// ( - 
 const str1 = "Y(3(p)p(3)r)s";
 const expected1 = true;
 
@@ -17,9 +17,34 @@ const expected3 = false;
 
 const str4 = "a(b))(c";
 const expected4 = false;
-// Explanation: same number of opens and closes but the 2nd closing closes nothing
+// Explanation: same number of opens and closes but the 2nd closing closes nothing    
 
-function parensValid(str) {}
+function parensValid(str) {
+    // counter of open parens
+    var ctr = 0
+
+    // Loop through the string
+    for (var idx = 0, idx < str.length; idx++) {
+      // check for the parens
+      if (str[idx] == "(") {
+        console.log{"you made it to the 1st if(). ctr is" + ctr}
+        ctr++
+      }
+
+       if (str[idx] == ")") {
+        console.log{"you made it to the 2nd if(). ctr is" + ctr}
+         ctr--
+       }
+
+      if (ctr == 0) {
+        return true;
+      } else {
+        return false;
+      }
+   }
+ }
+
+parensValid(str1)
 
 /*****************************************************************************/
 

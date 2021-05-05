@@ -4,6 +4,7 @@
 	return whether the parenthesis are valid
 */
 
+
 const str1 = "Y(3(p)p(3)r)s";
 const expected1 = true;
 
@@ -19,7 +20,24 @@ const str4 = "a(b))(c";
 const expected4 = false;
 // Explanation: same number of opens and closes but the 2nd closing closes nothing
 
-function parensValid(str) {}
+function parensValid(str){
+  var parenthesis = 0;
+  for(var i in str){   
+      if(str[i] == '('){
+          parenthesis ++;
+      } else if(str[i] == ')') {
+          parenthesis --;
+      }  
+      if (parenthesis < 0) return false;
+  }
+  if(parenthesis > 0) return false;
+  return true;
+}
+
+console.log(parensValid(str1));
+console.log(parensValid(str2));
+console.log(parensValid(str3));
+console.log(parensValid(str4));
 
 /*****************************************************************************/
 
@@ -37,4 +55,32 @@ const expected2 = false;
 const str3 = "A(1)s[O (n]0{t) 0}k";
 const expected3 = false;
 
-function bracesValid(str) {}
+function parensValid(str){
+    var parenthesis = 0;
+    var curlybrackets = 0;
+    var brackets = 0;
+    for(var i in str){
+        if(str[i] == '['){
+            brackets ++;
+        } else if(str[i] == ']') {
+            brackets --;
+        }  
+        if(str[i] == '{'){
+            curlybrackets ++;
+        } else if(str[i] == '}') {
+            curlybrackets --;
+        }     
+        if(str[i] == '('){
+            parenthesis ++;
+        } else if(str[i] == ')') {
+            parenthesis --;
+        }  
+        if (parenthesis < 0 || brackets < 0 || curlybrackets < 0) return false;
+    }
+    if(parenthesis > 0 || brackets > 0 || curlybrackets > 0) return false;
+    return true;
+}
+
+console.log(parensValid(str1));
+console.log(parensValid(str2));
+console.log(parensValid(str3));

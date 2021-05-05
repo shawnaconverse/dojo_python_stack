@@ -18,8 +18,25 @@ const expected3 = false;
 const str4 = "a(b))(c";
 const expected4 = false;
 // Explanation: same number of opens and closes but the 2nd closing closes nothing
-
-function parensValid(str) {}
+function parensValid(str) {
+  var count = 0
+  for(var i = 0; i < str.length; i++){
+    if(str[i]=="("){
+      count++;
+    }
+    if(str[i]==")" && count == 0){
+      return false;
+    } else if(str[i] == ")"){
+      count--;
+    }
+  }
+  if(count==0){
+    return true;
+  } else{
+    return false;
+  }
+}
+console.log(parensValid(str4))
 
 /*****************************************************************************/
 
@@ -27,6 +44,7 @@ function parensValid(str) {}
   Braces Valid
   Given a string sequence of parentheses, braces and brackets, determine whether it is valid. 
 */
+
 
 const str1 = "W(a{t}s[o(n{ c}o)m]e )h[e{r}e]!";
 const expected1 = true;
@@ -37,4 +55,52 @@ const expected2 = false;
 const str3 = "A(1)s[O (n]0{t) 0}k";
 const expected3 = false;
 
-function bracesValid(str) {}
+var pCount = 0;
+var bracketCount = 0;
+var curlyCount = 0;
+var temp = ""
+function bracesValid(str) {
+
+  for(var i = 0; i < str.length; i++){
+    if(str[i] == "(" || str[i] == "[" || str[i] == "{") {
+
+    }
+  }
+
+  // for(var i = 0; i < str.length; i++){
+  //   if(str[i]=="("){
+  //     pCount++;
+  //   }
+  //   if(str[i]==")" && pCount == 0){
+  //     return false;
+  //   } else if(str[i] == ")"){
+  //     pCount--;
+    
+  //   }if(str[i]=="["){
+  //     bracketCount++;
+  //   }
+  //   if(str[i]=="]" && bracketCount == 0){
+  //     return false;
+  //   } else if(str[i] == "]"){
+  //     bracketCount--;
+  //   }
+  //   if(str[i]=="{"){
+  //     curlyCount++;
+  //   }
+  //   if(str[i]=="}" && curlyCount == 0){
+  //     return false;
+  //   } else if(str[i] == "}"){
+  //     curlyCount--;
+  //   }
+  // }
+
+
+  if(pCount==0 && bracketCount==0 && curlyCount==0){
+    return true;
+  } else{
+    return false;
+  }
+}
+
+
+
