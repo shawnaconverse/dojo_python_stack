@@ -18,7 +18,17 @@ const expected3 = false;
 const str4 = "oho!";
 const expected4 = false;
 
-function isPalindrome(str) {}
+function isPalindrome( str ) {
+    var splitstring = str.split( "" );
+    var reversearr = splitstring.reverse();
+    var joinArray = reversearr.join( "" )
+  if (joinArray == splitstring) {
+    return true;
+  }else{
+    return false;
+  }
+}
+isPalindrome( str1 );
 
 /*****************************************************************************/
 
@@ -39,4 +49,24 @@ const expected2 = "u";
 const str3 = "Yikes! my favorite racecar erupted!";
 const expected3 = "e racecar e";
 
-function longestPalindromicSubstring(str) {}
+function isPalindrome( str ) {
+    var splitstring = str.split( "" );
+    console.log( splitstring );
+    //var reversearr = splitstring.reverse();
+    //console.log( reversearr );
+    for ( var i = 0; i < str.length; i++ ) {
+        var buff = [];
+        buff.push( splitstring[ i ] );
+        for ( var j = i + 1; j < str.length; j++ ) {
+            buff.push( splitstring[ j ] );
+          console.log(buff)
+          var reversearr = buff.reverse()
+          if (buff == reversearr) {
+            console.log(buff)
+          }
+        }
+    }
+    //var joinArray = reversearr.join( "" )
+    //console.log( joinArray )
+}
+isPalindrome( str1 );

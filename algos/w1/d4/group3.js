@@ -1,4 +1,4 @@
-/* 
+        /* 
   String: Is Palindrome
   Create a function that returns a boolean whether the string is a strict palindrome. 
     - palindrome = string that is same forwards and backwards
@@ -20,6 +20,26 @@ const expected4 = false;
 
 function isPalindrome(str) {}
 
+
+
+function palindrome(string) {
+  for (var i = 0; i < string.length/2; i++) {
+    console.log(i)
+    if (string[i] === string[string.length - 1 - [i]]) {
+      console.log(string[i],string[string.length - 1 - [i]], true)
+    }
+    if ((string[i] !== string[string.length - 1 - [i]])) {
+      console.log(string[i],string[string.length - 1 - [i]], false)
+      return false;
+    }
+  }
+  return true;
+}
+
+
+var palindromereturn = palindrome(str1)
+console.log(palindrome)
+
 /*****************************************************************************/
 
 /* 
@@ -39,4 +59,17 @@ const expected2 = "u";
 const str3 = "Yikes! my favorite racecar erupted!";
 const expected3 = "e racecar e";
 
-function longestPalindromicSubstring(str) {}
+function longestPalindromicSubstring(str) {
+  var reverseString = []
+  var expectedResult = []
+  for(var i = 0; i <str.length; i++){
+    reverseString.push(str.length - i - 1)
+  }
+  for(var i = 0; i <str.length; i++){
+    if(str[i] === reverseString[i])
+    expectedResult.push(str[i])
+  }
+  return expectedResult;
+}
+var palindromicResult =  longestPalindromicSubstring(str1);
+console.log(palindromicResult)

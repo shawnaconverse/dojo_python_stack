@@ -18,9 +18,22 @@ const expected3 = false;
 const str4 = "oho!";
 const expected4 = false;
 
-function isPalindrome(str) {}
+function isPalindrome(str) {
+    var splitString = str.split("")
+    console.log(splitString);
+    var reverseArray = splitString.reverse();
+    var joinArray = reverseArray.join("")
+
+    return joinArray
+}
+
+isPalindrome(str1)
+
+
+
 
 /*****************************************************************************/
+
 
 /* 
     Longest Palindrome
