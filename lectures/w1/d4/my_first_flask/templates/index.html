@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Here is my first HTML rendered to a browser!</h1>
+  <ul>
+    <li>Shawn</li>
+    <li>Dogs</li>
+    <li>Coffee</li>
+  </ul>
+  <h2>Display information using Jinja</h2>
+  <p>{{ phrase }}</p>
+  <p>{{ times }}</p>
+  <h2>Do some logic with Jinja as well</h2>
+  {% for i in range(0, times) %}
+    {% if phrase == "Howdydo?" %}
+      <h3>Well I'll be darned</h3>
+    {% endif %}
+    <h3>{{ phrase }}</h3>
+  {% endfor %}
+</body>
+</html>
