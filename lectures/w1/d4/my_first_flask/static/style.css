@@ -1,0 +1,9 @@
+h1 {
+  color: red;
+  border: 3px dotted red;
+}
+
+li {
+  background-color: red;
+  border: 2px solid red;
+}

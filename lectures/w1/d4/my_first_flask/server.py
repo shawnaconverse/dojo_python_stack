@@ -34,6 +34,26 @@ def index():
     return render_template("index.html", phrase = "Howdydo?", times = 5)
 
 
+@app.route("/other")
+def other():
+    dogs = ["Vicky", "Leia", "Shiro", "Bosco", "Rufus", "Lady", "Spot", "Doug", "Lassie"]
+
+    return render_template("other.html", all_dogs = dogs)
+
+
+@app.route("/instructors")
+def display_instructors():
+    instructor_info = [
+        {'name': "Shawn Converse", "age": 27},
+        {'name': "Jim Reeder", "age": 30},
+        {'name': "Tyler Thibault", "age": 31},
+        {'name': "Edward Im", "age": 30},
+        {'name': "Brendan Stanton", "age": 30}
+    ]
+
+    return render_template("instructor.html", all_instructors = instructor_info)
+
+
 if __name__ == "__main__":
     app.run(debug = True)
 
