@@ -25,7 +25,21 @@ const arr5 = [];
 const separator5 = ", ";
 const expected5 = "";
 
-function join(arr, separator) {}
+function joiner( arr, sepperator ) {
+    empty = "";
+    for ( var i = 0; i < arr.length; i++ ) {
+        if ( i < arr.length - 1 ) {
+            empty = empty + arr[ i ].toString() + sepperator;
+        } else {
+            empty = empty + arr[ i ].toString()
+
+        }
+
+    }
+    console.log( empty )
+    return empty
+}
+joiner( arr1, separator1 );
 
 /*****************************************************************************/
 
