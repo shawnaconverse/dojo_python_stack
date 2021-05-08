@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Does anyone actually see this?</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <p>Your Gold:</p>
+      <p class="gold-display">{{ session['gold'] }}</p>
+      <a href="/destroy">RESET</a>
+    </div>
+    <div class="main">
+      <form action="/process_money" method="post">
+        <input type="hidden" name="location" value="farm">
+        <p>Farm</p>
+        <p>(earns 10-20 gold)</p>
+        <button>Find Gold!</button>
+      </form>
+      <form action="/process_money" method="post">
+        <input type="hidden" name="location" value="cave">
+        <p>Cave</p>
+        <p>(earns 5-10 gold)</p>
+        <button>Find Gold!</button>
+      </form>
+      <form action="/process_money" method="post">
+        <input type="hidden" name="location" value="house">
+        <p>House</p>
+        <p>(earns 2-5 gold)</p>
+        <button>Find Gold!</button>
+      </form>
+      <form action="/process_money" method="post">
+        <input type="hidden" name="location" value="casino">
+        <p>Casino</p>
+        <p>(earns/takes 0-50 gold)</p>
+        <button>Find Gold!</button>
+      </form>
+    </div>
+    <div class="footer">
+      <p>Activities:</p>
+      <div class="activities">
+        {% for message in session['activities']|reverse %}
+          <p 
+          {% if "Earned" in message %}
+            class="earned"
+          {% else %}
+            class="lost"
+          {%endif%}>
+          {{ message }}
+        </p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</body>
+</html>
