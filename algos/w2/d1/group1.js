@@ -27,9 +27,39 @@ function encodeStr(str) {}
 
 /* 
   String Decode  
-*/
+*/(
 
 const str1 = "a3b2c1d3";
 const expected1 = "aaabbcddd";
+var result = []
+function decodeStr(str) {
+  for(var i = 0; i < str1.length; i++){
+    result.push(str1.charAt(i) = result  
+  }
+} console.log(decodeStr(str1))
 
-function decodeStr(str) {}
+/* 
+function Charcount(str){
+  var result = str.charAt(0);
+  var count = 1;
+  if (str.length == 1){
+    result+= count;
+    return result;
+  }
+  else{
+    for(var i=1; i<str.length;i++){
+      if(str.charAt(i) != str.charAt(i-1))
+        result+= count + str.charAt(i);
+        count = 1;
+      }
+      else{
+        count++;
+      }
+    if ( i == str.length - 1){
+      result += count;
+    }
+  }
+  return result;
+  }
+}
+*/
