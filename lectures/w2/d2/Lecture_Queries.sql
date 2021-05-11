@@ -103,13 +103,60 @@ SELECT LOWER(first_name) as first_lower FROM users;
 SELECT HOUR(created_at) as created_hour FROM users;
 
 
+-- JOINS
+-- SELECT <columns> FROM <table1> JOIN <table_name2> ON <table1.id> = <table2.table1_id>
 
 
+SELECT * FROM users;
+SELECT * FROM orders;
+
+SELECT * FROM users
+JOIN orders ON users.id = orders.user_id
+WHERE users.id = 2;
+
+SELECT * FROM users
+JOIN addresses ON users.id = addresses.user_id
+WHERE users.id = 3;
+
+SELECT users.first_name, users.last_name, orders.amount FROM users
+JOIN orders ON users.id = orders.user_id
+ORDER BY orders.amount;
+
+SELECT orders.amount, items.name, items.description FROM orders
+JOIN orders_items ON orders.id = orders_items.order_id
+JOIN items ON items.id = orders_items.item_id;
+
+SELECT users.first_name, orders.amount, items.name FROM users
+JOIN orders ON users.id = orders.user_id
+JOIN orders_items ON orders.id = orders_items.order_id
+JOIN items ON items.id = orders_items.item_id;
+
+-- get only the users who have made orders
+SELECT * FROM users
+JOIN orders ON users.id = orders.user_id;
+
+-- take all information on the left table, regardless if it has a match in the right table
+SELECT * FROM users
+LEFT JOIN orders ON users.id = orders.user_id;
 
 
+SELECT * FROM users
+JOIN addresses ON users.id = addresses.user_id;
+
+SELECT * FROM users
+LEFT JOIN addresses ON users.id = addresses.user_id;
 
 
+-- give me all users, and show if they have orders with items
+SELECT CONCAT(users.first_name, " ", users.last_name) AS full_name, orders.amount, items.name FROM users
+LEFT JOIN orders ON users.id = orders.user_id
+LEFT JOIN orders_items ON orders.id = orders_items.order_id
+LEFT JOIN items ON items.id = orders_items.item_id
+ORDER BY orders.amount;
 
+SELECT users.first_name, users.last_name, orders.id AS order_id, orders.amount FROM users
+JOIN orders ON users.id = orders.user_id
+ORDER BY orders.id DESC;
 
 
 
