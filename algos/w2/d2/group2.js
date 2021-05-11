@@ -24,7 +24,20 @@ const expected2 = {
 const arr3 = [];
 const expected3 = {};
 
-function frequencyTableBuilder(arr) {}
+function frequencyTableBuilder(arr) {
+  var freq = {}; //Set empty dictionary
+  for (var i = 0; i < arr.length; i++) { // Create For Loop that walks through length of arr
+    var character = arr[i]; // Sets variable as the i index of arr
+    if (freq[character]) { // checks dictionary for an instance of the character. If character exists, add to count
+      freq[character]++;
+      } else { // if character doesn't exit, sets character with value of 1
+        freq[character] = 1;
+      }
+  }
+  return freq;
+}
+
+console.log((arr1))
 
 /*****************************************************************************/
 
@@ -37,4 +50,27 @@ function frequencyTableBuilder(arr) {}
 const str1 = "This is a test";
 const expected1 = "test a is This";
 
-function reverseWordOrder(wordsStr) {}
+function reverseWordOrder(wordsStr) {
+  // var array = wordsStr.split(' ')
+  // array.reverse()
+  // array = array.join(' ')
+  // return array
+  var arry = [];
+  var new_str = "";
+  for(var i = 0; i <= wordsStr.length; i++){
+    if(wordsStr[i] == " " || i == wordsStr.length) {
+      arry.splice(0,0, new_str)
+      new_str = ""
+    } else{
+      new_str += wordsStr[i];
+    }
+  }
+  for(var j = 0; j < arry.length; j++){
+    new_str+=arry[j] + ' '
+  }
+  return new_str
+}
+
+
+reverseWordOrder(str1)
+

@@ -1,30 +1,37 @@
-/* 
-Given an array of strings
-return a sum to represent how many times each array item is found (a frequency table)
-Useful methods:
-  Object.hasOwnProperty("keyName")
-    - returns true or false if the object has the key or not
-  Python: key in dict
-*/
-
 const arr1 = ["a", "a", "a"];
 const expected1 = {
-  a: 3,
+    a: 3,
 };
 
 const arr2 = ["a", "b", "a", "c", "B", "c", "c", "d"];
 const expected2 = {
-  a: 2,
-  b: 1,
-  c: 3,
-  B: 1,
-  d: 1,
+    a: 2,
+    b: 1,
+    c: 3,
+    B: 1,
+    d: 1,
 };
 
 const arr3 = [];
 const expected3 = {};
 
-function frequencyTableBuilder(arr) {}
+function frequencyTableBuilder(arr) {
+    // SETUP
+    var table = {};
+    // WORK
+    for (var i = 0; i < arr.length; i++) {
+        if(table.hasOwnProperty(arr[i])) {
+            table[arr[i]]++;
+        }
+        else{
+            table[arr[i]] = 1;
+        }
+    }
+    // RETURN
+    return table
+}
+
+console.log(frequencyTableBuilder(arr3))
 
 /*****************************************************************************/
 
@@ -35,6 +42,15 @@ function frequencyTableBuilder(arr) {}
 */
 
 const str1 = "This is a test";
-const expected1 = "test a is This";
+// const expected1 = "test a is This";
 
-function reverseWordOrder(wordsStr) {}
+function reverseWordOrder(wordsStr) {
+  var words = [];
+  var length = str.length;
+
+  for (let i = 0; i  ) {
+    words = 
+
+
+  }
+}

@@ -12,6 +12,8 @@ const expected1 = {
   a: 3,
 };
 
+
+
 const arr2 = ["a", "b", "a", "c", "B", "c", "c", "d"];
 const expected2 = {
   a: 2,
@@ -24,17 +26,28 @@ const expected2 = {
 const arr3 = [];
 const expected3 = {};
 
-function frequencyTableBuilder(arr) {}
+function frequencyTableBuilder(arr){
+  for(var i; i<arr1.length; i++){
 
-/*****************************************************************************/
+  }
+}
+r
+/****************************************************************************/
 
 /* 
   Reverse Word Order
   Given a string of words (with spaces)
-  return a new string with words in reverse sequence.
+  retu
+  rn a new string with words in reverse sequence.
 */
 
 const str1 = "This is a test";
 const expected1 = "test a is This";
 
-function reverseWordOrder(wordsStr) {}
+fuvar split = wordsStr.split(" ");
+  var reverse = split.reverse();
+  var join = reverse.join(" ");
+  return join;on reverseWordOrder(wordsStr) {
+ 
+console.log(reverseWordOrder(str1)); for 
+}
