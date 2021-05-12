@@ -9,6 +9,9 @@ const expected1 = "abcABC";
 const str2 = "helloo";
 const expected2 = "helo";
 
+const str3 = "adgatedtdyaopw"
+const expected3 = "adgteyopw"
+
 function stringDedupe(str) {}
 
 /*****************************************************************************/

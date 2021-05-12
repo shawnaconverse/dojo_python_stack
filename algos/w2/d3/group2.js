@@ -9,7 +9,12 @@ const expected1 = "abcABC";
 const str2 = "helloo";
 const expected2 = "helo";
 
-function stringDedupe(str) {}
+
+function stringDedupe(str) {
+  var newString = str.split();
+  return newString
+}
+console.log(stringDedupe(str1)
 
 /*****************************************************************************/
 

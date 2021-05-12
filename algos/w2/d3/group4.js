@@ -9,7 +9,11 @@ const expected1 = "abcABC";
 const str2 = "helloo";
 const expected2 = "helo";
 
-function stringDedupe(str) {}
+function stringDedupe(str) {
+  let newStr = str.split("");
+    
+  return newStr.filter((val, i) => newStr.indexOf(val) === i).join("");
+}
 
 /*****************************************************************************/
 
