@@ -19,7 +19,26 @@ const str4 = "Hello World";
 const rotateAmnt4 = 4;
 const expected4 = "orldHello W";
 
-function rotateStr(str, n) {}
+function rotateStr(str, n) {
+  var a = n % str.length;
+  var b = 0
+
+  if (a > 0) {
+    b = str.length - a;
+  } else {
+    b = -a;
+  }
+
+  var c = str.substr(b, str.length);
+  var d = str.substr(0, b);
+
+  return c + d
+}
+console.log(rotateStr(str1, rotateAmnt1))
+console.log(rotateStr(str2, rotateAmnt2))
+console.log(rotateStr(str3, rotateAmnt3))
+console.log(rotateStr(str4, rotateAmnt4))
+
 
 /*****************************************************************************/
 

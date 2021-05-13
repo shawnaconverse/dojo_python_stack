@@ -19,7 +19,20 @@ const str4 = "Hello World";
 const rotateAmnt4 = 4;
 const expected4 = "orldHello W";
 
-function rotateStr(str, n) {}
+function rotateStr(str, n) {
+  // var newStr = str.slice(0, str.length - n);
+  // var endOfStr = str.slice(str.length - n, str.length);
+
+  // return endOfStr + newStr;
+  // if(n <=0)  return str;
+  // return str.substring(str.length-n,str.length) + str.substring(0,str.length-n)
+  // Ternary Opertator
+  //   condition ? true  :  false
+  return n <= 0
+    ? str
+    : str.substring(str.length - n, str.length) +
+        str.substring(0, str.length - n);
+}
 
 /*****************************************************************************/
 
@@ -38,4 +51,12 @@ const strB2 = "CDBA";
 const expected2 = false;
 // Explanation: all same letters in 2nd string, but out of order
 
-function isRotation(s1, s2) {}
+function isRotation(s1, s2) {
+  // if (s1.length !== s2.length || s1 === s2) return false;
+
+  // return (s1 + s1).includes(s2);
+
+  // syntatic sugar
+  return s1.length !== s2.length || s1 === s2 ? false : (s1 + s1).includes(s2);
+}
+

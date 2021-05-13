@@ -19,7 +19,13 @@ const str4 = "Hello World";
 const rotateAmnt4 = 4;
 const expected4 = "orldHello W";
 
-function rotateStr(str, n) {}
+function rotateStr(str, n){
+  var newString = str.split("");
+  console.log(newString)
+
+}
+console.log(rotateStr(str1,))
+}
 
 /*****************************************************************************/
 
