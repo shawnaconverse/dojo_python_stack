@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Edit a dog</h1>
+  <form action="/dogs/{{ dog.id }}/update" method="post">
+    <p>
+      Name: 
+      <input type="text" name="name" id="" value="{{ dog.name }}">
+    </p>
+    <p>
+      Age:
+      <input type="number" name="age" id="" value="{{ dog.age }}">
+    </p>
+    <p>
+      Hair Color:
+      <input type="text" name="hair_color" id="" value="{{ dog.hair_color }}">
+    </p>
+    <button>Update</button>
+  </form>
+  {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p style="color: red;">{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <a href="/">Cancel</a>
+</body>
+</html>

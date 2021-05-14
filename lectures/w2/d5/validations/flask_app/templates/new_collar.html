@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Create a New Collar</h1>
+  <form action="/collars/create" method="post">
+    <p>
+      Pick a Dog:
+      <select name="dog_id" id="">
+        {% for dog in all_dogs %}
+          <option value="{{ dog.id }}">{{ dog.name }}</option>
+        {% endfor %}
+      </select>
+    </p>
+    <p>
+      Color:
+      <input type="text" name="color" id="">
+    </p>
+    <button>Create Collar</button>
+  </form>
+  <a href="/">Cancel</a>
+</body>
+</html>
