@@ -22,7 +22,18 @@ const strA4 = "silent";
 const strB4 = "listen";
 const expected4 = true;
 
-function isAnagram(s1, s2) {}
+function isAnagram(s1, s2) {
+  /* toLowerCase() will convert the string to lower case, split will split the string into an array, 
+  sort will sort the letters in asc value, join rebuilds the string */
+  var y = s1.toLowerCase().split("").sort().join(""), z = s2.toLowerCase().split("").sort().join("");
+  console.log(z === y 
+      ? s1 + " and " + s2 + " are anagrams!"
+      : s1 + " and " + s2 + " are not anagrams."
+  );
+}
+
+isAnagram(strA2,strB2)
+
 
 /*****************************************************************************/
 
@@ -35,4 +46,22 @@ function isAnagram(s1, s2) {}
 const str1 = "   hello world     ";
 const expected1 = "hello world";
 
-function trim(str) {}
+function trim(str) {
+  /* trim() returns the string w/o extra whaite space */
+  console.log(str.trim())
+}
+
+function trim2(str) {
+  var tempStr = str.split(""), newStr="";
+  for (let ctr=0; ctr < str.length; ctr++) {
+    if (tempStr[ctr] != " ") {
+      newStr += str[ctr]
+    }
+  }
+}
+
+trim(str1);
+
+trim2(str1);
+
+

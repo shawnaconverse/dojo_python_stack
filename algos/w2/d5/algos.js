@@ -22,7 +22,9 @@ const strA4 = "silent";
 const strB4 = "listen";
 const expected4 = true;
 
-function isAnagram(s1, s2) {}
+function isAnagram(s1, s2) {
+  return s1.toLowerCase().split("").sort().join("") === s2.toLowerCase().split("").sort().join("");
+}
 
 /*****************************************************************************/
 
@@ -35,4 +37,21 @@ function isAnagram(s1, s2) {}
 const str1 = "   hello world     ";
 const expected1 = "hello world";
 
-function trim(str) {}
+function trim(str) {
+  let startIdx = 0;
+  let endIdx = str.length - 1;
+
+  // Falsy, empty string equates to False
+  // while (!str[startIdx])
+  while (str[startIdx] == false) {
+    startIdx++;
+  }
+
+  while (str[endIdx] == false) {
+    endIdx--;
+  }
+
+  return str.slice(startIdx, endIdx + 1);
+}
+
+      

@@ -22,7 +22,33 @@ const strA4 = "silent";
 const strB4 = "listen";
 const expected4 = true;
 
-function isAnagram(s1, s2) {}
+function isAnagram(s1, s2) {
+
+  function createCharMap(text) {
+      let charMap = {}
+
+      for (let char of text) {
+          if (charMap.hasOwnProperty(char)) {
+              charMap[char]++
+          } else {
+              charMap[char] = 1
+          }
+      }
+      return charMap
+  }
+  if (s1.length === s2.length) {
+      let s1Map = createCharMap(s1)
+      let s2Map = createCharMap(s2)
+      for (let char in s1Map) {
+          if (s1Map[char] !== s2Map[char]) {
+              return false
+          }
+      }
+      return true
+  } else {
+      return false
+  }
+}console.log (isAnagram("yes", "eys"));
 
 /*****************************************************************************/
 
