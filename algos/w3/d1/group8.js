@@ -12,7 +12,22 @@ const expected1 = true;
 const nums2 = [1, 2, 4, 2, 1];
 const expected2 = false;
 
-function balancePoint(nums) {}
+function balancePoint(nums) {
+  let right = 0
+  let left = 0
+  for(var i=0; i<nums.length; i++){
+    right+= arr[i];
+  }
+  for(var x=0; x<nums.length; x++){
+    left-= arr[x];
+    if(left === right){
+      return x
+    }
+    left += arr[x]
+  }
+  return false
+}
+console.log(balancePoint(1,2,3,4,10))
 
 /*****************************************************************************/
 

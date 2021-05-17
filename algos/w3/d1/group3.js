@@ -9,6 +9,7 @@ const nums1 = [1, 2, 3, 4, 10];
 const expected1 = true;
 // Explanation: between indices 3 & 4
 
+
 const nums2 = [1, 2, 4, 2, 1];
 const expected2 = false;
 
@@ -31,4 +32,18 @@ const expected1 = 2;
 const nums2 = [9, 9];
 const expected2 = -1;
 
-function balanceIndex(nums) {}
+function balanceIndex(nums) {
+
+leftSide = 0;
+rightSide = 0;
+for (var i = 0; i < nums.length; i++){
+  for (var j = 0; j < [i]; j++){
+    leftSide = nums[j]++
+    console.log(leftSide)
+  }
+  for (var x = [i] + 1; x < nums.length; x++){
+    rightSide++
+  }
+}
+}
+console.log(balanceIndex(nums1))

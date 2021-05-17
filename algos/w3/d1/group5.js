@@ -12,7 +12,30 @@ const expected1 = true;
 const nums2 = [1, 2, 4, 2, 1];
 const expected2 = false;
 
-function balancePoint(nums) {}
+function balancePoint(nums) {
+
+  var backary = [];
+  var forwardary = [];
+  for(var i = 1; i < nums.length; i++){
+      var backsum = 0;
+      var forwardsum = 0;
+      backary = nums.slice(0,i)
+      forwardary = nums.slice(i,nums.length)
+      for(var x = 0; x < backary.length; x++){
+          backsum+=backary[x]
+
+      }
+      for(var y = 0; y < forwardary.length; y++){
+          forwardsum+=forwardary[y]
+
+      }
+      if(backsum == forwardsum){
+          return true;
+      }
+  }
+  return false
+}
+
 
 /*****************************************************************************/
 
@@ -31,4 +54,27 @@ const expected1 = 2;
 const nums2 = [9, 9];
 const expected2 = -1;
 
-function balanceIndex(nums) {}
+function balanceIndex(nums) {
+  if(nums.length < 3) return -1;
+
+  var backary = [];
+  var forwardary = [];
+  for(var i = 1; i < nums.length; i++){
+      var backsum = 0;
+      var forwardsum = 0;
+      backary = nums.slice(0,i)
+      forwardary = nums.slice(i+1,nums.length)
+      for(var x = 0; x < backary.length; x++){
+          backsum+=backary[x]
+
+      }
+      for(var y = 0; y < forwardary.length; y++){
+          forwardsum+=forwardary[y]
+
+      }
+      if(backsum == forwardsum){
+          return i;
+      }
+  }
+  return -1
+}

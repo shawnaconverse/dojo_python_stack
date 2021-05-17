@@ -12,7 +12,24 @@ const expected1 = true;
 const nums2 = [1, 2, 4, 2, 1];
 const expected2 = false;
 
-function balancePoint(nums) {}
+function balancePoint(nums) {
+  let leftSum = 0
+  let rightSum = 0
+
+  for (let j = 0; j < nums.length; j++){
+      rightSum += nums[j]
+  }
+
+  for (let i = 0; i < nums.length; i++){
+      leftSum += nums[i];
+      rightSum -= nums[i];
+
+      if (leftSum == rightSum) return true;
+
+  }
+  return false
+}
+console.log(balancePoint(nums1));
 
 /*****************************************************************************/
 
@@ -31,4 +48,25 @@ const expected1 = 2;
 const nums2 = [9, 9];
 const expected2 = -1;
 
-function balanceIndex(nums) {}
+function balanceIndex(nums) {
+  if (nums.length < 3) return -1;
+
+  let leftSum = 0;
+  let rightSum = 0;
+
+  for (let j = 0; j < nums.length; j++){
+      rightSum += nums[j];
+  }
+
+  rightSum -= nums[0];
+
+  for (let i = 1; i < nums.length; i++){
+      leftSum += nums[i-1];
+      rightSum -= nums[i];
+
+      if (leftSum == rightSum) return 2
+  }
+  return -1
+}
+
+console.log(balanceIndex(nums1))

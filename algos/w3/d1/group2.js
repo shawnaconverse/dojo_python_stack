@@ -1,4 +1,4 @@
-/* 
+           /* 
   Balance Point
   Write a function that returns whether the given
   array has a balance point BETWEEN indices, 
@@ -6,13 +6,33 @@
 */
 
 const nums1 = [1, 2, 3, 4, 10];
-const expected1 = true;
+// const expected1 = true;
 // Explanation: between indices 3 & 4
 
-const nums2 = [1, 2, 4, 2, 1];
-const expected2 = false;
+// const nums2 = [1, 2, 4, 2, 1];
+// const expected2 = false;
 
-function balancePoint(nums) {}
+function balancePoint(nums) {
+  let sumLeft = 0;
+  let sumRight = 0;
+
+  for (let i=0; i < nums.length; i++) {
+    sumLeft += nums[i]
+    sumRight = 0;
+    console.log(sumLeft)
+    for (let j=i+1; j < nums.length; j++) {
+      sumRight += nums[j]
+      console.log(sumRight)    
+    }
+    if (sumLeft == sumRight) {
+      return true
+    }
+  }
+  return false
+}
+  
+balancePoint(nums1)
+
 
 /*****************************************************************************/
 
@@ -26,9 +46,33 @@ function balancePoint(nums) {}
 */
 
 const nums1 = [-2, 5, 7, 0, 3];
-const expected1 = 2;
+// const expected1 = 2;
 
-const nums2 = [9, 9];
-const expected2 = -1;
+// const nums2 = [9, 9];
+// const expected2 = -1;
 
-function balanceIndex(nums) {}
+function balanceIndex(nums) {
+  let sumLeft = 0;
+  let sumRight = 0;
+
+  if (nums.length < 3) {
+    return -1
+  }
+  
+  for (let i=0; i < nums.length; i++) {
+    sumLeft += nums[i]
+    sumRight = 0;
+    console.log(sumLeft)
+    for (let j=i+2; j < nums.length; j++) {
+      sumRight += nums[j]
+      console.log(sumRight)    
+    }
+  }
+  if (sumLeft == sumRight) {
+    return i
+  } else {
+    return -1
+  }
+}
+
+balanceIndex(nums1)

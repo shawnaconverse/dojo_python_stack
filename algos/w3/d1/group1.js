@@ -12,7 +12,24 @@ const expected1 = true;
 const nums2 = [1, 2, 4, 2, 1];
 const expected2 = false;
 
-function balancePoint(nums) {}
+function balancePoint(nums) {
+
+  var balanced = false
+  for(var i = 0; i < nums.length; i++){
+      var temp1 = nums.slice(0,i).reduce(function(a,b){
+          return a + b;}, 0)
+      var temp2 = nums.slice(i).reduce(function(a,b){
+          return a + b;}, 0)
+      if(temp1 == temp2){
+          balanced = true
+          return balanced
+      }
+  }
+  return balanced
+}
+
+console.log(balancePoint(nums1))
+console.log(balancePoint(nums2))
 
 /*****************************************************************************/
 
