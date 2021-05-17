@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Full Demo</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Welcome {{ user.first_name }} {{ user.last_name }}!</h1>
+      <div>
+        <a href="/ice_creams/new">Create</a>
+        <a href="/logout">Logout</a>
+      </div>
+    </div>
+    <div class="main">
+      <h3>These are your ice creams!</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Flavor</th>
+            <th>Cone</th>
+            <th>Sprinkles</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for ice_cream in user.ice_creams %}
+            <tr>
+              <td>{{ ice_cream.flavor }}</td>
+              <td>{{ ice_cream.cone }}</td>
+              <td>{% if ice_cream.sprinkles %}Yes{% else %}No{% endif %}</td>
+              <td>
+                <a href="/ice_creams/{{ ice_cream.id }}">View</a> | 
+                <a href="/ice_creams/{{ ice_cream.id }}/edit">Edit</a> | 
+                <a href="/ice_creams/{{ ice_cream.id }}/delete">Delete</a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

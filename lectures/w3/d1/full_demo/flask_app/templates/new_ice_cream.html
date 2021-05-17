@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Demo</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Hello {{ user.first_name }}, lets make an Ice Cream!</h1>
+      <div>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+      </div>
+    </div>
+    <form action="/ice_creams/create" method="post">
+      <p>
+        Flavor:
+        <input type="text" name="flavor" id="">
+      </p>
+      <p>
+        Cone Type:
+        <input type="text" name="cone" id="">
+      </p>
+      <p>
+        Sprinkles?
+        <input type="checkbox" name="sprinkles" id="sprinkles">
+      </p>
+      <button>Create</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p style="color: red;">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
+</body>
+</html>

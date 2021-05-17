@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Demo</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>{{ ice_cream.user.first_name }}'s Ice Cream!</h1>
+      <div>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+      </div>
+    </div>
+    <div class="main"> 
+      <p>Flavor: {{ ice_cream.flavor }}</p>
+      <p>Cone: {{ ice_cream.cone }}</p>
+      <p>Sprinkles?: {% if ice_cream.sprinkles %}Yes{% else %}No{% endif %}</p>
+    </div>
+  </div>
+</body>
+</html>
