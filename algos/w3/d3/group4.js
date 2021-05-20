@@ -14,7 +14,19 @@ const expected2 = [1, 2, 3];
 const nums3 = [1, 1, 2, 3, 3, 4];
 const expected3 = [1, 2, 3, 4];
 
-function dedupeSorted(nums) {}
+function dedupeSorted(nums) {
+  let dedup = 0;
+  let returnNums = [];
+  for (let i = 0; i < nums.length; i++){
+    dedup = nums[i];
+    if (dedup != nums[i+1]){
+      returnNums.push(dedup);
+    }
+    
+  }
+  return returnNums
+
+console.log(dedupeSorted(nums1))
 
 /*****************************************************************************/
 
@@ -45,4 +57,34 @@ const nums5 = [5, 1, 4, 1, 5];
 const expected5 = [5, 1];
 //  - order doesn't matter
 
-function mode(nums) {}
+function mode(nums) {
+  if (nums.length <= 1) {
+    return nums1;
+  }
+  var newObject = {};
+
+  for (char of nums) {
+
+    if (!newObject[char]) {
+    newObject[char]=1;
+    }
+    else {
+    newObject[char]++
+    }
+  }
+  console.log(newObject)
+  var newArray = []
+  var anotherObject = {}
+  var max = 0;
+  for (key in newObject) {
+    if (newObject[key] > max) {
+      max = newObject[key]
+    }
+    console.log('THIS IS MAX', max)
+    console.log(newObject[key])
+    console.log('THIS IS KEYS', Object.keys(newObject))
+  }
+}
+
+
+console.log(mode(nums4))

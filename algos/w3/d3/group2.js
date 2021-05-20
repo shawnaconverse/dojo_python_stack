@@ -14,7 +14,15 @@ const expected2 = [1, 2, 3];
 const nums3 = [1, 1, 2, 3, 3, 4];
 const expected3 = [1, 2, 3, 4];
 
-function dedupeSorted(nums) {}
+function dedupeSorted(nums) {
+  ary = []
+  for (var i = 0; i < nums.length; i++){
+    if(nums[i] != nums[i+1]){
+      ary.push(nums[i])
+    }
+  }
+  return ary
+}
 
 /*****************************************************************************/
 
@@ -45,4 +53,31 @@ const nums5 = [5, 1, 4, 1, 5];
 const expected5 = [5, 1];
 //  - order doesn't matter
 
-function mode(nums) {}
+function mode(nums) {
+  if (nums.length < 2) return nums;
+
+  var dict = {}
+  var new_array = []
+
+  for (var i = 0; i < nums.length; i++){
+    if(dict[nums[i]] in dict){
+      dict[nums[i]]++;
+    } else {
+      dict[nums[i]] = 1;
+    }
+  }
+  var highest = 0;
+  for(var [key,value] of Object.entries(dict)){
+      if(value > highest){
+        highest = value
+      }
+  }
+  for(var [key,value] of Object.entries(dict)){
+    if(value == highest){
+        if(!new_array.includes(value)){
+            new_array.push(parseInt(key))
+        }
+    }
+  }
+  return new_array;
+}

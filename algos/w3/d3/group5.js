@@ -14,7 +14,11 @@ const expected2 = [1, 2, 3];
 const nums3 = [1, 1, 2, 3, 3, 4];
 const expected3 = [1, 2, 3, 4];
 
-function dedupeSorted(nums) {}
+function dedupeSorted ( nums ) {
+    let uniqueChars = [ ...new Set( nums ) ];
+    console.log(uniqueChars)
+  }
+dedupeSorted(nums2)
 
 /*****************************************************************************/
 
@@ -43,6 +47,7 @@ const expected4 = [1];
 
 const nums5 = [5, 1, 4, 1, 5];
 const expected5 = [5, 1];
-//  - order doesn't matter
 
-function mode(nums) {}
+const mostFrequent = arr => Object.entries(arr.reduce((a, v) => {a[v] = a[v] ? a[v] + 1 : 1;return a;}, {})).reduce((a, v) => (v[1] >= a[1] ? v : a), [null, 0])[0];
+
+  console.log(mostFrequent(nums3)); 
