@@ -16,7 +16,36 @@ const expected3 = { nickel: 1, penny: 4 };
 const cents4 = 99;
 const expected4 = { quarter: 3, dime: 2, penny: 4 };
 
-function fewestCoinChange(cents) {}
+function fewestCoinChange(cents) {
+  const quarterValue = 25;
+  const dimeValue = 10;
+  const nickelValue = 5;
+  const pennyValue = 1;
+
+  var change = {}
+
+  if(cents >= quarterValue){
+    var quarter = Math.floor(cents/quarterValue);
+    change['quarter'] = quarter
+    cents %= quarterValue
+  }
+  if(cents >= dimeValue){
+    var dime = Math.floor(cents/dimeValue);
+    change['dime'] = dime
+    cents %= dimeValue
+  }
+  if(cents >= nickelValue){
+    var nickel = Math.floor(cents/nickelValue);
+    change['nickel'] = nickel
+    cents %= nickelValue
+  }
+  if(cents >= pennyValue){
+    var penny = Math.floor(cents/pennyValue);
+    change['penny'] = penny
+    cents %= pennyValue
+  }
+  return change
+}
 
 /*****************************************************************************/
 
@@ -34,4 +63,26 @@ const nums2 = [3, 0, 1, 2];
 const expected2 = null;
 // Explanation: nothing is missing
 
-function missingValue(unorderedNums) {}
+const nums3 = [9, 3, 6, 4, 8, 5, 2, 1, 0]
+const expected3 = 7
+
+
+
+function missingValue(unorderedNums) {
+  var missingNumber = 0;
+  for (var i = 0; i < unorderedNums.length; i++) {
+    for (var j = 0; j < unorderedNums.length; j++) {
+    
+    if (missingNumber == unorderedNums[j]) {
+      missingNumber += 1
+    }
+  }
+  }
+  if (missingNumber == unorderedNums.length) {
+    return null
+  }
+  console.log(missingNumber)
+  return missingNumber
+}
+
+console.log(missingValue(nums2))

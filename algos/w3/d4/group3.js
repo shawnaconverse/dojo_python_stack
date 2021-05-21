@@ -16,8 +16,44 @@ const expected3 = { nickel: 1, penny: 4 };
 const cents4 = 99;
 const expected4 = { quarter: 3, dime: 2, penny: 4 };
 
-function fewestCoinChange(cents) {}
+function fewestCoinChange(cents) {
+  coinBag = {
+      quarter: 0,
+      dime: 0,
+      nickel: 0,
+      penny: 0
+  }
 
+  while (cents >= 25){
+      coinBag.quarter++;
+      cents -= 25;
+  }
+
+  while (cents >= 10 ){
+      coinBag.dime++;
+      cents -= 10;
+  }
+
+  while (cents >= 5){
+      coinBag.nickel++;
+      cents -= 5
+  }
+
+  while (cents >= 1){
+      coinBag.penny++;
+      cents -= 1;
+  }
+
+  let cleanUp = Object.getOwnPropertyNames(coinBag);
+  for (let i = 0; i < cleanUp.length; i++){
+      if (coinBag[cleanUp[i]] === 0){
+          delete coinBag[cleanUp[i]]
+      }
+  }
+  return coinBag
+}
+
+console.log(fewestCoinChange(cents4))
 /*****************************************************************************/
 
 /* 
