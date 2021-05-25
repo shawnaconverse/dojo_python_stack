@@ -1,4 +1,4 @@
-/* 
++/* 
   Recursive Factorial
   Input: integer
   Output: integer, product of ints from 1 up to given integer
@@ -13,17 +13,45 @@
 */
 
 const num1 = 3;
-const expected1 = 6;
+// const expected1 = 6;
 // Explanation: 1*2*3 = 6
 
 const num2 = 6.8;
-const expected2 = 720;
+// const expected2 = 720;
 // Explanation: 1*2*3*4*5*6 = 720
 
-const num3 = 0;
-const expected3 = 1;
+// const num3 = 0;
+// const expected3 = 1;
 
-function factorial(n) {}
+function factorial(num) {
+  // if number is 0
+  let n = Math.floor(num)
+
+  if (n < 2) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+
+function factorial(num) {
+  if (num <= 1){
+    return 1
+  }
+  if (typeof(num) == 'number') {
+    num = Math.floor(num)
+    var numlist = []
+    for (let i = 1; i <= num; i++) {
+      numlist.push(i)
+    }
+    return factorial(numlist)
+  }
+  else {
+    return num[0] * factorial(num.slice(1, num.length))
+  }
+}
+
+console.log(factorial(num2))
 
 /*****************************************************************************/
 
@@ -37,6 +65,24 @@ function factorial(n) {}
 
 const num1 = 0;
 const expected1 = 0;
+
+function fibonacci(n) {
+    var fibArr = [0, 1];
+    for(var i=2; i<n; i++){
+        fibArr.push (fibArr[i-1] + fibArr[i-2]);
+    }
+    return fibArr;
+}
+console.log(fibonnacci(num1);
+
+function fibonacci(n) {
+  if(num < 2) {
+      return num;
+  }
+  else {
+      return fibonacci(n-1) + fibonacci(n-2);
+  }
+}
 
 const num2 = 1;
 const expected2 = 1;

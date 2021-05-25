@@ -23,14 +23,21 @@ const expected2 = 720;
 const num3 = 0;
 const expected3 = 1;
 
-function factorial(n) {}
+function factorial(n) {
+  // BASE CASE
+  if (n < 1) return 1;
+
+  n = Math.floor(n);
+  // RECURSIVE CALL WITH FORWARD PROGRESS
+  return n * factorial(n - 1);
+}
 
 /*****************************************************************************/
 
 /* 
   Return the fibonacci number at the nth position, recursively.
   
-  Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+  Fibonacci seqence 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
   The next number is found by adding up the two numbers before it,
   starting with 0 and 1 as the first two numbers of the sequence.
 */
@@ -53,4 +60,24 @@ const expected5 = 3;
 const num6 = 8;
 const expected6 = 21;
 
-function fibonacci(num) {}
+function fibonacci(num) {
+  // BASE CASE
+  if (num == 0) return 0;
+  if (num == 1) return 1;
+  // RECURSIVE CALL WITH FORWARD PROGRESS
+  return fibonacci(num - 1) + fibonacci(num - 2);
+}
+
+// Memoization
+// remembering values i've previously calculated
+function fibMemoized(n, memo = { 0: 0, 1: 1 }) {
+  // EDGE CASE
+  if (n < 0) return null;
+
+  // BASE CASE
+  if (memo[n] !== undefined) return memo[n];
+
+  memo[n] = fibMemoized(n - 1, memo) + fibMemoized(n - 2, memo);
+
+  return memo[n];
+}
