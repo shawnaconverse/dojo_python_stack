@@ -9,32 +9,36 @@
 */
 
 const nums1 = [1, 3, 5, 6];
-// const searchNum1 = 4;
+const searchNum1 = 4;
 // const expected1 = false;
 
 const nums2 = [4, 5, 6, 8, 12];
-// const searchNum2 = 5;
+const searchNum2 = 5;
 // const expected2 = true;
 
 const nums3 = [3, 4, 6, 8, 12];
-// const searchNum3 = 3;
+const searchNum3 = 3;
 // const expected3 = true;
 
 function binarySearch(sortedNums, searchNum) {
-  // BASE CASE
-  if (sortedNums.length == 0) return false;
+
+  if (sortedNums.length < 1) return false;
+
 
   var center = Math.floor(sortedNums.length/2)
 
+  //BASE CASE
   if(sortedNums[center] == searchNum) return true;
 
   if(sortedNums[center] > searchNum){
     return binarySearch(sortedNums.slice(0,center), searchNum)
   } 
   if(sortedNums[center] < searchNum){
-    return binarySearch(sortedNums.slice(center,sortedNums.length), searchNum)
+    return binarySearch(sortedNums.slice(center+1,sortedNums.length), searchNum)
   } 
-
-
-  
 }
+
+console.log(binarySearch(nums1,searchNum1))
+console.log(binarySearch(nums2,searchNum2))
+console.log(binarySearch(nums3,searchNum3))
+
