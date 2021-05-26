@@ -20,4 +20,22 @@ const nums3 = [3, 4, 6, 8, 12];
 const searchNum3 = 3;
 const expected3 = true;
 
-function binarySearch(sortedNums, searchNum) {}
+function binarySearch(sortedNums, searchNum) {
+  if (searchNum < sortedNums[0]) return false;
+  if (searchNum > sortedNums[sortedNums.length - 1]) return false;
+
+  var idx = Math.floor(sortedNums.length / 2);
+
+  if (sortedNums[idx] == searchNum) {
+    return true;
+  }
+
+  if (sortedNums[idx] > searchNum) {
+    return binarySearch(sortedNums.slice(0, idx), searchNum);
+  } else if (sortedNums[idx] < searchNum) {
+    return binarySearch(sortedNums.slice(idx + 1, ), searchNum);
+  }
+
+
+  
+}
