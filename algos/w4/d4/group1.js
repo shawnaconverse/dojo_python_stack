@@ -11,7 +11,12 @@ const expected1 = "cba";
 const str2 = "";
 const expected2 = "";
 
-function reverseStr(str) {}
+function reverseStr(str) {
+  if (str.length < 2) return str;
+
+  return str[str.length-1] + reverseStr(str.slice(0,str.length-1))
+
+}
 
 /*****************************************************************************/
 
@@ -33,7 +38,18 @@ const expected1 = 5;
 const num2 = 10;
 const expected2 = 1;
 
-const num3 = 25;
+const num3 = 254;
 const expected3 = 7;
 
-function sumToOneDigit(num) {}
+function sumToOneDigit(num) {
+  if (isNaN(num)) return NaN; 
+  if (num < 10) return num;
+
+  num = num.toString()
+  var sum = 0
+  for (var i = 0; i < num.length; i++){
+    sum += parseInt(num[i])
+  }
+  return sumToOneDigit(sum)
+}
+4

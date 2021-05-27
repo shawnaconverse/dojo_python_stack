@@ -11,8 +11,26 @@ const expected1 = "cba";
 const str2 = "";
 const expected2 = "";
 
-function reverseStr(str) {}
+function reverseStr( str ) {
 
+  return str ? reverseStr( str.substr( 1 ) ) + str[ 0 ] : str;
+}
+console.log( reverseStr( str1 ) )
+/*
+possible second answer....
+
+function reverseStr(str) {
+  var splitString = str.split("");
+  var reverseArray = splitString.reverse();
+  var joinArray = reverseArray.join("");
+  return joinArray;
+}
+console.log("string 1 = " + reverseStr(str1))
+console.log("string 2 = " + reverseStr(str2))
+*/
+  // Base Case
+  // Forward Progress
+  // Recursive Calli
 /*****************************************************************************/
 
 /*
@@ -37,3 +55,15 @@ const num3 = 25;
 const expected3 = 7;
 
 function sumToOneDigit(num) {}
+
+// what happens if the input number was 3, 4, 1000 digits long? - Shawn
+function sumToOneDigit(num) {
+  return num.toString().split("").reduce(function(a, b){
+    return parseInt(a) + parseInt(b);
+  });
+}
+
+console.log(sumToOneDigit(5)); 
+console.log(sumToOneDigit(10));
+console.log(sumToOneDigit(25));
+
