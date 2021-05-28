@@ -3,14 +3,14 @@
   return the integers all under ONE array.
 */
 
-const arr1 = [1, 2, 3, 4, 5, 6];
-const expected1 = [1, 2, 3, 4, 5, 6];
+// const arr1 = [1, 2, 3, 4, 5, 6];
+// const expected1 = [1, 2, 3, 4, 5, 6];
 
 const arr2 = [1, 2, [4, 5], 6];
-const expected2 = [1, 2, 4, 5, 6];
+// const expected2 = [1, 2, 4, 5, 6];
 
-const arr3 = [1, 2, [3, 4, [5]], 6];
-const expected3 = [1, 2, 3, 4, 5, 6];
+// const arr3 = [1, 2, [3, 4, [5]], 6];
+// const expected3 = [1, 2, 3, 4, 5, 6];
 
 /* 
   Two useful built in functions:
@@ -23,4 +23,36 @@ const expected3 = [1, 2, 3, 4, 5, 6];
     - arr1.concat(arr2) => [1, 2, 3, 4, 5, 6, 1, 2, [4, 5], 6]
 */
 
-function recursiveFlatten(arr) {}
+// FYI this is not a group file, this is the main algos file :D
+
+function recursiveFlatten(arr) {
+  if (!Array.isArray(arr)) return arr;
+
+  let returnArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      returnArr = returnArr.concat(recursiveFlatten(arr[i]));
+    } else {
+      returnArr.push(arr[i]);
+    }
+  }
+  
+  return returnArr;
+}
+
+function recursiveFlattenWithFlat(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i]) == true) {
+      arr = arr.flat();
+      console.log(arr);
+      return recursiveFlatten(arr);
+    }
+  }
+}
+
+function recursiveFlattenWithFlatOneLine(arr) {
+  return arr.flat(Infinity);
+}
+
+recursiveFlatten(arr2);

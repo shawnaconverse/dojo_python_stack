@@ -22,5 +22,13 @@ const expected3 = [1, 2, 3, 4, 5, 6];
   Array.concat() : concatenates two arrays together
     - arr1.concat(arr2) => [1, 2, 3, 4, 5, 6, 1, 2, [4, 5], 6]
 */
-
-function recursiveFlatten(arr) {}
+function recursiveFlatten ( arr ) {
+  for ( var i = 0; i < arr.length; i++ ){
+    if ( Array.isArray( arr[i] ) == true ) {
+      arr = arr.flat()
+      console.log(arr)
+      return recursiveFlatten( arr )
+    } 
+  }
+}
+console.log(recursiveFlatten(arr3))
