@@ -18,6 +18,13 @@
       {% endif %}
     {% endfor %}
   </ul>
+  <ul>
+    {% for toy in dog.toys %}
+      {% if toy.name != None%}
+        <li>{{ toy.name }}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
   <a href="/">Home</a>
 </body>
 </html>

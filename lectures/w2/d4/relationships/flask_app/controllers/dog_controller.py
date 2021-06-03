@@ -21,7 +21,7 @@ def display_dog(dog_id):
     #     "id": dog_id
     # }
     # this_dog = Dog.get_one_dog(data)
-    this_dog = Dog.get_dog_with_collars({"id": dog_id})
+    this_dog = Dog.get_dog_with_collars_and_toys({"id": dog_id})
 
     return render_template("dog.html", dog = this_dog)
 

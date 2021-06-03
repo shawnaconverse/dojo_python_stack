@@ -13,6 +13,7 @@ const nums2 = [1, 2, 4, 2, 1];
 const expected2 = false;
 
 function balancePoint(nums) {
+
   let leftSum = 0
   let rightSum = 0
 
@@ -64,7 +65,7 @@ function balanceIndex(nums) {
       leftSum += nums[i-1];
       rightSum -= nums[i];
 
-      if (leftSum == rightSum) return 2
+      if (leftSum == rightSum) return i
   }
   return -1
 }

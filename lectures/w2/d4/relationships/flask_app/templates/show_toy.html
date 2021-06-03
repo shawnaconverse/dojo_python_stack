@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>{{ toy.name }}</h1>
+    <ul>
+      {% for dog in toy.dogs %}
+        {% if dog.name != None%}
+          <li>{{ dog.name }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    <h2>Add a Dog!</h2>
+    <form action="/toys/{{ toy.id }}/add_dog" method="post">
+      <select name="dog_id" id="">
+        {% for dog in all_dogs %}
+          <option value="{{ dog.id }}">{{ dog.name }}</option>
+        {% endfor %}
+      </select>
+      <button>Add Dog</button>
+    </form>
+  </div>
+  <a href="/toys">Go Back to Toys</a>
+</body>
+</html>

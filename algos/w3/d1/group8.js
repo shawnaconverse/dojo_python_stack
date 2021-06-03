@@ -16,16 +16,15 @@ function balancePoint(nums) {
   let right = 0
   let left = 0
   for(var i=0; i<nums.length; i++){
-    right+= arr[i];
+    right+= nums[i];
   }
-  for(var x=0; x<nums.length; x++){
-    left-= arr[x];
+  for(var x=0; x<nums.length x>0; x--){
+    left+= [x];
+    right-=nums[x]
     if(left === right){
       return x
-    }
-    left += arr[x]
-  }
-  return false
+    } 
+    return false 
 }
 console.log(balancePoint(1,2,3,4,10))
 

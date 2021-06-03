@@ -1,6 +1,7 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 
 from ..models.collar import Collar
+from ..models import toy
 
 class Dog:
     def __init__(self, data):
@@ -12,6 +13,7 @@ class Dog:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.collars = []
+        self.toys = []
 
     
     @classmethod
@@ -58,6 +60,26 @@ class Dog:
 
         return dog
 
+    
+    @classmethod
+    def get_dog_with_collars_and_toys(cls, data):
+        query = "SELECT * FROM dogs LEFT JOIN dogs_has_toys ON dogs.id = dogs_has_toys.dog_id " \
+            "LEFT JOIN toys ON toys.id = dogs_has_toys.toy_id WHERE dogs.id = %(id)s;"
+        results = connectToMySQL("dogs_schema").query_db(query, data)
+        dog_with_collars = cls.get_dog_with_collars(data)
+        return_dog = cls(results[0])
+
+        return_dog.collars = dog_with_collars.collars
+        for row in results:
+            data = {
+                "id": row['toys.id'],
+                "name": row['toys.name'],
+                "created_at": row['toys.created_at'],
+                "updated_at": row['toys.updated_at']
+            }
+            return_dog.toys.append(toy.Toy(data))
+        
+        return return_dog
 
     @classmethod
     def create(cls, data):
