@@ -99,4 +99,117 @@ if 24 == 17 and 24 > 25:
     print("do something else")
 
 
+print("=" * 80)
+
+
+# Loop
+# a repeating code block
+# for
+dog_names = ["vicky", "leia", "shiro", "fudge", "phylo"]
+
+# range(start, stop, step)
+# range(start, stop) # default step is 1
+# range(stop) # default start is 0
+# for range function, stop is exclusive
+for i in range(len(dog_names)):
+    print(dog_names[i])
+
+for name in dog_names:
+    print(name)
+
+
+# while
+# when we dont know when we need to stop
+# condition is not met
+num = 0
+while num < 10:
+    print("bork")
+    num += 1
+
+print("=" * 80)
+
+dogs = [
+    {"name": "Vicky", "age": 3, "hair_color": "brown and white"},
+    {"name": "Leia", "age": 0, "hair_color": "red and white"},
+    {"name": "Shiro", "age": 9, "hair_color": "white"},
+    {"name": "Fudge", "age": 16, "hair_color": "black"},
+    {"name": "phylo", "age": 5, "hair_color": "silver and orange"}
+]
+
+print(dogs[1]['age'])
+
+for dog in dogs:
+    print(f"Dog name: {dog['name']}")
+
+print()
+print()
+print("=" * 80)
+print()
+print()
+
+
+# Functions
+
+a = 42
+b = 56
+c = a + b
+print(c)
+
+
+a = 14
+b = 73
+c = a + b
+print(c)
+
+
+a = 4321
+b = -7
+c = a + b
+print(c)
+
+# Define
+def add_two_things(num1, num2):
+    sum = num1 + num2
+    print(sum)
+
+# Call - Invoke
+add_two_things(42, 56)
+add_two_things(14, 72)
+add_two_things(4321, -7)
+
+print()
+print("=" * 80)
+print()
+
+def add_two_things2(num1, num2):
+    sum = num1 + num2
+    return sum
+
+another_var = add_two_things2(35, add_two_things2(7, 12))
+print(another_var)
+# add_two_things2(35)
+
+# Default Parameters and Named Arguments
+def greet(name = "", repeat = 2):
+    print(f"Good Morning {name}!\n" * repeat)
+
+greet()
+greet("shawn")
+greet("shawn", 5)
+
+greet(repeat = 5, name = "shawn")
+greet(repeat = 7, name = "Jim")
+greet(name = "Jin", repeat = 2)
+
+
+def make_bank_account(name, int_rate = 0.05, balance = 0):
+    pass # do nothing
+
+make_bank_account("1st branch of Converse")
+make_bank_account("17th branch of Natan", .1, 10000)
+
+
+
+
+
 

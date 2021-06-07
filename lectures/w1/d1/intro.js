@@ -28,3 +28,21 @@ if ("42" == 42) {
   console.log("monster hunter")
 }
 
+// Loops
+// for
+var arr = ["vicky", "leia", "shiro", "fudge", "phylo"]
+
+// for (var hotdogs = 0; hotdogs < arr.length; hotdogs++) {
+//   console.log(arr[hotdogs])
+// }
+
+for (const name of arr) {
+  console.log(name)
+}
+
+// while
+var num = 0
+while (num < 10) {
+  console.log("woof")
+  num++;
+}
