@@ -1,7 +1,7 @@
-/* 
+/*
 	Acronyms
-	Create a function that, given a string, returns the string’s acronym 
-	(first letter of each word capitalized). 
+	Create a function that, given a string, returns the string’s acronym
+	(first letter of each word capitalized).
 	Do it with .split first if you need to, then try to do it without
 */
 
@@ -11,11 +11,27 @@ const expected1 = "TNFL-GPYW";
 const str2 = "Live from New York, it's Saturday Night!";
 const expected2 = "LFNYISN";
 
-function acronymize(str) {}
+function acronymize(str) {
+  // SETUP
+	var acronym = "";
+	var wordsArr = str.split(" ");
+
+  // WORK
+	for (var word of wordsArr) {
+		// a string is an array of characters
+    if (word[0] != ""){
+		  acronym += word[0].toUpperCase();
+    }
+	}
+
+  // RETURN
+	return acronym;
+}
+
 
 /*****************************************************************************/
 
-/* 
+/*
 	String: Reverse
 	Given a string,
 	return a new string that is the given string reversed
@@ -27,4 +43,21 @@ const expected1 = "erutaerc";
 const str2 = "dog";
 const expected2 = "god";
 
-function reverseString(str) {}
+function reverseString(str) {
+	// SETUP
+	var reversed = "";
+
+	// WORK
+	for (var i = str.length - 1; i >= 0; i--) {
+		reversed += str[i];
+	}
+
+	// RETURN
+	return reversed;
+}
+
+function reverseString2(str) {
+	return str.split("").reverse().join("");
+}
+
+
