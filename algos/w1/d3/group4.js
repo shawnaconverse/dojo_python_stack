@@ -1,4 +1,4 @@
-/* 
+/*
   Parens Valid
 	Given an str that has parenthesis in it
 	return whether the parenthesis are valid
@@ -19,11 +19,34 @@ const str4 = "a(b))(c";
 const expected4 = false;
 // Explanation: same number of opens and closes but the 2nd closing closes nothing
 
-function parensValid(str) {}
+function parensValid(str) {
+  var count = 0;
+  for (var i = 0; i < str.length; i++) {
+
+    if (str[i] === "(") {
+      count++;
+      
+    } else if (str[i] === ")") {
+
+      count--;
+      if(count < 0){
+        return false;
+      }
+    }
+  }
+  if (count != 0) {
+    console.log(false);
+  } else {
+    console.log(true);
+  }
+  return count;
+}
+
+parensValid(str2);
 
 /*****************************************************************************/
 
-/* 
+/*
   Braces Valid
   Given a string sequence of parentheses, braces and brackets, determine whether it is valid. 
 */
@@ -37,4 +60,33 @@ const expected2 = false;
 const str3 = "A(1)s[O (n]0{t) 0}k";
 const expected3 = false;
 
-function bracesValid(str) {}
+function parensValid(str) {
+  var count = 0;
+  var innerCount = 0;
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] === "(" || "{" || "[") {
+      count++;
+    } else if (str[i] === ")" || "}" || "]") {
+      count--;
+    }
+        if (str[i] === "(" || "{" || "[") {
+          innerCount++;
+        } else if (str[i] === ")" || "}" || "]") {
+          innerCount--;
+        }
+        if (innerCount != 0) {
+          console.log(false);
+        } else {
+          console.log(true);
+        }
+        return count;
+      }
+  }
+  if (count != 0) {
+    console.log(false);
+  } else {
+    console.log(true);
+  }
+
+
+parensValid(str2);

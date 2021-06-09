@@ -29,12 +29,24 @@ function parensValid(str) {}
 */
 
 const str1 = "W(a{t}s[o(n{ c}o)m]e )h[e{r}e]!";
-const expected1 = true;
+// const expected1 = true;
 
 const str2 = "D(i{a}l[ t]o)n{e";
-const expected2 = false;
+// const expected2 = false;
 
 const str3 = "A(1)s[O (n]0{t) 0}k";
-const expected3 = false;
+// const expected3 = false;
 
-function bracesValid(str) {}
+function bracesValid(str) {
+  var sbracket = [];
+  var paren1 = "(";
+  var paren2 = ")";
+  for (var paren1 in str) {
+    sbracket.pop();
+  }
+  if (sbracket.length == 0) {
+    console.log("correct" + sbracket);
+  } else {
+    console.log("incorrect" + sbracket);
+  }
+}

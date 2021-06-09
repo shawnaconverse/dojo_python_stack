@@ -1,4 +1,4 @@
-/* 
+/*
   Parens Valid
 	Given an str that has parenthesis in it
 	return whether the parenthesis are valid

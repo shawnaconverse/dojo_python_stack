@@ -19,7 +19,25 @@ const str4 = "a(b))(c";
 const expected4 = false;
 // Explanation: same number of opens and closes but the 2nd closing closes nothing
 
-function parensValid(str) {}
+function parensValid(str) {
+  var countOpen = 0;
+  var countClose = 0;
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] == ")") {
+      countClose += 1;
+    } else if (str[i] == "(") {
+      countOpen += 1;
+    }
+    if (countClose > countOpen) {
+      return false;
+    }
+  }
+  if (countOpen == countClose) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 /*****************************************************************************/
 
@@ -36,5 +54,41 @@ const expected2 = false;
 
 const str3 = "A(1)s[O (n]0{t) 0}k";
 const expected3 = false;
-
-function bracesValid(str) {}
+// for loop through the entire string
+// if we encounter a close first return false
+// either a while loop or for loop where we start tracking conditions when we encounter at open
+// 
+function bracesValid(str) { // doesn't work for improper groupings
+  var ref = {
+    "(":0,
+    "[":0,
+    "{":0,
+    ")":0,
+    "]":0,
+    "}":0,
+  }
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] == "(") {
+      ref["("] += 1;
+    } else if (str[i] == "[") {
+      ref["["] += 1;
+    } else if (str[i] == "{") {
+      ref["{"] += 1;
+    } else if (str[i] == ")") {
+      ref[")"] += 1
+    } else if (str[i] == "]") {
+      ref["]"] += 1;
+    } else if (str[i] == "}") {
+      ref["}"] += 1;
+    }
+    if (ref[")"] > ref["("] || ref["]"] > ref["["] || ref["}"] > ref["{"]) {
+      return false;
+    }
+  }
+  if (ref["("] == ref[")"] && ref["["] == ref["]"] && ref["{"] == ref["}"]) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}

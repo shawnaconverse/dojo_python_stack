@@ -19,7 +19,25 @@ const str4 = "a(b))(c";
 const expected4 = false;
 // Explanation: same number of opens and closes but the 2nd closing closes nothing
 
-function parensValid(str) {}
+function parensValid(str) {
+  let rightParen = 0;
+  let leftParen = 0;
+  for (let letter of str) {
+    if (rightParen > leftParen) {
+      return false;
+    } else {
+      if (letter === "(") {
+        ++leftParen;
+      } else if (letter === ")") {
+        ++rightParen;
+      }
+    }
+  }
+  if (leftParen === rightParen) {
+    return true;
+  }
+  return false;
+}
 
 /*****************************************************************************/
 
@@ -37,4 +55,15 @@ const expected2 = false;
 const str3 = "A(1)s[O (n]0{t) 0}k";
 const expected3 = false;
 
-function bracesValid(str) {}
+const str4 = "a(1{2}{3 3})";
+
+function bracesValid(str) {
+  let counter = 0
+  let strArr = str.split("");
+
+  for (let letter of strArr) {
+    if (letter === {) {
+    } else {
+    }
+  }
+}

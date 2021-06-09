@@ -19,8 +19,25 @@ const str4 = "a(b))(c";
 const expected4 = false;
 // Explanation: same number of opens and closes but the 2nd closing closes nothing
 
-function parensValid(str) {}
-
+function parensValid(str) {
+  let counter = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === "(") {
+      counter++;
+    } else if (str[i] === ")") {
+      counter--;
+      if (counter < 0) {
+        return false;
+      }
+    }
+    
+  }
+  if (counter != 0) {
+    return false;
+  } else {
+    return true;
+  }
+}
 /*****************************************************************************/
 
 /* 
@@ -37,4 +54,44 @@ const expected2 = false;
 const str3 = "A(1)s[O (n]0{t) 0}k";
 const expected3 = false;
 
-function bracesValid(str) {}
+function bracesValid(str) {
+  let parencounter = 0;
+  let bracketcounter = 0;
+  let bracescounter = 0;
+  let openSequence = [];
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === "(") {
+      parencounter++;
+      openSequence.push("(");
+    } else if (str[i] === ")") {
+      parencounter--;
+      if (openSequence.length === 0 || openSequence.pop() != "(") {
+        return false;
+      }
+    } else if (str[i] === "[") {
+      bracketcounter++;
+      openSequence.push("[");
+    } else if (str[i] === "]") {
+      bracketcounter--;
+      if (openSequence.length === 0 || openSequence.pop() != "[") {
+        return false;
+      }
+    } else if (str[i] === "{") {
+      bracescounter++;
+      openSequence.push("{");
+    } else if (str[i] === "}") {
+      bracescounter--;
+      if (openSequence.length === 0 || openSequence.pop() != "{") {
+        return false;
+      }
+    }
+    if (parencounter < 0 || bracketcounter < 0 || bracescounter < 0) {
+      return false;
+    }
+  }
+  if (parencounter != 0 || bracketcounter != 0 || bracescounter != 0) {
+    return false;
+  } else {
+    return true;
+  }
+}
