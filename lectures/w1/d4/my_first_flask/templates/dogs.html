@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x' crossorigin='anonymous'>
+  <style>
+    h1 {
+      color: {{ color }};
+    }
+  </style> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+  
+</head>
+<body>
+  <h1>Here are my dogs!</h1>
+  <img src="{{ url_for('static', filename = 'img/IMG_1592.jpg') }}" alt="">
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Hair Color</th>
+      <th>Favorite Toy</th>
+    </tr>
+    {% for dog in dog_names %}
+    <tr>
+        <td>{{ dog["name"] }}</td>
+        <td>{{ dog["age"] }}</td>
+        <td>{{ dog["hair_color"] }}</td>
+        <td>{{ dog["favorite_toy"] }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  <script src="{{ url_for('static', filename = 'js/script.js') }}"></script>
+</body>
+</html>
