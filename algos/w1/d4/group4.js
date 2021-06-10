@@ -2,7 +2,7 @@
   String: Is Palindrome
   Create a function that returns a boolean whether the string is a strict palindrome. 
     - palindrome = string that is same forwards and backwards
-  
+
   Do not ignore spaces, punctuation and capitalization
  */
 
@@ -18,7 +18,36 @@ const expected3 = false;
 const str4 = "oho!";
 const expected4 = false;
 
-function isPalindrome(str) {}
+function isPalindrome(str) {
+  for (const i = 0; i < str.length; i++) {
+    let j = str.length - 1 - i;
+    if (str[i] !== str[str.length - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isPalindrome(str1));
+console.log(isPalindrome(str2));
+console.log(isPalindrome(str3));
+console.log(isPalindrome(str4));
+
+// function isPalindrome(str) {
+//   for (const i = 0; i < str.length / 2; i++) {
+//     let j = str.length - 1 - i;
+//     if (str[i] !== str[str.length - 1 - i]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+//THE ONE LINER WORKS--RICK
+// AWESOME!! -Mark
+function isPalindrome(str) {
+  return str.split("").reverse().join("") === str;
+}
 
 /*****************************************************************************/
 
@@ -39,4 +68,16 @@ const expected2 = "u";
 const str3 = "Yikes! my favorite racecar erupted!";
 const expected3 = "e racecar e";
 
-function longestPalindromicSubstring(str) {}
+function longestPalindromicSubstring(str) {
+  for (let i = str.length - 1; i > 0; i++) {
+    for (let j = 0; j < str.length - i; j++) {
+      if (isPalindrome(str.substring(j, j + i))) {
+        return str.substring(j, j + i);
+      }
+    }
+  }
+}
+
+longestPalindromicSubstring(str1);
+longestPalindromicSubstring(str2);
+longestPalindromicSubstring(str3);

@@ -18,7 +18,27 @@ const expected3 = false;
 const str4 = "oho!";
 const expected4 = false;
 
-function isPalindrome(str) {}
+function isPalindrome(str) {
+  for (var i= 0; i<Math.ceil(str.length/2); i++) {
+    if (str[i] != str[str.length-1-i]) {
+      return false
+    }
+  }
+  return true
+}
+
+console.log(isPalindrome(str1))
+console.log(isPalindrome(str2))
+console.log(isPalindrome(str3))
+console.log(isPalindrome(str4))
+
+
+steps:
+// 1. check first word going forward
+2. iterate through a for loop
+3. how to find middle? or half? .length 
+
+
 
 /*****************************************************************************/
 

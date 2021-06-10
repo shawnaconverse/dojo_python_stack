@@ -18,8 +18,18 @@ const expected3 = false;
 const str4 = "oho!";
 const expected4 = false;
 
-function isPalindrome(str) {}
-
+function isPalindrome(str) {
+  let mid = Math.floor(str.length / 2);
+  var i = 0;
+  while (i < mid) {
+    if (str[i] != str[str.length - 1 - i]) {
+      return false;
+    }
+    i += 1;
+  }
+  return true;
+}
+isPalindrome(str3);
 /*****************************************************************************/
 
 /* 

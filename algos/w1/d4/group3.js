@@ -1,8 +1,8 @@
-/* 
+/*
   String: Is Palindrome
   Create a function that returns a boolean whether the string is a strict palindrome. 
     - palindrome = string that is same forwards and backwards
-  
+
   Do not ignore spaces, punctuation and capitalization
  */
 
@@ -18,11 +18,22 @@ const expected3 = false;
 const str4 = "oho!";
 const expected4 = false;
 
-function isPalindrome(str) {}
-
+function isPalindrome(str) {
+  //set up
+  var reverse = "";
+  for (var i = str.length - 1; i >= 0; i--) {
+    reverse += str[i];
+  }
+  if (reverse == str) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(isPalindrome(str4));
 /*****************************************************************************/
 
-/* 
+/*
     Longest Palindrome
     For this challenge, we will look not only at the entire string provided, but also at the substrings within it. Return the longest palindromic substring. 
     Strings longer or shorter than complete words are OK.

@@ -18,7 +18,14 @@ const expected3 = false;
 const str4 = "oho!";
 const expected4 = false;
 
-function isPalindrome(str) {}
+function isPalindrome(str) {
+  for (let i = 0; i < str.length / 2; i++) {
+    if (str[i] != str[str.length - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+}
 
 /*****************************************************************************/
 
@@ -30,13 +37,23 @@ function isPalindrome(str) {}
     a, ab, abc, b, bc, c
 */
 
-const str1 = "what up, daddy-o?";
+const str5 = "what up, daddy-o?";
 const expected1 = "dad";
 
-const str2 = "uh, not much";
+const str6 = "uh, not much";
 const expected2 = "u";
 
-const str3 = "Yikes! my favorite racecar erupted!";
+const str7 = "Yikes! my favorite racecar erupted!";
 const expected3 = "e racecar e";
 
-function longestPalindromicSubstring(str) {}
+function longestPalindromicSubstring(str) {
+  for (let i = 0; i < str.length; i++) {
+    for (let j = 0; j < str.length; j++) {
+      let sliced = str.slice(i, j + 1);
+      let foundPalindrome = isPalindrome(sliced);
+      if (foundPalindrome) {
+      }
+    }
+  }
+}
+longestPalindromicSubstring(str5);
