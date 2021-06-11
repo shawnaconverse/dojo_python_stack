@@ -25,7 +25,16 @@ const arr5 = [];
 const separator5 = ", ";
 const expected5 = "";
 
-function join(arr, separator) {}
+function join(arr, separator) {
+  let joinedStr = "";
+  for (var i = 0; i < arr.length; i++) {
+    joinedStr += arr[i];
+    if (arr[i + 1]) {
+      joinedStr += separator;
+    }
+  }
+  return joinedStr;
+}
 
 /*****************************************************************************/
 
@@ -38,4 +47,42 @@ function join(arr, separator) {}
 const nums1 = [1, 13, 14, 15, 37, 38, 70];
 const expected1 = "1, 13-15, 37-38, 70";
 
-function bookIndex(nums) {}
+function bookIndex(nums) {
+  // SETUP
+  var str = "";
+
+  // WORK
+  // We need to loop over the array
+  for (var i = 0; i < nums.length; i++) {
+    // assign a second pointer, j, to the element after i
+    var j = i + 1;
+
+    // Check to see if there is a range between j and i
+    // if there is a range, I need to push j forward to look for the
+    // end of the range
+    // looking at j, and the element before j, and seeing if there is a difference of 1
+    while (nums[j] === nums[j - 1] + 1) {
+      j++; // j will end one index beyond the end of the range
+    }
+
+    // if j is equal to i + 1, then i dont have a range
+    if (j === i + 1) {
+      str += nums[i];
+    }
+
+    // if j is greater than i + 1, then we have found a range
+    // j is one index beyond the end of the range
+    if (j > i + 1) {
+      str += nums[i] + "-" + nums[j - 1];
+      i = j - 1;
+    }
+
+    // if i is not at nums.length - 1, then append the comma
+    if (i < nums.length - 1) {
+      str += ", ";
+    }
+  }
+
+  // RETURN
+  return str;
+}

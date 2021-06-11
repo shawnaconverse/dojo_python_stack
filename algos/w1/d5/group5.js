@@ -25,7 +25,23 @@ const arr5 = [];
 const separator5 = ", ";
 const expected5 = "";
 
-function join(arr, separator) {}
+function join(arr, separator) {
+  let joinedStr = "";
+  for (var i = 0; i < arr.length; i++) {
+      joinedStr += arr[i];
+      if (arr[i + 1]) {
+          joinedStr += separator;
+      }
+  }
+  return joinedStr;
+}
+
+console.log(join(arr1, separator1))
+console.log(join(arr2, separator2))
+console.log(join(arr3, separator3))
+console.log(join(arr4, separator4))
+console.log(join(arr5, separator5))
+
 
 /*****************************************************************************/
 
@@ -38,4 +54,40 @@ function join(arr, separator) {}
 const nums1 = [1, 13, 14, 15, 37, 38, 70];
 const expected1 = "1, 13-15, 37-38, 70";
 
-function bookIndex(nums) {}
+function bookIndex(nums) {
+  
+}
+const arr1 = [1, 2, 3];
+const separator1 = ", ";
+const expected1 = "1, 2, 3";
+
+const arr2 = [1, 2, 3];
+const separator2 = "-";
+const expected2 = "1-2-3";
+
+const arr3 = [1, 2, 3];
+const separator3 = " - ";
+const expected3 = "1 - 2 - 3";
+
+const arr4 = [1];
+const separator4 = ", ";
+const expected4 = "1";
+
+const arr5 = [];
+const separator5 = ", ";
+const expected5 = "";
+
+function join(arr, separator) {
+  var newStr = "";
+  for (var i = 0; i < arr.length; i++) {
+    newStr += arr[i]
+    if (arr[i+1]){
+        newStr += separator;
+    }
+  }
+  return newStr;
+}
+    console.log(join(arr1, separator1));
+    console.log(join(arr2, separator2));
+    console.log(join(arr3, separator3));
+    console.log(join(arr4, separator4));

@@ -25,7 +25,23 @@ const arr5 = [];
 const separator5 = ", ";
 const expected5 = "";
 
-function join(arr, separator) {}
+function join(arr, separator) {
+  var str = "";
+  for (idx in arr) {
+    if (idx < arr.length - 1) {
+      str += arr[idx] + separator;
+    } else {
+      str += arr[idx];
+    }
+  }
+  console.log(str);
+  return str;
+}
+join(arr1, separator1);
+join(arr2, separator2);
+join(arr3, separator3);
+join(arr4, separator4);
+join(arr5, separator5);
 
 /*****************************************************************************/
 
@@ -36,6 +52,53 @@ function join(arr, separator) {}
 */
 
 const nums1 = [1, 13, 14, 15, 37, 38, 70];
+
 const expected1 = "1, 13-15, 37-38, 70";
 
-function bookIndex(nums) {}
+function bookIndex(nums) {
+  var str = "";
+  var seq = [];
+  var ptr = 0;
+  while (ptr<nums.length){
+    var expected = nums[ptr]+1;
+    if(nums[ptr+1]==expected){
+      seq.push(nums[ptr])
+    }
+    if(nums[ptr+1]!=expected && seq.length>0){
+      seq.push(nums[ptr])
+      str+=seq[0]+"-"+seq[seq.length-1]+", "
+      seq=[]
+    }
+    else if(nums[ptr+1]!=expected && ptr!=nums1.length-1){
+      str+=nums[ptr]+", "
+    }
+    else if(nums[ptr+1]!=expected  && ptr==nums1.length-1){
+      str+=nums[ptr]
+    }
+    ptr+=1
+  }
+  console.log(str)
+  return str;
+}
+bookIndex(nums1)
+
+
+
+
+
+function bookpages(nums){
+  return nums.split([]).join([])==nums
+}
+
+
+function bookIndex(nums) {
+  for (let i = nums.length - 1; i > 0; i--){
+    for ( let j = 0; j < nums.length - i; j++){
+      if (bookpages(nums.subarr(j, j + i))) {
+        return nums.subarr(j, j + i);
+      }
+    }
+  }
+}
+
+console.log(bookIndex(nums1));

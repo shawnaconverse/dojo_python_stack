@@ -13,6 +13,24 @@ const arr2 = [1, 2, 3];
 const separator2 = "-";
 const expected2 = "1-2-3";
 
+var t =""
+
+for (var i=0; i<arr.length; i++){
+    t += arr[i]
+
+
+}
+
+
+
+
+// PSUDO CODE
+// 1. SET UP WORK, AND THE RETURN 
+// 2. WE WANT TO MAKE A VARIABLE TO PUT OUR STRING IN
+// 3. WANT TO RETURN VALUE FOR T
+
+
+
 const arr3 = [1, 2, 3];
 const separator3 = " - ";
 const expected3 = "1 - 2 - 3";
@@ -25,7 +43,19 @@ const arr5 = [];
 const separator5 = ", ";
 const expected5 = "";
 
-function join(arr, separator) {}
+// VAR    |    VALUE
+// i           0 --> 
+// t           "" -->
+
+function join(arr, separator) {
+  var t =""
+  for (var i=0; i<arr.length; i++){
+    t += arr[i]
+  }  
+  return t
+}
+
+console.log(join(arr3, separator3));
 
 /*****************************************************************************/
 

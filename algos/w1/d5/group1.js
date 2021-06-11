@@ -25,7 +25,17 @@ const arr5 = [];
 const separator5 = ", ";
 const expected5 = "";
 
-function join(arr, separator) {}
+function join(arr, separator) {
+  let newStr = "";
+  for (var i = 0; i < arr.length - 1; i++) {
+    newStr += arr[i];
+    newStr += separator;
+  }
+  newStr += arr[arr.length - 1];
+  return newStr;
+}
+c
+join(arr1, separator1);
 
 /*****************************************************************************/
 
@@ -38,4 +48,21 @@ function join(arr, separator) {}
 const nums1 = [1, 13, 14, 15, 37, 38, 70];
 const expected1 = "1, 13-15, 37-38, 70";
 
-function bookIndex(nums) {}
+function bookIndex(nums) {
+  let startpage = 0;
+  let endpage = 0;
+  newStri = "";
+  for(var i = 0; i < nums.length - 1; i++)  {
+    startpage = i;
+    while((nums[j - 1] == nums[j] - 1)) {
+      endpage = j;
+      j++;
+    }
+    if (startpage == endpage) {
+      newStri += nums[startpage]
+    }
+  }
+}
+
+
+
