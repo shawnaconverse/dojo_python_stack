@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, session, redirect
 import random
 
+
 app = Flask(__name__)
 app.secret_key = "keep it secret, keep it safe."
 
@@ -12,6 +13,7 @@ def index():
         session['activities'] = []
     
     print(session['activities'])
+
     return render_template("index.html")
 
 
@@ -40,7 +42,6 @@ def process_money():
             session['activities'].append(f"<p class='earned'>Earned {gold_amt} gold at the casino</p>")
         else:
             session['activities'].append(f"<p class='lost'>Lost {gold_amt} gold at the casino</p>")
-
 
     return redirect("/")
 
