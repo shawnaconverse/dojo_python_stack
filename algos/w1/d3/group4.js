@@ -22,14 +22,11 @@ const expected4 = false;
 function parensValid(str) {
   var count = 0;
   for (var i = 0; i < str.length; i++) {
-
     if (str[i] === "(") {
       count++;
-      
     } else if (str[i] === ")") {
-
       count--;
-      if(count < 0){
+      if (count < 0) {
         return false;
       }
     }
@@ -69,24 +66,23 @@ function parensValid(str) {
     } else if (str[i] === ")" || "}" || "]") {
       count--;
     }
-        if (str[i] === "(" || "{" || "[") {
-          innerCount++;
-        } else if (str[i] === ")" || "}" || "]") {
-          innerCount--;
-        }
-        if (innerCount != 0) {
-          console.log(false);
-        } else {
-          console.log(true);
-        }
-        return count;
-      }
+    if (str[i] === "(" || "{" || "[") {
+      innerCount++;
+    } else if (str[i] === ")" || "}" || "]") {
+      innerCount--;
+    }
+    if (innerCount != 0) {
+      console.log(false);
+    } else {
+      console.log(true);
+    }
+    return count;
   }
-  if (count != 0) {
-    console.log(false);
-  } else {
-    console.log(true);
-  }
-
+}
+if (count != 0) {
+  console.log(false);
+} else {
+  console.log(true);
+}
 
 parensValid(str2);

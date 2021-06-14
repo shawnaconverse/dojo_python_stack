@@ -21,7 +21,26 @@ const expected3 = "a";
 const str4 = "bbcc";
 const expected4 = "bbcc";
 
-function encodeStr(str) {}
+function encodeStr(str) {
+  var count_letter = str[0];
+  var encoded = "";
+  var count = 0;
+  for (var i = 0; i <= str.length; i++)  {
+    if (str[i] == count_letter) {
+      count += 1
+    }
+    else {
+      encoded += count_letter + count;
+      count_letter = str[i];
+      count = 1;
+    }
+  }
+  if (encoded.length < str.length) {
+    return encoded
+  } else {
+    return str
+  }
+}
 
 /*****************************************************************************/
 
@@ -32,4 +51,20 @@ function encodeStr(str) {}
 const str1 = "a3b2c1d3";
 const expected1 = "aaabbcddd";
 
-function decodeStr(str) {}
+function decodeStr(str) {
+  // SETUP
+  var decoded = "";
+
+  // WORK
+  for (var i = 0; i < str.length; i++) {
+    var n = parseInt(str[i]);
+    // if str[i] is a number, n will be the number
+    // if str[i] is not a number. n will be NaN (not a number)
+    if (n) {
+      decoded += str[i - 1].repeat(n);
+    }
+  }
+
+  // RETURN
+  return decoded;
+}
