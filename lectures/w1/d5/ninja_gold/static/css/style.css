@@ -47,3 +47,15 @@ input {
   display: flex;
   justify-content: space-between;
 }
+
+* {
+  vertical-align: baseline;
+  font-weight: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  border: 0px none;
+  outline: 0px;
+  padding: 0px;
+  margin: 0px;
+}
