@@ -9,9 +9,28 @@ const expected1 = "abcABC";
 const str2 = "helloo";
 const expected2 = "helo";
 
-function stringDedupe(str) {}
+const str3 = "aabbccabc"
+const expected3 = "abc"
+
+function stringDedupe(str) {
+  var newStr = "";
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] != str[i + 1]) {
+      newStr += str[i];
+    } else continue;
+  }
+  return newStr;
+}
+console.log(stringDedupe(str2));
 
 /*****************************************************************************/
+
+function reverseWords(str) {
+  var newStr =''
+  var word = ''
+  
+}
+
 
 /* 
   Given a string containing space separated words
@@ -28,4 +47,19 @@ const expected2 = "olleh dlrow";
 const str3 = "abc def ghi";
 const expected3 = "cba fed ihg";
 
-function reverseWords(str) {}
+function reverseWords(str)
+{
+    var word = "";
+    var newStr = "";
+    for(var i = str.length - 1; i >= 0; i--) {
+        if (str[i] == " ") {
+            newStr = " " + word + newStr;
+            word = "";
+        }
+        else {
+            word += str[i];
+        }
+    }
+    return word + newStr;
+}
+console.log(reverseWords(str3))

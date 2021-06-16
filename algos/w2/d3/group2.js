@@ -9,7 +9,21 @@ const expected1 = "abcABC";
 const str2 = "helloo";
 const expected2 = "helo";
 
-function stringDedupe(str) {}
+function stringDedupe(str) {
+  let obj = {};
+  let deDupe = "";
+  for (let letter of str) {
+    if (!obj.hasOwnProperty(letter)) {
+      obj[letter] = 1;
+    }
+  }
+  for (let key in obj) {
+    deDupe += key;
+  }
+  return deDupe;
+}
+
+
 
 /*****************************************************************************/
 
@@ -28,4 +42,19 @@ const expected2 = "olleh dlrow";
 const str3 = "abc def ghi";
 const expected3 = "cba fed ihg";
 
-function reverseWords(str) {}
+function reverseWords(str) {
+  let reversed = "";
+  let word = "";
+  for (let index = 0; index <= str.length; index++) {
+    if (str[index] == " ") {
+      reversed += word + " ";
+      word = "";
+    } 
+    else if (index == str.length) {
+      reversed += word; 
+    } else {
+      word = str[index] + word;
+    }
+  }
+  return reversed;
+}

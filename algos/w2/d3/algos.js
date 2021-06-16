@@ -9,7 +9,22 @@ const expected1 = "abcABC";
 const str2 = "helloo";
 const expected2 = "helo";
 
-function stringDedupe(str) {}
+const str3 = "aabbccabc";
+const expected3 = "abc";
+
+function stringDedupe(str) {
+  let distinctStr = "";
+  const seen = {};
+
+  // loop backwards to include last occurrence
+  for (let i = str.length - 1; i >= 0; --i) {
+    if (!seen[str[i]]) {
+      distinctStr = str[i] + distinctStr;
+      seen[str[i]] = true;
+    }
+  }
+  return distinctStr;
+}
 
 /*****************************************************************************/
 
@@ -28,4 +43,22 @@ const expected2 = "olleh dlrow";
 const str3 = "abc def ghi";
 const expected3 = "cba fed ihg";
 
-function reverseWords(str) {}
+function reverseWords(str) {
+  const words = wordsStr.split(" ");
+  let wordsReversed = "";
+
+  for (const word of words) {
+    let reversedWord = "";
+
+    for (let i = word.length - 1; i >= 0; --i) {
+      reversedWord += word[i];
+    }
+
+    // add a space in front of word if it's not the first word
+    if (wordsReversed.length > 0) {
+      reversedWord = " " + reversedWord;
+    }
+    wordsReversed += reversedWord;
+  }
+  return wordsReversed;
+}
