@@ -1,4 +1,4 @@
-from mysqlconnection import connectToMySQL
+from ..config.mysqlconnection import connectToMySQL
 
 class Dog:
     def __init__(self, data):
@@ -27,6 +27,7 @@ class Dog:
         for row in results:
             dogs.append(Dog(row)) # adding Dog objects to the list
         
+        print(dogs)
         return dogs
 
 
@@ -41,5 +42,31 @@ class Dog:
         print (dog_id)
         return dog_id
 
-    
+
+    @classmethod
+    def get_one(cls, data):
+        # data is a dictionary
+        query = "SELECT * FROM dogs WHERE id = %(id)s;"
+
+        results = connectToMySQL("dogs_schema").query_db(query, data)
+
+        # print(results)
+
+        return Dog(results[0])
+
+
+    @classmethod
+    def delete(cls, data):
+        query = "DELETE FROM dogs WHERE id = %(id)s;"
+
+        connectToMySQL("dogs_schema").query_db(query, data)
+
+        # return True
+
+
+    @classmethod
+    def update(cls, data):
+        query = "UPDATE dogs SET name = %(name)s, age = %(age)s, hair_color = %(hair_color)s, updated_at = NOW() WHERE id = %(id)s;"
+
+        connectToMySQL("dogs_schema").query_db(query, data)
 

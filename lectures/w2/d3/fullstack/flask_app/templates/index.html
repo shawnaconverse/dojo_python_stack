@@ -20,7 +20,7 @@
     {% for dog in all_dogs %}
       <tr>
         <td>{{ dog.id }}</td>
-        <td>{{ dog.name }}</td>
+        <td><a href="/dogs/{{ dog.id }}">{{ dog.name }}</a></td>
         <td>{{ dog.age }}</td>
         <td>{{ dog.hair_color }}</td>
         <td>{{ dog.created_at }}</td>
