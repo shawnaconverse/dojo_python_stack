@@ -19,7 +19,22 @@ const str4 = "Hello World";
 const rotateAmnt4 = 4;
 const expected4 = "orldHello W";
 
-function rotateStr(str, n) {}
+function rotateStr(str, n) {
+  let firstpart='';
+  let lastpart= '';
+
+  for( let i = str.length-1; i>=0; i--){
+    if(i >= str.length-n){
+      firstpart = str[i] + firstpart;
+    }
+    else{
+      lastpart = str[i] + lastpart;
+    }
+  }
+    return firstpart+lastpart
+}
+
+// it works now!
 
 /*****************************************************************************/
 
@@ -38,4 +53,7 @@ const strB2 = "CDBA";
 const expected2 = false;
 // Explanation: all same letters in 2nd string, but out of order
 
-function isRotation(s1, s2) {}
+function isRotation(s1, s2) {
+  
+  
+}
