@@ -13,6 +13,7 @@ class Dog:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.collars = []
+        self.toys = []
     
 
     @classmethod
@@ -67,6 +68,8 @@ class Dog:
                     'updated_at': row['collars.updated_at']
                 }
                 dog.collars.append(collar.Collar(row_data))
+
+        query = "SELECT * FROM dogs LEFT JOIN dogs_has_toys "
 
         return dog
 
