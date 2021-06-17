@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show a Single Dog</title>
+</head>
+<body>
+  <div>
+    <h1>Your dog's name is {{ dog.name }}.</h1>
+    <a href="/">Home</a>
+  </div>
+  <p>It is {{ dog.age }} years old.</p>
+  <p>It has {{ dog.hair_color }} hair.</p>
+  <h3>This dog's collars:</h3>
+  <table>
+    <thead>
+      <tr> 
+        <th>ID</th>
+        <th>Dog ID</th>
+        <th>Color</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for collar in dog.collars %}
+        <tr>
+          <td><a href="/collars/{{ collar.id }}">{{ collar.id }}</a></td>
+          <td>{{ collar.dog.id }}</td>
+          <td>{{ collar.color }}</td>
+          <td>{{ collar.created_at }}</td>
+          <td>{{ collar.updated_at }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+    
+  
+  <p>
+    <a href="/dogs/{{ dog.id }}/edit">Edit</a> | 
+    <a href="/dogs/{{ dog.id }}/delete">Delete</a>
+  </p>
+</body>
+</html>
