@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show a Single Dog</title>
+</head>
+<body>
+  <div>
+    <h1>Your dog's name is {{ dog.name }}.</h1>
+    <a href="/">Home</a>
+  </div>
+  <p>It is {{ dog.age }} years old.</p>
+  <p>It has {{ dog.hair_color }} hair.</p>
+  <p>
+    <a href="/dogs/{{ dog.id }}/edit">Edit</a> | 
+    <a href="/dogs/{{ dog.id }}/delete">Delete</a>
+  </p>
+</body>
+</html>
