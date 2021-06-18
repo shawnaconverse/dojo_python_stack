@@ -21,27 +21,44 @@ const expected3 = false;
 const strA4 = "silent";
 const strB4 = "listen";
 const expected4 = true;
-natan
+
 function isAnagram(s1, s2) {
   s1 = s1.toLowerCase();
   s2 = s2.toLowerCase();
-  s1Dict = {
-    'n':1,
-    'a':1,
-    't':1,
-  
-  };
-  s2Dict = {};
+  var s1Dict = {};
+  var s2Dict = {};
   for(var i =0; i<s1.length; i++){
-    if () {
+    // if s1[i] is a key in dictionary increment it
+    if (s1Dict[s1[i]]) {
       s1Dict[s1[i]] = s1Dict[s1[i]]+1
     } else {
+      // else means the key is not in the dictionary
+      // make a key value pair
       s1Dict[s1[i]] = 1
     }
-    
-  } 
-
+  }
+  for(var i =0; i<s2.length; i++){
+    // if s1[i] is a key in dictionary increment it
+    if (s2Dict[s2[i]]) {
+      s2Dict[s2[i]] = s2Dict[s2[i]]+1
+    } else {4
+      // else means the key is not in the dictionary
+      // make a key value pair
+      s2Dict[s2[i]] = 1
+    }
+  }
+  // where we check if both objects carry the same letters
+  // DOES NOT WORK IN JS...
+  if (s1Dict==s2Dict) {
+    return true;
+  } else {
+    return false;
+  }
 }
+console.log(isAnagram(strA1, strA1));
+console.log(isAnagram(strA2, strA2));
+console.log(isAnagram(strA3, strA3));
+console.log(isAnagram(strA4, strA4));
 
 
 /*****************************************************************************/

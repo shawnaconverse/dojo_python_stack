@@ -24,6 +24,10 @@ const expected4 = true;
 
 function isAnagram(s1, s2) {
 
+  if (s1.length != s2.length) {
+    return false;
+  }
+
   let dict = {};
   for (let i = 0; i < s1.length; i++) {
     if (s1[i] in dict) {
@@ -37,7 +41,15 @@ function isAnagram(s1, s2) {
     if (s2[i] in dict)  {
       dict[s2[i]]--;
     } else  {
-      
+      return false;
+    }
+  }
+
+  for (let keys in dict)  {
+    if(dict[key] > 0 || dict[key] < 0)  {
+      return false;
+    } else  {
+      return true;
     }
   }
 }

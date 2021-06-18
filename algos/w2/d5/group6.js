@@ -51,13 +51,12 @@ return true;
   do not remove any other spaces.
 */
 
-const str1 = "   hello world     ";
+const str1 = "hello world";
 const expected1 = "hello world";
 
 function trim(str) {
   let pos1 = str[0];
   let pos2 = str[str.length-1];
-
 
   for(var i = 0; i<str.length;i++){
     if(str[i] != " "){
@@ -76,6 +75,7 @@ function trim(str) {
   return str.slice(pos1,pos2)
 }
 
+const str1 = "   hello world     ";
 function trim(str) {
   let pos1 = 0;
   let pos2 = str.length-1;
@@ -87,10 +87,11 @@ function trim(str) {
         pos2 -= 1;
       }
       if(str[pos1] != " " && str[pos2] != " "){
-      break;
+        pos2++
+        break;
       }
   }
-  return str.slice(pos1,pos2+1)
+  return str.slice(pos1,pos2)
 }
 
 trim(str1)

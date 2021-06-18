@@ -54,45 +54,9 @@ function isAnagram(s1, s2) {
   return str1 === str2;
 }
 
+console.log(isAnagram(strA1, strB1))
 
 
-
-
-
-
-
-// --------------EXAMPLE 2--------------
-function checkAnagram(string1, string2){
-
-  if(string1.length !== string2.length){
-      return false;
-  }
-
-  for(var i = 0; i < string1.length; i++){
-
-      if(count <= 0){
-
-          return false;
-      }
-      var count = 0;
-
-      for(var t = 0; t < string2.length; t++){
-
-          //counter = 0
-
-          if(string2[t].toLowerCase() == string1[i].toLowerCase()){
-              //counter++;
-              count++;
-              break;
-          }
-
-
-      }
-
-  }
-
-  return true;
-}
 
 
 /*****************************************************************************/
