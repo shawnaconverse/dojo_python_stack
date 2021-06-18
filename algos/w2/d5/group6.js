@@ -22,7 +22,26 @@ const strA4 = "silent";
 const strB4 = "listen";
 const expected4 = true;
 
-function isAnagram(s1, s2) {}
+
+function isAnagram(s1, s2) {
+  if(s1.length !== s2.length){
+    return false
+  }
+  for (var i = 0; i < s1.length; i++){
+      for (var j = 0; j < s2.length; j++){
+        if(s1[i].toLowerCase()==s2[j].toLowerCase()){
+          break;
+        }
+        if(s1[i].toLowerCase()!=s2[j].toLowerCase() && j==s2.length){
+          return false;
+        }
+  } 
+  
+}
+
+return true;
+
+}
 
 /*****************************************************************************/
 
@@ -35,4 +54,43 @@ function isAnagram(s1, s2) {}
 const str1 = "   hello world     ";
 const expected1 = "hello world";
 
-function trim(str) {}
+function trim(str) {
+  let pos1 = str[0];
+  let pos2 = str[str.length-1];
+
+
+  for(var i = 0; i<str.length;i++){
+    if(str[i] != " "){
+      pos1 = i;
+      break;
+    }
+  }
+
+  for(var j =str.length-1;j>=0;j--){
+    if(str[j] != " "){
+      pos2 = j+1;
+      break;
+    }
+  }
+
+  return str.slice(pos1,pos2)
+}
+
+function trim(str) {
+  let pos1 = 0;
+  let pos2 = str.length-1;
+  while(true){
+      if(str[pos1] == " "){
+        pos1+=1;
+      }
+      if(str[pos2] == " "){
+        pos2 -= 1;
+      }
+      if(str[pos1] != " " && str[pos2] != " "){
+      break;
+      }
+  }
+  return str.slice(pos1,pos2+1)
+}
+
+trim(str1)

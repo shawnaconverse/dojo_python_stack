@@ -22,7 +22,78 @@ const strA4 = "silent";
 const strB4 = "listen";
 const expected4 = true;
 
-function isAnagram(s1, s2) {}
+function isAnagram(str1, str2) {
+  var newStr = " "
+  var str1 = str1.toLowerCase()
+  var str2 = str2.toLowerCase()
+  if (str1.length != str2.length){
+    return false
+  }
+  for ( let i = 0; i < str1.length; i++){
+    
+  }
+  
+}
+// --------------NEW OPTION--------------
+
+const strA1 = "yes";
+const strB1 = "eys";
+const expected1 = true;
+
+function isAnagram(s1, s2) {
+  var str1 = s1.toLowerCase()
+  var str2 = s2.toLowerCase()
+
+  if (str1.length !== str2.length){
+    return false
+  }
+
+  str1.split('').sort().join('');
+  str2.split('').sort().join('');
+
+  return str1 === str2;
+}
+
+
+
+
+
+
+
+
+// --------------EXAMPLE 2--------------
+function checkAnagram(string1, string2){
+
+  if(string1.length !== string2.length){
+      return false;
+  }
+
+  for(var i = 0; i < string1.length; i++){
+
+      if(count <= 0){
+
+          return false;
+      }
+      var count = 0;
+
+      for(var t = 0; t < string2.length; t++){
+
+          //counter = 0
+
+          if(string2[t].toLowerCase() == string1[i].toLowerCase()){
+              //counter++;
+              count++;
+              break;
+          }
+
+
+      }
+
+  }
+
+  return true;
+}
+
 
 /*****************************************************************************/
 

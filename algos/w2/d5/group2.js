@@ -22,10 +22,25 @@ const strA4 = "silent";
 const strB4 = "listen";
 const expected4 = true;
 
-function isAnagram(s1, s2) {}
+function isAnagram(s1, s2) {
 
-/*****************************************************************************/
+  let dict = {};
+  for (let i = 0; i < s1.length; i++) {
+    if (s1[i] in dict) {
+      dict[s1[i]]++
+    } else  {
+      dict[s1[i]] = 1
+    }
+  }
 
+  for (let j = 0; j < s2.length; j++) {
+    if (s2[i] in dict)  {
+      dict[s2[i]]--;
+    } else  {
+      
+    }
+  }
+}
 /* 
   Given a string that may have extra spaces at the start and the end,
   return a new string that has the extra spaces at the start and the end trimmed (removed)
