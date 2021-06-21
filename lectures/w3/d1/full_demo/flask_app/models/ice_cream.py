@@ -17,7 +17,27 @@ class IceCream:
     
     @classmethod
     def get_all(cls):
-        pass
+        query = "SELECT * FROM ice_creams;"
+
+        results = connectToMySQL("full_demo").query_db(query)
+
+        ice_creams = []
+
+        if len(results) > 0:
+            for row in results:
+                row_data = {
+                    "id": row['id'],
+                    "flavor": row['flavor'],
+                    "topping": row['topping'],
+                    "cone": row['cone'],
+                    "created_at": row['created_at'],
+                    "updated_at": row['updated_at'],
+                    "user": user.User.get_by_id({"id": row['user_id']})
+                }
+                ice_creams.append(cls(row_data))
+        
+
+        return ice_creams
 
 
     @classmethod
@@ -48,7 +68,10 @@ class IceCream:
 
     @classmethod
     def update(cls, data):
-        pass
+        query = "UPDATE ice_creams SET flavor = %(flavor)s, topping = %(topping)s, " \
+            "cone = %(cone)s, updated_at = NOW() WHERE id = %(id)s;"
+
+        return connectToMySQL("full_demo").query_db(query, data)
 
 
     @classmethod

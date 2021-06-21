@@ -27,15 +27,17 @@
           </tr>
         </thead>
         <tbody>
-          {% for ice_cream in user.ice_creams %}
+          {% for ice_cream in all_ice_creams %}
             <tr>
               <td>{{ ice_cream.flavor }}</td>
               <td>{{ ice_cream.topping }}</td>
               <td>{{ ice_cream.cone }}</td>
               <td>
-                <a href="/ice_creams/{{ ice_cream.id }}">View</a> | 
-                <a href="/ice_creams/{{ ice_cream.id }}/edit">Edit</a> |
-                <a href="/ice_creams/{{ ice_cream.id }}/delete">Delete</a>
+                <a href="/ice_creams/{{ ice_cream.id }}">View</a> 
+                {% if user.id == ice_cream.user.id %}
+                  | <a href="/ice_creams/{{ ice_cream.id }}/edit">Edit</a> |
+                  <a href="/ice_creams/{{ ice_cream.id }}/delete">Delete</a>
+                {% endif %}
               </td>
             </tr>
           {% endfor %}

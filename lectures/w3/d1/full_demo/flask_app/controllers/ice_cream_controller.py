@@ -10,7 +10,11 @@ def dashboard():
     if "uuid" not in session:
         return redirect("/")
 
-    return render_template("dashboard.html", user = User.get_by_id({"id": session['uuid']}))
+    return render_template(
+        "dashboard.html", 
+        user = User.get_by_id({"id": session['uuid']}),
+        all_ice_creams = IceCream.get_all()
+    )
 
 
 @app.route("/ice_creams/new")
@@ -47,6 +51,34 @@ def display_ice_cream(id):
         user = User.get_by_id({"id": session['uuid']}),
         ice_cream = IceCream.get_one({"id": id})
     )
+
+
+@app.route("/ice_creams/<int:id>/edit")
+def edit_ice_cream(id):
+    if "uuid" not in session:
+        return redirect("/")
+
+    return render_template("edit_ice_cream.html", ice_cream = IceCream.get_one({"id": id}))
+
+
+@app.route("/ice_creams/<int:id>/update", methods = ['POST'])
+def update_ice_cream(id):
+    if not IceCream.validate(request.form):
+        return redirect(f"/ice_creams/{id}/edit")
+
+    print(request.form)
+    return redirect(f"/ice_creams/{id}/edit")
+
+    data = {
+        "flavor": request.form['flavor'],
+        "topping": request.form['topping'],
+        "cone": request.form['cone'],
+        "id": id
+    }
+
+    IceCream.update(data)
+
+    return redirect("/dashboard")
 
 
 @app.route("/ice_creams/<int:id>/delete")

@@ -9,26 +9,34 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1>Add a new Ice Cream!</h1>
+      <h1>Edit Ice Cream!</h1>
       <div>
         <a href="/dashboard">Dashboard</a>
         <a href="/logout">Logout</a>
       </div>
     </div>
-    <form action="/ice_creams/create" method="post">
+    <form action="/ice_creams/{{ ice_cream.id }}/update" method="post">
       <p>
         Flavor:
-        <input type="text" name="flavor">
+        <input type="text" name="flavor" value="{{ ice_cream.flavor }}">
       </p>
       <p>
         Topping:
-        <input type="text" name="topping">
+        <input type="text" name="topping" value="{{ ice_cream.topping }}">
       </p>
       <p>
         Cone:
-        <input type="text" name="cone">
+        <input type="text" name="cone" value="{{ ice_cream.cone }}">
       </p>
-      <button>Create the Ice Cream!</button>
+      <!-- <p>
+        <label for="">Chocolate</label>
+        <input type="radio" name="sauce" id="" value="chocolate">
+        <label for="">Caramel</label>
+        <input type="radio" name="sauce" id="" value="caramel">
+        <label for="">None</label>
+        <input type="radio" name="sauce" id="" value="none" checked="checked">
+      </p> -->
+      <button>Update the Ice Cream!</button>
     </form>
     {% with messages = get_flashed_messages() %}
       {% if messages %}
