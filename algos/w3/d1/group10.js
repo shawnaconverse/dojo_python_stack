@@ -32,3 +32,5 @@ const nums2 = [9, 9];
 const expected2 = -1;
 
 function balanceIndex(nums) {}
+
+  

@@ -6,14 +6,56 @@
 */
 
 const nums1 = [1, 2, 3, 4, 10];
+
+
+
 const expected1 = true;
 // Explanation: between indices 3 & 4
 
 const nums2 = [1, 2, 4, 2, 1];
 const expected2 = false;
 
-function balancePoint(nums) {}
-
+function bp(arr){
+	var left = 0;
+  var right = arr.length-1;
+  var leftsum = 0;
+  var rightsum = 0;
+  var maxsum = 0;
+  while(left<right){
+  	if(arr[left]<=arr[right]){
+    leftsum+=arr[left]
+    left+=1;
+    }
+    if(arr[left]>arr[right]){
+    rightsum+=arr[right]
+    right-=1;
+    }
+    if(leftsum==rightsum && left==right){
+			return [left,right];
+    }
+  }
+  return false;
+}
+function balancePoint2(arr){
+	var left = 0;
+  var right = arr.length-1;
+  var leftsum = 0;
+  var rightsum = 0;
+  while(left<right){
+  	if(arr[left]<=arr[right]){
+      leftsum+=arr[left]
+      left+=1;
+    }
+    if(arr[left]>=arr[right]){
+      rightsum+=arr[right]
+      right-=1;
+    }
+    if(leftsum==rightsum && left==Math.floor(arr.length/2)){
+      console.log("We found the balance point at indices", left,right)
+    }
+  }
+  return false;
+}
 /*****************************************************************************/
 
 /* 

@@ -12,7 +12,22 @@ const expected1 = true;
 const nums2 = [1, 2, 4, 2, 1];
 const expected2 = false;
 
-function balancePoint(nums) {}
+function balancePoint(nums) {
+    let sum = 0;
+    let totalfromstart = 0;
+    
+    for (let i = 0; i < nums.length;i++){
+    sum += nums[i];
+    }
+    for(let j = 0; j < nums.length;j++){
+        totalfromstart += nums[j];
+        sum -= nums[j];
+        if( sum === totalfromstart){
+            return true
+        }
+    }
+    return false
+}
 
 /*****************************************************************************/
 
@@ -31,4 +46,28 @@ const expected1 = 2;
 const nums2 = [9, 9];
 const expected2 = -1;
 
-function balanceIndex(nums) {}
+function balanceIndex(nums) {
+let sum =0;
+let totalfromstart = 0;
+
+
+    if (nums.length >= 2){
+
+        for (let i = 0; i < nums.length;i++){
+        sum += nums[i];
+        }
+
+        for(let j = 0; j < nums.length-1;j++){
+                sum -= nums[j];
+            if( sum === totalfromstart){
+                return j;
+            }
+            totalfromstart += nums[j];
+
+            
+      }
+    }
+
+        return -1
+
+}
