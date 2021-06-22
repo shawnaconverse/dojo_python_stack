@@ -117,4 +117,5 @@
 6. Don't overthink features
 7. use the platform
 8. Before your retake, finish the wireframe
+9. sleep
 
