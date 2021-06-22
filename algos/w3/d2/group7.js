@@ -18,3 +18,4 @@ const searchNum3 = 3;
 const expected3 = true;
 
 function binarySearch(sortedNums, searchNum) {}
+[]

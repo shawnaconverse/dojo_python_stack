@@ -68,4 +68,3 @@ function binarySearchUsingIndexs(sortedNums, searchNum) {
 
   return false;
 }
-

@@ -21,20 +21,24 @@ const expected3 = true;
 // odd length loop --> 
 function binarySearch(sortedNums, searchNum) {
   var len = Math.floor(sortedNums.length/2);
-  for (var i=0; i<sortedNums.length;i++) {
-    if (sortedNums[len]===searchNum) {
+  for (var i=len; i<sortedNums.length;i++) {
+    if (sortedNums[i]==searchNum) {
       return true;
-    } else {
-      if (sortedNums[len]<searchNum) {
-        len = len/2
+    }
+    else {
+      if (sortedNums[i]<searchNum) {
+        len = Math.floor(len/2);
       } else {
-        len = sortedNums.length-len
+        len = len + Math.ceil(len/2);
       }
     }
   }
+  return false;
 }
 
-
+console.log(binarySearch(nums1,searchNum1));
+console.log(binarySearch(nums2,searchNum2));
+console.log(binarySearch(nums3,searchNum3));
 
 
 
@@ -49,10 +53,10 @@ function binarySearch(arr, expect){
     if (expect == arr[middle]){
       return true;
     }
-    if (expect > arr[middle]){
+    else if (expect > arr[middle]){
       start = middle + 1;
     }
-    if (expect < arr[middle]){
+    else {
       end = middle - 1;
     }
   }
