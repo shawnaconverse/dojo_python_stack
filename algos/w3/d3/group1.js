@@ -14,7 +14,32 @@ const expected2 = [1, 2, 3];
 const nums3 = [1, 1, 2, 3, 3, 4];
 const expected3 = [1, 2, 3, 4];
 
-function dedupeSorted(nums) {}
+function dedupeSorted(nums) {
+  var dup = {};
+  var duplist = [];
+  for (var i=0; i<nums.length; i++) {
+    dup[nums[i]]=1;
+  }
+  for (let key in dup) {
+    duplist.push(key);
+  }
+  return duplist;
+}
+
+
+function dedupeSorted(nums) {
+  var duplist = [];
+  for (var i=0; i<nums.length; i++) {
+    if (!duplist.includes(nums[i])) {
+      duplist.push(nums[i]);
+    }
+  }
+  return duplist
+}
+
+console.log(dedupeSorted(nums1));
+console.log(dedupeSorted(nums2));
+console.log(dedupeSorted(nums3));
 
 /*****************************************************************************/
 
@@ -28,6 +53,7 @@ function dedupeSorted(nums) {}
     - what if all items occur the same number of times?
     - return empty array
 */
+
 
 const nums1 = [];
 const expected1 = [];
@@ -43,6 +69,52 @@ const expected4 = [1];
 
 const nums5 = [5, 1, 4, 1, 5];
 const expected5 = [5, 1];
-//  - order doesn't matter
 
-function mode(nums) {}
+const nums6 = [5, 1, 4, 3, 4, 3, 1, 5];
+const expected6 = [5, 1];
+//  - order doesn't matter
+// empty return empty
+// single return single
+//     both of these:  if nums.length<= 1 return nums
+
+// if all unique numbers have the same frequency   return empty list
+// if we have multiple numbers with the same frequency, return all of em
+//     we need to find highest frequency number
+//     then ask if any other number has that frequency
+//     return nubmers that have that frequency
+
+function mode(nums) {
+  var result = []
+  var dup = {};
+  var frequency = 0;
+  if (nums.length<=1) {
+    return nums;
+  }
+  else {
+    for (var i=0; i<nums.length; i++) {
+      if (!(nums[i] in dup)) {
+        dup[nums[i]] = 1;
+      } else {
+        dup[nums[i]] = dup[nums[i]] + 1;
+      }
+    }
+    for (const key in dup) {
+      if (dup[key] > frequency) {
+        frequency = dup[key];
+      }
+    }
+    for (const key in dup) {
+      if (dup[key]==frequency) {
+        result.push(key);
+      }
+    }
+    
+  }
+  return result
+}
+
+console.log(mode(nums1))
+console.log(mode(nums2))
+console.log(mode(nums3))
+console.log(mode(nums4))
+console.log(mode(nums5))

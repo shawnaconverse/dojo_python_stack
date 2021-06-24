@@ -14,7 +14,15 @@ const expected2 = [1, 2, 3];
 const nums3 = [1, 1, 2, 3, 3, 4];
 const expected3 = [1, 2, 3, 4];
 
-function dedupeSorted(nums) {}
+function dedupeSorted(nums) {
+  var duplist = [];
+  for (var i=0; i<nums.length; i++) {
+    if (!duplist.includes(nums[i])) {
+      duplist.push(nums[i]);
+    }
+  }
+  return duplist
+}
 
 /*****************************************************************************/
 
@@ -45,4 +53,64 @@ const nums5 = [5, 1, 4, 1, 5];
 const expected5 = [5, 1];
 //  - order doesn't matter
 
-function mode(nums) {}
+function mode(nums) {
+  if(nums.length<2){
+    return nums;
+  }
+  var dict = {};
+  let max = 1;
+  for(let num of nums){
+
+    if(dict[num]){
+      dict[num]+=1;
+      max =  max<dict[num] ? dict[num] : max;
+    }
+    else  {
+      dict[num] = 1;
+    }
+  }
+  let counter = 0;
+  var retArr = [];
+  for(let key in dict){
+    counter++;
+    if(dict[key]==max){
+      retArr.push(parseInt(key));
+    }
+  }
+  if (counter== retArr.length){
+    return [];
+  }
+  return retArr;
+}
+
+
+function modeShawn(nums) {
+  if (nums.length < 2) return nums;
+
+  const modes = [];
+  const freq = {};
+  let maxFreq = 0;
+  let allSameFreq = true;
+
+  for (const n of nums) {
+    // if (freq.hasOwnProperty(n)) {
+    //   freq[n]++;
+    // } else {
+    //   freq[n] = 1;
+    // }
+
+    freq.hasOwnProperty(n) ? freq[n]++ : (freq[n] = 1); // syntatic sugar
+
+    if (freq[n] > maxFreq) (maxFreq = freq[n]);
+  }
+
+  for (const key in freq) {
+    if (freq[key] === maxFreq) {
+      modes.push(parseInt(key));
+    } else {
+      allSameFreq = false;
+    }
+  }
+
+  return allSameFreq ? [] : modes;
+}

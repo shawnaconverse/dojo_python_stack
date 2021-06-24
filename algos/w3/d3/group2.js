@@ -14,7 +14,33 @@ const expected2 = [1, 2, 3];
 const nums3 = [1, 1, 2, 3, 3, 4];
 const expected3 = [1, 2, 3, 4];
 
-function dedupeSorted(nums) {}
+function dedupeSorted(nums) {
+  if(nums.length==0){
+    return nums;
+}
+  var expArr = [nums[0]];
+  for(var i = 1; i < nums.length; i++){
+      if (nums[i] != expArr[expArr.length - 1]){
+          expArr.push(nums[i]);
+      }
+  }
+  return expArr
+}
+
+
+function dedupeSorted(nums) {
+  if(nums.length==0){
+      return false;
+  }
+  result=[nums[0]]
+  for(let i=1; i<nums.length; i++){
+      if(nums[i]!=result[result.length-1]){
+          result.length+=1;
+          result[result.length-1]=nums[i];
+      }
+  }
+  return result
+}
 
 /*****************************************************************************/
 

@@ -14,7 +14,33 @@ const expected2 = [1, 2, 3];
 const nums3 = [1, 1, 2, 3, 3, 4];
 const expected3 = [1, 2, 3, 4];
 
-function dedupeSorted(nums) {}
+function dedupeSorted(nums) {
+  let deduped = [];
+  let dupe = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    if (!dupe[nums[i]]) {
+      dupe[nums[i]] = 1;
+      deduped.push(nums[i]);
+    }
+  }
+  return deduped;
+}
+console.log(dedupeSorted(nums1))
+
+function dedupeSorted(nums) {
+  newArr = [];
+  for (var i = 0 ; i < nums.length ; i++){
+      if (nums[i] == nums[i+1]){
+          continue;
+      }
+      else{
+          newArr.push(nums[i]);
+      }
+  }
+  return newArr;
+}
+console.log(dedupeSorted(nums1))
 
 /*****************************************************************************/
 
@@ -45,4 +71,30 @@ const nums5 = [5, 1, 4, 1, 5];
 const expected5 = [5, 1];
 //  - order doesn't matter
 
-function mode(nums) {}
+function mode(nums) {
+  if (nums.length == 1 || nums.length == 0){
+    return nums;
+  }
+  let mode =[];
+  let dupe = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    if (!dupe[nums[i]]) {
+      dupe[nums[i]] = 1;
+    } else {
+      dupe[nums[i]] += 1;
+    }
+  }
+  let max = 1;
+  for (let key in dupe) {
+    if (dupe[key] > max) {
+      max = dupe[key];
+      mode = [];
+      mode.push(parseInt(key));
+    }
+    else if (max > 1 && dupe[key] === max){
+      mode.unshift(parseInt(key));
+    }
+  }
+  return mode;
+}
