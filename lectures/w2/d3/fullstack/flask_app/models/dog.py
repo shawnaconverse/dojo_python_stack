@@ -66,7 +66,8 @@ class Dog:
 
     @classmethod
     def update(cls, data):
-        query = "UPDATE dogs SET name = %(name)s, age = %(age)s, hair_color = %(hair_color)s, updated_at = NOW() WHERE id = %(id)s;"
+        query = "UPDATE dogs SET name = %(name)s, age = %(age)s, " \
+        "hair_color = %(hair_color)s, updated_at = NOW() WHERE id = %(id)s;"
 
         connectToMySQL("dogs_schema").query_db(query, data)
 

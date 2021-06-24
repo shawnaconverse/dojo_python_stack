@@ -17,8 +17,8 @@ const expected3 = [1, 2, 3, 4];
 function dedupeSorted(nums) {
   var dup = {};
   var duplist = [];
-  for (var i=0; i<nums.length; i++) {
-    dup[nums[i]]=1;
+  for (var i = 0; i < nums.length; i++) {
+    dup[nums[i]] = 1;
   }
   for (let key in dup) {
     duplist.push(key);
@@ -26,15 +26,14 @@ function dedupeSorted(nums) {
   return duplist;
 }
 
-
 function dedupeSorted(nums) {
   var duplist = [];
-  for (var i=0; i<nums.length; i++) {
+  for (var i = 0; i < nums.length; i++) {
     if (!duplist.includes(nums[i])) {
       duplist.push(nums[i]);
     }
   }
-  return duplist
+  return duplist;
 }
 
 console.log(dedupeSorted(nums1));
@@ -53,7 +52,6 @@ console.log(dedupeSorted(nums3));
     - what if all items occur the same number of times?
     - return empty array
 */
-
 
 const nums1 = [];
 const expected1 = [];
@@ -84,14 +82,13 @@ const expected6 = [5, 1];
 //     return nubmers that have that frequency
 
 function mode(nums) {
-  var result = []
+  var result = [];
   var dup = {};
   var frequency = 0;
-  if (nums.length<=1) {
+  if (nums.length <= 1) {
     return nums;
-  }
-  else {
-    for (var i=0; i<nums.length; i++) {
+  } else {
+    for (var i = 0; i < nums.length; i++) {
       if (!(nums[i] in dup)) {
         dup[nums[i]] = 1;
       } else {
@@ -104,17 +101,16 @@ function mode(nums) {
       }
     }
     for (const key in dup) {
-      if (dup[key]==frequency) {
+      if (dup[key] == frequency) {
         result.push(key);
       }
     }
-    
   }
-  return result
+  return result;
 }
 
-console.log(mode(nums1))
-console.log(mode(nums2))
-console.log(mode(nums3))
-console.log(mode(nums4))
-console.log(mode(nums5))
+console.log(mode(nums1));
+console.log(mode(nums2));
+console.log(mode(nums3));
+console.log(mode(nums4));
+console.log(mode(nums5));
