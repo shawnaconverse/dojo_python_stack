@@ -5,7 +5,9 @@
 const nums1 = [1, 2, 3];
 const expected1 = 6;
 
-function sumArr(nums) {}
+function sumArr(nums) {
+  
+}
 
 /*****************************************************************************/
 
