@@ -23,7 +23,11 @@ const expected2 = 720;
 const num3 = 0;
 const expected3 = 1;
 
-function factorial(n) {}
+function factorial(n) {
+  // BASE CASE
+  // FORWARD PROGRESS
+  // RECURSIVE CALLS
+}
 
 /*****************************************************************************/
 
@@ -50,7 +54,41 @@ const expected4 = 2;
 const num5 = 4;
 const expected5 = 3;
 
-const num6 = 8;
-const expected6 = 21;
+const num6 = 50;
+const expected6 = 12586269025;
 
-function fibonacci(num) {}
+
+function fibonacci(num) {
+  if (num <= 0) return 0;
+  if (num < 2) return 1;
+
+  return fibonacci(num - 1) + fibonacci(num - 2);
+}
+
+
+// memoization
+function fibMemoized(n, memo = {0: 0, 1: 1}) {
+  // EDGE CASE
+  if (n < 0) return null;
+
+  // BASE CASE
+  if (memo[n] !== undefined) {
+    return memo[n];
+  }
+
+  memo[n] = fibMemoized(n - 1, memo) + fibMemoized(n - 2, memo);
+
+  return memo[n];
+}
+// Python version
+// def fib(n, memo = {"0": 0, "1": 1}):
+//   if (n < 0):
+//     return None
+  
+//   if str(n) in memo:
+//     return memo[str(n)]
+  
+
+//   memo[str(n)] = fib(n - 1, memo) + fib(n - 2, memo)
+
+//   return memo[str(n)]

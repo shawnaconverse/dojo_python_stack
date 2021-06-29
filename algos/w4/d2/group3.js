@@ -23,7 +23,21 @@ const expected2 = 720;
 const num3 = 0;
 const expected3 = 1;
 
-function factorial(n) {}
+function factorial(n) {
+  //handle floats
+  if (n % 1 != 0) {
+    n = Math.floor(n);
+  }
+  //handle negative nums
+  if (n < 0) {
+    return null;
+  }
+  // BASE CASE
+  if (n == 0){
+    return 1;
+  }
+  return (n) * factorial(n-1);
+}
 
 /*****************************************************************************/
 
@@ -50,7 +64,19 @@ const expected4 = 2;
 const num5 = 4;
 const expected5 = 3;
 
-const num6 = 8;
-const expected6 = 21;
+const num6 = 40;
+const expected6 = 102334155;
 
-function fibonacci(num) {}
+function fibonacci(num) {
+  if (num < 2){
+    return num;
+}
+return fibonacci(num - 1) + fibonacci(num - 2);
+}
+console.log(fibonacci(0));
+console.log(fibonacci(1));
+console.log(fibonacci(2));
+console.log(fibonacci(3));
+
+
+fibonacci(num6)
