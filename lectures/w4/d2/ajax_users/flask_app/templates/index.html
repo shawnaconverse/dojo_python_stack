@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Names</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    
+</head>
+<body>
+    <h1 class="text-center">Here are the Users</h1>
+    <div class="d-flex">
+    <div class="">
+        <table class="table table-sm table-striped table-info table-hover">
+            <thead >
+                <tr>
+                    <th>User Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="users">
+                <tr>
+                    <td>User</td>
+                    <td>Email</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="">
+        <h2>Add a User</h2>
+        <form id="myForm" onsubmit="event.preventDefault(); handleSubmit(this);">
+            <p>
+                Username:
+                <input type="text" name="username">
+            </p>
+            <p>
+                Email:
+                <input type="email" name="email" id="">
+            </p>
+            <button>Submit</button>
+        </form>
+    </div>
+    </div>
+    <script src="{{  url_for('static', filename='js/site.js')}}" async></script>
+</body>
+</html>
