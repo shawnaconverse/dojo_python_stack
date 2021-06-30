@@ -16,7 +16,31 @@ const expected3 = { nickel: 1, penny: 4 };
 const cents4 = 99;
 const expected4 = { quarter: 3, dime: 2, penny: 4 };
 
-function fewestCoinChange(cents) {}
+function fewestCoinChange(cents) {
+  var expected = {}; 
+  if(cents>=25) {
+      expected["quarter"] = Math.floor(cents/25)
+      cents = cents %25;
+  }
+  if(cents>=10){
+    expected["dime"] = Math.floor(cents/10)
+    cents = cents %10;
+  }
+  if(cents>=5){
+    expected["nickel"] = Math.floor(cents/5)
+    cents = cents %5;
+  }
+  if(cents>=1){
+    expected["penny"] = cents; 
+  }
+  return expected;
+  
+}
+
+console.log(fewestCoinChange(cents1))
+console.log(fewestCoinChange(cents2))
+console.log(fewestCoinChange(cents3))
+console.log(fewestCoinChange(cents4))
 
 /*****************************************************************************/
 
@@ -34,4 +58,32 @@ const nums2 = [3, 0, 1, 2];
 const expected2 = null;
 // Explanation: nothing is missing
 
-function missingValue(unorderedNums) {}
+
+function missingValue(unorderedNums) {
+  var sum = 0;
+  var expectedsum = 0;
+  var n = 0;
+  var zerocheck = false;
+  for(var i=0;i<unorderedNums.length;i++){
+      if(unorderedNums[i]==0){
+        zerocheck = true;
+      }
+      if (unorderedNums[i] > n) {
+        n = unorderedNums[i]; // Set max value
+      }
+      sum += unorderedNums[i];
+  }
+  while (n>0) {
+    expectedsum += n;
+    n--;
+  }
+  if(zerocheck==false){
+    return 0;
+  }
+	
+  return Math.abs(sum-expectedsum==0) ? "null" : Math.abs(expectedsum-sum);
+}
+
+console.log(missingValue(nums1))
+console.log(missingValue(nums2))
+

@@ -19,5 +19,21 @@ const expected2 = true;
 const nums3 = [3, 4, 6, 8, 12];
 const searchNum3 = 3;
 const expected3 = true;
+/*
 
-function binarySearch(sortedNums, searchNum) {}
+*/
+
+// ?wrong group
+function binarySearch(sortedNums, searchNum) {
+  let point = Math.floor(sortedNums.length/2);
+  if (sortedNums[point] === searchNum) {
+    return true;
+  } else if ( sortedNums[point] > searchNum) {
+    return binarySearch(sortedNums.slice(0, point), searchNum)
+  } else if ( sortedNums[point] < searchNum) {
+    return binarySearch( sortedNums.slice(point, sortedNums.length), searchNum)
+  }
+
+
+  return 
+}

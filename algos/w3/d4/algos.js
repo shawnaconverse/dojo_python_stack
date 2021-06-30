@@ -16,8 +16,21 @@ const expected3 = { nickel: 1, penny: 4 };
 const cents4 = 99;
 const expected4 = { quarter: 3, dime: 2, penny: 4 };
 
-function fewestCoinChange(cents) {}
-
+function fewestCoinChange(cents) {
+  if (cents < 1) {
+    return false;
+  }
+  let denominations = [25, 10, 5, 1];
+  let names = ["quarter", "dime", "nickel", "penny"];
+  let result = {};
+  for (let i = 0; i < denominations.length; i++) {
+    if (Math.floor(cents / denominations[i] != 0)) {
+      result[names[i]] = Math.floor(cents / denominations[i]);
+      cents = cents % denominations[i];
+    }
+  }
+  return result;
+}
 /*****************************************************************************/
 
 /* 
@@ -34,4 +47,20 @@ const nums2 = [3, 0, 1, 2];
 const expected2 = null;
 // Explanation: nothing is missing
 
-function missingValue(unorderedNums) {}
+function missingValue(unorderedNums) {
+  let nums = {};
+
+  for (let i = 0; i < unorderedNums.length; i++) 
+  {
+    nums[unorderedNums[i]] = 1;
+  }
+
+  for (let i = 0; i < unorderedNums.length; i++) 
+  {
+    if (!nums[i]) 
+    {
+      return i;
+    }
+  }
+  return null;
+}
