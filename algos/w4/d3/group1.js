@@ -19,23 +19,21 @@ const nums3 = [3, 4, 6, 8, 12];
 const searchNum3 = 3;
 const expected3 = true;
 
+function binarySearch(
+  sortedNums,
+  searchNum,
+  startidx = 0,
+  endidx = sortedNums.length - 1
+) {
+  var mid = Math.floor((startidx + endidx) / 2);
 
-function binarySearch(sortedNums, searchNum, startidx=0, endidx=sortedNums.length-1) {
-
-    var mid = Math.floor((startidx+endidx)/2);
-
-    if(searchNum==sortedNums[mid]){
-      return true;
-    }
-    else if(startidx==endidx){
-      return false;
-    }
-    else if(searchNum<sortedNums[mid]){
-      return binarySearch(sortedNums,searchNum,startidx,mid-1)
-    }
-    else if(searchNum>sortedNums[mid]){
-      return binarySearch(sortedNums,searchNum,mid+1,endidx)
-    }
-    
+  if (searchNum == sortedNums[mid]) {
+    return true;
+  } else if (startidx == endidx) {
+    return false;
+  } else if (searchNum < sortedNums[mid]) {
+    return binarySearch(sortedNums, searchNum, startidx, mid - 1);
+  } else if (searchNum > sortedNums[mid]) {
+    return binarySearch(sortedNums, searchNum, mid + 1, endidx);
+  }
 }
-

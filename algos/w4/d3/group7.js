@@ -26,14 +26,13 @@ const expected3 = true;
 // ?wrong group
 function binarySearch(sortedNums, searchNum) {
   let point = Math.floor(sortedNums.length/2);
-  if (sortedNums[point] === searchNum) {
+  if (sortedNums.length === 1 && sortedNums[0] != searchNum) {
+    return false;
+  } else if (sortedNums[point] === searchNum) {
     return true;
   } else if ( sortedNums[point] > searchNum) {
-    return binarySearch(sortedNums.slice(0, point), searchNum)
+    return binarySearch(sortedNums.slice(0, point), searchNum);
   } else if ( sortedNums[point] < searchNum) {
-    return binarySearch( sortedNums.slice(point, sortedNums.length), searchNum)
+    return binarySearch( sortedNums.slice(point, sortedNums.length), searchNum);
   }
-
-
-  return 
 }

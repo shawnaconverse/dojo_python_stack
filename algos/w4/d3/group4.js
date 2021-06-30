@@ -21,14 +21,15 @@ const searchNum3 = 3;
 const expected3 = true;
 
 function binarySearch(sortedNums, searchNum) {
-  let mid=Math.floor(sortedNums.length/2);
-  if(sortedNums[mid]==searchNum){
-      return true;
-  } else if(searchNum>sortedNums[mid] && mid!=sortedNums.length-1){
-      sortedNums=sortedNums.slice(mid+1, sortedNums.length);
-  } else if(searchNum<sortedNums[mid] && mid!=0){
-      sortedNums=sortedNums.slice(0, mid);
-  } else {
-      return false;
-  }
+    let mid=Math.floor(sortedNums.length/2);
+    if(sortedNums[mid]==searchNum){
+        return true;
+    } else if(searchNum>sortedNums[mid] && mid!=sortedNums.length-1){
+        sortedNums=sortedNums.slice(mid+1, sortedNums.length);
+    } else if(searchNum<sortedNums[mid] && mid!=0){
+        sortedNums=sortedNums.slice(0, mid);
+    } else {
+        return false;
+    }
+    return binarySearch(sortedNums, searchNum);
 }

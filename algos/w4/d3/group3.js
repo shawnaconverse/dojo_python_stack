@@ -16,23 +16,24 @@ const nums2 = [4, 5, 6, 8, 12];
 const searchNum2 = 5;
 const expected2 = true;
 
-const nums3 = [3, 4, 6, 8, 12, 50]; // what are you doing christian i see you made it disappear
+const nums3 = [3, 4, 6, 8, 12, 50]; 
 const searchNum3 = 3;
 const expected3 = true;
 
 function binarySearch(sortedNums, searchNum) {
   
-  //base case
-  if (sortedNums.length === 1 && sortedNums[0] !== searchNum){
+  //base case 
+  if (sortedNums.length === 0){
     return false;
   }
-
 
   //if we find it
   let mid = Math.floor(sortedNums.length/2)
   if (sortedNums[mid] === searchNum){
     return true
   }
+
+
   //If not, we divide into two cases, one if the midpoint was larger, the other if it was smaller
   else if (sortedNums[mid] < searchNum){
     return binarySearch(sortedNums.slice(mid+1), searchNum)
@@ -44,6 +45,6 @@ function binarySearch(sortedNums, searchNum) {
 }
 
 
-console.log(binarySearch(nums1))
-console.log(binarySearch(nums2))
-console.log(binarySearch(nums3))
+console.log(binarySearch(nums1, searchNum1))
+console.log(binarySearch(nums2, searchNum2))
+console.log(binarySearch(nums3, searchNum3))

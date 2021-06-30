@@ -21,18 +21,24 @@ const searchNum3 = 3;
 const expected3 = true;
 
 function binarySearch(sortedNums, searchNum) {
-  let startingPoint = Math.floor((sortedNums)/2);
-  let length =sortedNums.length;
+  console.log(sortedNums);
+  let length = sortedNums.length;
+  let startingPoint = 0;
+  if (length > 1) {
+    startingPoint = Math.ceil(sortedNums.length/2);
+  }
+
   let found = false;
   if (sortedNums[startingPoint] === searchNum) {
     found = true;
     return found;
   }
-  else if (sortedNums[startingPoint] >= searchNum) {
-    return binarySearch((sortedNums.splice(startingPoint, (length - startingPoint)), searchNum));
+  else if (sortedNums[startingPoint] >= searchNum && length > 1) {
+    return binarySearch((sortedNums.slice(0, startingPoint)), searchNum);
   }
-  else if (sortedNums[startingPoint] <= searchNum) {
-    return binarySearch((sortedNums.splice(0, startingPoint), searchNum));
+  else if (sortedNums[startingPoint] <= searchNum && length > 1) {
+    return binarySearch((sortedNums.slice(startingPoint, length+1)) , searchNum);
+
   }
   else {
     return found;
