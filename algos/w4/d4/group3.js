@@ -11,7 +11,13 @@ const expected1 = "cba";
 const str2 = "";
 const expected2 = "";
 
-function reverseStr(str) {}
+function reverseStr(str) {
+    if (str === "") {
+      return "";
+    } else{
+      return reverseStr(str.substr(1)) + str.charAt(0);
+    }
+}
 
 /*****************************************************************************/
 
@@ -33,7 +39,23 @@ const expected1 = 5;
 const num2 = 10;
 const expected2 = 1;
 
-const num3 = 25;
+const num3 = 25;["2","5"]
 const expected3 = 7;
 
-function sumToOneDigit(num) {}
+const num2 = 3.5;
+const expected2 = 1;
+
+function sumToOneDigit(num) {
+  let sum = 0;
+  let numbers = num.toString().split('');
+  
+  while(numbers.length > 0){
+    sum += parseInt(numbers[0],10); // the 10 will convert from a decimal number // parseInt(string, radix)
+    numbers.splice(0,1); // (index, howmany, item)
+    sumToOneDigit(numbers.join(''));
+  }
+   return sum;
+  }
+
+
+
