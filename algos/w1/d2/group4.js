@@ -11,8 +11,13 @@ const expected1 = "TNFL-GPYW";
 const str2 = "Live from New York, it's Saturday Night!";
 const expected2 = "LFNYISN";
 
-function acronymize(str) {}
+function acronymize(str) {
+	var array = str.split(" ");
+	for(var i = 0; i < str.length; i++);
+	console.log(array)
+}
 
+acronymize(str2)
 /*****************************************************************************/
 
 /* 
@@ -28,3 +33,5 @@ const str2 = "dog";
 const expected2 = "god";
 
 function reverseString(str) {}
+
+
