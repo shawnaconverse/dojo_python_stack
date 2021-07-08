@@ -1,3 +1,4 @@
+
 /* 
   Parens Valid
 	Given an str that has parenthesis in it
@@ -19,7 +20,9 @@ const str4 = "a(b))(c";
 const expected4 = false;
 // Explanation: same number of opens and closes but the 2nd closing closes nothing
 
-function parensValid(str) {}
+function parensValid(str) {
+  
+}
 
 /*****************************************************************************/
 

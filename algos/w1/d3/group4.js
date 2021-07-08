@@ -19,7 +19,33 @@ const str4 = "a(b))(c";
 const expected4 = false;
 // Explanation: same number of opens and closes but the 2nd closing closes nothing
 
-function parensValid(str) {}
+
+function parensValid(str) {
+  var total = 0
+
+  for(var i = 0; i < str.length; i++){
+    if(str[i] == "("){
+      total++
+      for(var x = i + 1; x < str.length; x++){
+        if(str[x] == ")"){
+          total++
+          break;
+        }
+        else{
+          return false;
+        }
+      }
+    }
+  }
+
+  if(total % 2 == 0){
+    return true;
+  }
+
+  else{
+    return false;
+  }
+}
 
 /*****************************************************************************/
 
@@ -37,4 +63,57 @@ const expected2 = false;
 const str3 = "A(1)s[O (n]0{t) 0}k";
 const expected3 = false;
 
-function bracesValid(str) {}
+function bracesValid(str) {
+  var openArray = []
+  var closeArray = []
+
+  for(var i = 0; i < str.length; i++){
+    if(str[i] == "("){
+      openArray.push(str[i])
+      for(var x = i + 1; x < str.length; x++){
+        if(str[x] == ")"){
+          closeArray.push(str[x])
+          break;
+        }
+        else{
+          return false;
+        }
+      }
+    }
+
+    else if(str[i] == "{"){
+      openArray.push(str[i])
+      for(var x = i + 1; x < str.length; x++){
+        if(str[x] == "}"){
+          closeArray.push(str[x])
+          break;
+        }
+        else{
+          return false;
+        }
+      }
+    }
+
+    else if(str[i] == "["){
+      openArray.push(str[i])
+      for(var x = i + 1; x < str.length; x++){
+        if(str[x] == "]"){
+          closeArray.push(str[x])
+          break;
+        }
+        else{
+          return false;
+        }
+      }
+    }
+
+  }
+
+  if(openArray.length == closeArray.length){
+    return true;
+  }
+
+  else{
+    return false;
+  }
+}

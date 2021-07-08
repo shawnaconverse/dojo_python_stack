@@ -19,7 +19,29 @@ const str4 = "a(b))(c";
 const expected4 = false;
 // Explanation: same number of opens and closes but the 2nd closing closes nothing
 
-function parensValid(str) {}
+function parensValid(str) {
+
+
+  
+}
+
+function parensValid(str) {
+  testArray = []
+  for(i = 0; i < str.length-1; i++){
+      if (str[i]=="("){
+        testArray.push(str[i]);
+      } 
+      else if(str[i]==")"){
+        if(testArray.length==0)return false;
+        else testArray.pop();
+      }
+  }
+  if(testArray.length==0){
+     return true;
+  }
+  else return false;
+}
+
 
 /*****************************************************************************/
 
@@ -37,4 +59,34 @@ const expected2 = false;
 const str3 = "A(1)s[O (n]0{t) 0}k";
 const expected3 = false;
 
-function bracesValid(str) {}
+function parensValid(str) {
+  testArray = []
+  for(i = 0; i < str.length-1; i++){
+
+      if (str[i]=="(" || str[i]=="{" || str[i]=="["){
+        testArray.push(str[i]);
+      } 
+      else if(str[i]==")"){
+        if(testArray.length==0)return false;
+        else if(testArray[testArray.length-1]=="("){
+          testArray.pop();
+        }
+      }
+      else if(str[i]=="}"){
+        if(testArray.length==0)return false;
+        else if(testArray[testArray.length-1]=="{"){
+          testArray.pop();
+        }
+      }        
+      else if(str[i]=="]"){
+        if(testArray.length==0)return false;
+        else if(testArray[testArray.length-1]=="["){
+          testArray.pop();
+        }
+      }
+  }
+  if(testArray.length==0){
+     return true;
+  }
+  else return false;
+}

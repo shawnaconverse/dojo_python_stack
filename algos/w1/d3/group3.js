@@ -8,7 +8,7 @@ const str1 = "Y(3(p)p(3)r)s";
 const expected1 = true;
 
 const str2 = "N(0(p)3";
-const expected2 = false;
+const expected2 = false; 
 // Explanation: not every parenthesis is closed.
 
 const str3 = "N(0)t ) 0(k";
@@ -19,7 +19,39 @@ const str4 = "a(b))(c";
 const expected4 = false;
 // Explanation: same number of opens and closes but the 2nd closing closes nothing
 
-function parensValid(str) {}
+
+// const str1 = "Y(3(p)p(3)r)s";
+// function parensValid(str1){
+
+//     const stack = []
+    
+//     for (i = 0; i < str1.length; i++){
+//         let curChar = s[i];
+//         switch(curChar){
+//             case '(': stack.push(')');
+//                 break;
+//         default:
+//             topElement = stack.pop()
+//             if (curChar !== topElement) return false;
+//         }
+//     }
+//     return str1.lenght == 0;
+// }
+  
+let isBalancedParenthesis = (str) => {
+    
+  return !str.split('').reduce((uptoPrevChar, thisChar) => {
+      if(thisChar === '(' || thisChar === '{' || thisChar === '[' ) {
+          return ++uptoPrevChar;
+      } else if (thisChar === ')' || thisChar === '}' || thisChar === ']') {
+          return --uptoPrevChar;
+      }
+
+      return uptoPrevChar
+  }, 0);
+}
+
+console.log(isBalancedParenthesis("D(i{a}l[ t]o)n{e"))
 
 /*****************************************************************************/
 

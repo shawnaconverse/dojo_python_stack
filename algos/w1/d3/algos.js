@@ -37,4 +37,21 @@ const expected2 = false;
 const str3 = "A(1)s[O (n]0{t) 0}k";
 const expected3 = false;
 
-function bracesValid(str) {}
+function bracesValid(str) {
+  const stack = [];
+  const opens = "({[";
+  const closeToOpen = { ")": "(", "}": "{", "]": "[" };
+
+  for (let i = 0; i < str.length; i++) {
+    if (opens.includes(str[i])) {
+      stack.push(str[i]);
+    } else if (str[i] in closeToOpen) {
+      if (closeToOpen[str[i]] === stack[stack.length - 1]) {
+        stack.pop();
+      } else {
+        return false;
+      }
+    }
+  }
+  return stack.length === 0;
+}
