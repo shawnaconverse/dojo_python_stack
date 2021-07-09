@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x' crossorigin='anonymous'>
+
+</head>
+<body>
+  <h1>Here is a list of dogs:</h1>
+  <ul>
+    {% for dog_name in dogs %}
+      <li>
+        {% if dog_name == "Vicky" %}
+          is good girl
+        {% endif %}
+        {{ dog_name }}
+      </li>
+    {% endfor %}
+  </ul>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Hair Color</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for dog in dogs %}
+        <tr>
+          <td>{{ dog['name'] }}</td>
+          <td>{{ dog['age'] }}</td>
+          <td>{{ dog.hair_color }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
