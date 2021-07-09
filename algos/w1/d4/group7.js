@@ -19,7 +19,7 @@ const str4 = "oho!";
 const expected4 = false;
 
 function isPalindrome(str) {}
-
+a
 /*****************************************************************************/
 
 /* 
