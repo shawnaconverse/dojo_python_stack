@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POST REQUESTS</title>
+</head>
+<body>
+  <h1>Make a Dog!</h1>
+  <form action="/create" method="post">
+    <p>
+      Name:
+      <input type="text" name="name" id="">
+      <!-- the name attribute defines the key in request.form -->
+    </p>
+    <p>
+      Age:
+      <input type="text" name="age" id="">
+    </p>
+    <p>
+      Hair Color:
+      <input type="text" name="hair_color" id="">
+    </p>
+    <!-- <input type="submit" value="Submit"> -->
+    <button>submit</button>
+  </form>
+</body>
+</html>
