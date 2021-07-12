@@ -12,6 +12,7 @@ return the original string.
 const str1 = "aaaabbcddd";
 const expected1 = "a4b2c1d3";
 
+
 const str2 = "";
 const expected2 = "";
 

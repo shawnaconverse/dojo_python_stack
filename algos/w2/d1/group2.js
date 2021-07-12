@@ -21,7 +21,18 @@ const expected3 = "a";
 const str4 = "bbcc";
 const expected4 = "bbcc";
 
-function encodeStr(str) {}
+function encodeStr(str) {
+
+  for(var i = 0; i < str.length; i++){
+      let count = 1;
+      while(i < str.length - 1 && str[i] == str[i+1]){
+          count++;
+          i ++;
+      }
+      return (stre[i]);
+      return (count);
+  }
+}
 
 /*****************************************************************************/
 

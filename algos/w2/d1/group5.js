@@ -21,7 +21,25 @@ const expected3 = "a";
 const str4 = "bbcc";
 const expected4 = "bbcc";
 
-function encodeStr(str) {}
+function encodeStr(str){
+  newString = '';
+  count = 0;
+  for (var i = 0; i < str.length; i++); {
+    newString += str[i]
+    // for (var j = i + 1; j < str.length; j++); {
+      if (str[i] == str[i+1]) {
+        count++;
+      // } else {
+      //   newString += count;
+      //   i = j - 1;
+      //   count = 0;
+      // }
+    }
+  }
+  return newString;
+}
+ 
+
 
 /*****************************************************************************/
 
@@ -32,4 +50,8 @@ function encodeStr(str) {}
 const str1 = "a3b2c1d3";
 const expected1 = "aaabbcddd";
 
-function decodeStr(str) {}
+function decodeStr(str) {
+  for (var i=0; i < str.length -1; i++);{
+    
+  }
+}
