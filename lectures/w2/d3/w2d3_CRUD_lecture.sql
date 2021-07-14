@@ -105,6 +105,56 @@ SELECT LOWER(first_name) FROM users;
 SELECT id, CASE WHEN id %2 != 0 then "odd" else "even" end AS results FROM users WHERE results = "odd";
 
 
+-- JOIN
+-- SQL command: SELECT
+-- SELECT <fields> FROM <table> JOIN <2ndtable> ON <1sttablePK> = <2ndtableFK>;
+
+-- 1 to 1, 1 to Many
+
+SELECT * FROM users JOIN addresses ON users.id = addresses.user_id WHERE users.id = 2;
+SELECT * FROM users JOIN orders ON users.id = orders.user_id;
+
+-- Many to Many
+-- SELECT <fields> FROM <table> 
+-- JOIN <2ndtable> ON <1sttablePK> = <2ndtableFK>
+-- JOIN <3rdtable> ON <3rdtablePK> = <2ndtableFK>;
+
+SELECT * FROM orders;
+SELECT * FROM orders_items;
+
+SELECT orders.*, items.* FROM orders
+JOIN orders_items ON orders.id = orders_items.order_id
+JOIN items ON items.id = orders_items.item_id
+WHERE orders.id = 1;
+
+SELECT users.first_name, users.last_name, orders.amount, items.name, items.description FROM users
+JOIN orders ON users.id = orders.user_id
+JOIN orders_items ON orders.id = orders_items.order_id
+JOIN items ON items.id = orders_items.item_id
+WHERE users.id = 1;
+
+-- LEFT JOIN
+SELECT * FROM users;
+
+SELECT * FROM users
+LEFT JOIN orders ON users.id = orders.user_id
+WHERE users.id = 4;
+
+SELECT * FROM users
+LEFT JOIN addresses ON users.id = addresses.user_id;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
