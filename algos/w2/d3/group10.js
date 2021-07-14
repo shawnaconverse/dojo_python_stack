@@ -29,3 +29,4 @@ const str3 = "abc def ghi";
 const expected3 = "cba fed ihg";
 
 function reverseWords(str) {}
+[]

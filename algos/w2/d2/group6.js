@@ -24,7 +24,41 @@ const expected2 = {
 const arr3 = [];
 const expected3 = {};
 
-function frequencyTableBuilder(arr) {}
+function frequencyTableBuilder(arr) {
+  // add/key value example: parseIntperson['height'] = 5'4";
+  var count = 0;
+  var result = {}
+  for(var i = 0; i < arr.length-1; i++){
+    if (result.hasOwnProperty(arr[i])){
+      
+    }
+    else{
+      count ++;
+      result[arr[i]] = count;
+    }
+    for(var j = i+1; j < arr.length-1; j++){
+      if (arr[i] == arr[i]){
+        count++;
+        result[arr[i]] = count;
+      }
+    }
+  }
+}
+
+function frequencyTableBuilder(arr){
+  if(arr.length < 1 )
+      return {};
+  newArr = {};
+  for(var i = 0; i<arr.length; i++){
+      index = arr[i]
+      if(newArr.hasOwnProperty(index)){
+          newArr[index]++;
+      }
+      else 
+          newArr[index] = 1;
+  }
+  return newArr;
+}
 
 /*****************************************************************************/
 
@@ -37,4 +71,16 @@ function frequencyTableBuilder(arr) {}
 const str1 = "This is a test";
 const expected1 = "test a is This";
 
-function reverseWordOrder(wordsStr) {}
+function reverseWordOrder(wordStr){
+  const myArr = wordStr.split(" ");
+  newArr = "";
+  for(var i = myArr.length-1; i>-1; i--){
+      newArr += myArr[i]+" ";
+  }
+  return newArr;
+}  
+console.log(reverseWordOrder(str1))
+
+function reverseWordOrder(wordsStr){
+  return wordsStr.split(' ').reverse().join(' ')
+}
