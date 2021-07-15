@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>All Dogs</h1>
+  <a href="/dogs/new">Create a dog!</a>
+  <table>
+    <thead>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Hair Color</th>
+      <th>Created at</th>
+      <th>Updated at</th>
+    </thead>
+    <tbody>
+      {% for dog in all_dogs %}
+        <tr>
+          <td>{{ dog.id }}</td>
+          <td><a href="/dogs/{{ dog.id }}">{{ dog.name }}</a></td>
+          <td>{{ dog.age }}</td>
+          <td>{{ dog.hair_color }}</td>
+          <td>{{ dog.created_at }}</td>
+          <td>{{ dog.updated_at }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
