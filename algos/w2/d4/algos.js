@@ -55,8 +55,18 @@ const expected2 = false;
 // Explanation: all same letters in 2nd string, but out of order
 
 function isRotation(s1, s2) {
-  if (s1.length != s2.length || s1 === s2) return false;
+  if (s1.length != s2.length) return false;
 
   // .includes() - loops through soemthing and checks to see if a value exists inside it
   return (s1 + s1).includes(s2);
+
+  // actually, s1 === s2 is still a rotation of 0, so we don't need to compare it
+  // using an AND statement, we can return true or false depending on the logic below
+  // return s1.length == s2.length && (s1 + s1).includes(s2) 
+
+  // if we changed the definition of a rotation to mean if s1 === s2 then its not a rotation
+  // thie below ternary operator would combine the above logic into one line
+  // return s1.length != s2.length || s1 === s2 ? false : (s1 + s1).includes(s2)
 }
+
+
