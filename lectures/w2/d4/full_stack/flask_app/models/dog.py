@@ -1,4 +1,4 @@
-from mysqlconnection import connectToMySQL
+from flask_app.config.mysqlconnection import connectToMySQL
 
 class Dog:
     def __init__(self, data):
@@ -63,10 +63,19 @@ class Dog:
 
     @classmethod
     def update(cls, data):
-        pass
+        query = """
+            UPDATE dogs SET name = %(name)s, age = %(age)s, hair_color = %(hair_color)s,
+            updated_at = NOW() WHERE id = %(id)s;
+        """
+
+        connectToMySQL("dogs_schema").query_db(query, data)
+
 
 
     @classmethod
     def delete(cls, data):
-        pass
+        query = "DELETE FROM dogs WHERE id = %(id)s;"
+        
+        connectToMySQL("dogs_schema").query_db(query, data)
+
 
