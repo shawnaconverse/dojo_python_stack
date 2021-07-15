@@ -19,7 +19,43 @@ const str4 = "Hello World";
 const rotateAmnt4 = 4;
 const expected4 = "orldHello W";
 
-function rotateStr(str, n) {}
+// function rotateStr(str){
+
+  
+//   var sb;
+
+//   for(i = 0; i <str.length; i++){
+//       sb = [];
+//       var j = i;
+//       var k = 0;
+
+//       for(k2 = j; k2< str.length; k2++){
+//           sb.push(str.charAt(j));
+//           k++;
+//           j++;
+//       }
+//       j = 0;
+//       while(j <i){
+//           sb.push(str.charAt(j));
+//           j++;
+//           k++;
+//       }
+//       sb.join("") + "<br>";
+//   }
+// }
+// console.log(rotateStr(str2));
+
+function rotateStr(str,n){
+  rotate = {}
+  for (i = 0; i < str.length; i++){
+    for(n ; n > 0; n--){
+
+    str[i] += 1;
+    str.push()
+    rotate.join()
+    }
+  }
+}
 
 /*****************************************************************************/
 

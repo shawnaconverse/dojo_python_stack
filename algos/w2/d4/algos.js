@@ -1,6 +1,7 @@
 /* 
   String: Rotate String
-  Create a standalone function that accepts a string and an integer, and rotates the characters in the string to the right by that given integer amount.
+  Create a standalone function that accepts a string and an integer, 
+  and rotates the characters in the string to the right by that given integer amount.
 */
 
 const str1 = "Hello World";
@@ -19,7 +20,22 @@ const str4 = "Hello World";
 const rotateAmnt4 = 4;
 const expected4 = "orldHello W";
 
-function rotateStr(str, n) {}
+function rotateStr2(str, n) {
+  let answer = "";
+  for (let i = str.length - 1; i >= str.length - n; i--) {
+    answer = str[i] + answer;
+  }
+  answer += str.substring(0, str.length - n); // slice
+  return answer;
+}
+
+function roatateStr3(str, n) {
+  // let frontStr = str.slice(0, str.length - n);
+  // let endStr = str.slice(str.length - n, str.length);
+
+  // return endStr + frontStr;
+  return str.slice(str.length - n, str.length) + str.slice(0, str.length - n)
+}
 
 /*****************************************************************************/
 
@@ -38,4 +54,9 @@ const strB2 = "CDBA";
 const expected2 = false;
 // Explanation: all same letters in 2nd string, but out of order
 
-function isRotation(s1, s2) {}
+function isRotation(s1, s2) {
+  if (s1.length != s2.length || s1 === s2) return false;
+
+  // .includes() - loops through soemthing and checks to see if a value exists inside it
+  return (s1 + s1).includes(s2);
+}

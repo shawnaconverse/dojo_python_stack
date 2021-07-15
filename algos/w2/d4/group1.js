@@ -19,7 +19,37 @@ const str4 = "Hello World";
 const rotateAmnt4 = 4;
 const expected4 = "orldHello W";
 
-function rotateStr(str, n) {}
+// --------------------------------
+function rotateStr(str, n) {
+  var newstr = '';
+  for(var i = str.length - n; i < str.length; i++){
+    newstr += str[i];
+  }
+  for (var i = 0; i < str.length - n; i++){
+    newstr += str[i];
+  }
+  return newstr;
+}
+rotateStr(str1, rotateAmnt1)
+
+// -----------------------------------
+function reverseStr(charArr, left, right) {
+  while (left < right){
+      [charArr[left], charArr[right]] = [charArr[right], charArr[left]]  
+      left ++ 
+      right --
+  }
+  return charArr
+}
+
+function rotateStr(str, n) {
+  let strLength = str.length;
+  strArr = str.split("")
+  rotatedStr = reverseStr(strArr, 0, strLength - 1)
+  rotatedStr = reverseStr(strArr, 0, n - 1)
+  rotatedStr = reverseStr(strArr, n, strLength - 1)
+  return rotatedStr.join("");
+}
 
 /*****************************************************************************/
 
@@ -38,4 +68,19 @@ const strB2 = "CDBA";
 const expected2 = false;
 // Explanation: all same letters in 2nd string, but out of order
 
-function isRotation(s1, s2) {}
+
+
+// -------
+function isRotation(s1, s2) {
+  let s1Len = s1.length;
+  // if S1 == S2, no ratation
+  if (s1 == s2) return false;
+  
+  while (s1Len){
+      if (rotateStr(s1, s1Len) == s2){
+          return true;
+      }
+      s1Len --
+  }
+  return false;
+}
