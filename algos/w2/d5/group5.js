@@ -22,7 +22,34 @@ const strA4 = "silent";
 const strB4 = "listen";
 const expected4 = true;
 
-function isAnagram(s1, s2) {}
+function isAnagram(s1, s2) {
+  let dic1 = {};
+  let dic2 = {};
+  
+  for(let i = 0; i < s1.length; i++){
+     let c = s1[i].toLowerCase();
+    if (dic1[c]){
+      dic1[c]++;
+    } else dic1[c] = 1;
+  }
+
+  for(let j = 0; j <s2.length; j++){
+    let c = s2[j].toLowerCase();
+    if (dic2[c]){
+      dic2[c]++;
+    }
+    else dic2[c] = 1;
+  }
+  
+  let keys = Object.keys(dic2)
+  for(let key in keys){
+    if(dic2[key] != dic1[key]){
+      return false;
+    }
+  }
+  
+  return true;
+}
 
 /*****************************************************************************/
 
@@ -35,4 +62,20 @@ function isAnagram(s1, s2) {}
 const str1 = "   hello world     ";
 const expected1 = "hello world";
 
-function trim(str) {}
+function trim(str) {
+  arr1 = []
+  arr1 = str.split("")
+  for(let i = 0; i <arr.length; i++){
+    if(arr[i] != " "){
+      break;
+    }
+    else arr1.shift();
+  }
+  for(let j = arr1.length-1; j >= 0; j--){
+    if(arr[j] != " "){
+      break;
+    }
+    else arr1.pop();
+  }
+  return arr1.join("");
+}

@@ -22,8 +22,26 @@ const strA4 = "silent";
 const strB4 = "listen";
 const expected4 = true;
 
-function isAnagram(s1, s2) {}
+function isAnagram(s1, s2) {
+  if (s1.length != s2.length) return false
 
+  const s1CharFrequency = {}
+  for (const s1Char of s1){
+      s1CharFrequency[s1Char] = s1CharFrequency[s1Char] + 1 || 1
+  }
+
+  // iterate the second string, compare its char using s1CharFrequency
+  for (const s2Char of s2){
+      // if s2Char not in s1CharFrequency or its frequency is 0, return false
+      // or else: descrease the frequency of the char
+      if (!s2Char in s1CharFrequency || s1CharFrequency[s2Char] == 0){
+          return false
+      } else{
+          s1CharFrequency[s2Char] -= 1
+      }
+  }
+  return true;
+}
 /*****************************************************************************/
 
 /* 
@@ -35,4 +53,13 @@ function isAnagram(s1, s2) {}
 const str1 = "   hello world     ";
 const expected1 = "hello world";
 
-function trim(str) {}
+function trim(str) {
+  let newArr = str.split(" ")
+  let output = ""
+  for (const elt of newArr){
+      if (elt != ""){
+          output += elt + " "
+      }
+  }
+  return output.slice(0, output.length-1)
+}

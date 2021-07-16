@@ -22,7 +22,39 @@ const strA4 = "silent";
 const strB4 = "listen";
 const expected4 = true;
 
-function isAnagram(s1, s2) {}
+function frequencyTableBuilder(arr) {
+  const result = {}
+
+  for (let i = 0; i < arr.length; i++){
+      if (result.hasOwnProperty(arr[i])){
+          result[arr[i]]++;
+      }
+      else{
+          result[arr[i]] = 1;
+      }
+  
+  }
+
+  return result
+}
+
+function isAnagram(s1, s2) {
+  if (s1.length != s2.length){
+    return false;
+  }
+  s1.toLowercase();
+  s2.toLowercase();
+
+  dict1 = frequencyTableBuilder(s1.split(""))
+  dict2 = frequencyTableBuilder(s2.split(""))
+    
+  for (let i = 0; i < s1.length; i++){
+    if (dict1[s1[i]] != dict2[s1[i]]){
+      return false
+    }
+  }
+  return true
+}
 
 /*****************************************************************************/
 
@@ -35,4 +67,20 @@ function isAnagram(s1, s2) {}
 const str1 = "   hello world     ";
 const expected1 = "hello world";
 
-function trim(str) {}
+function trim(str) {
+  let start
+  let end
+
+  for (let i = 0; i < str.length; i++){
+    if (str[i] != " "){
+      start = i;
+    }
+  }
+  for (let y = str.length - 1; y >= 0; y--){
+    if (str[y] != " "){
+      end = y;
+    }
+  }
+
+  return str.substring(start + 1, end)
+}

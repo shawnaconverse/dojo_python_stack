@@ -22,7 +22,39 @@ const strA4 = "silent";
 const strB4 = "listen";
 const expected4 = true;
 
-function isAnagram(s1, s2) {}
+function isAnagram(s1, s2) {
+  if (s1.length !== s2.length) return false;
+
+  // frequency tables
+  const s1CharFreq = {};
+  const s2CharFreq = {};
+
+  for (let i = 0; i < s1.length; i++) {
+    const s1CharUpper = s1[i].toUpperCase();
+    const s2CharUpper = s2[i].toUpperCase();
+
+    if (s1CharFreq.hasOwnProperty(s1CharUpper)) {
+      s1CharFreq[s1CharUpper]++;
+    } else {
+      s1CharFreq[s1CharUpper] = 1;
+    }
+
+    if (s2CharFreq.hasOwnProperty(s2CharUpper)) {
+      s2CharFreq[s2CharUpper]++;
+    } else {
+      s2CharFreq[s2CharUpper] = 1;
+    }
+  }
+
+  // compare both tables for same chars and same frequency
+  for (const char in s1CharFreq) {
+    if (!s2.hasOwnProperty(char)) return false;
+
+    if (s1CharFreq[char] !== s2CharFreq[char]) return false;
+  }
+
+  return true;
+}
 
 /*****************************************************************************/
 
@@ -35,4 +67,17 @@ function isAnagram(s1, s2) {}
 const str1 = "   hello world     ";
 const expected1 = "hello world";
 
-function trim(str) {}
+function trim(str) {
+  let startIdx = 0;
+  let endIdx = str.length - 1;
+
+  while (str[startIdx] == " ") {
+    startIdx++;
+  }
+
+  while (str[endIdx] == " ") {
+    endIdx--;
+  }
+
+  return str.slice(startIdx, endIdx + 1);
+}
