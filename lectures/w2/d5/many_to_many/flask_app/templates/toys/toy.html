@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toy</title>
+</head>
+<body>
+  <h1>This is a Toy</h1>
+  <p>ID: {{ toy.id }}</p>
+  <p>Name: {{ toy.name }}</p>
+  <h3>Owner Dogs</h3>
+  <ul>
+    {% for dog in toy.dogs %}
+      <li>{{ dog.name }} | <a href="/toys/{{ toy.id }}/{{ dog.id }}/remove_dog">Remove</a></li>
+    {% endfor %}
+  </ul>
+  <a href="/">Dashboard</a>
+  <a href="/toys">Toy Dashboard</a>
+  <h1>Add a owner dog</h1>
+  <form action="/toys/{{ toy.id }}/add_dog" method="post">
+    <p>
+      <select name="dog_id" id="">
+        {% for dog in all_dogs %}
+          <option value="{{ dog.id }}">{{ dog.name }}</option>
+        {% endfor %}
+      </select>
+    </p>
+    <button>Add a Dog Owner</button>
+  </form>
+</body>
+</html>

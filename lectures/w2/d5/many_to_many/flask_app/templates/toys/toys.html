@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Toys</title>
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x' crossorigin='anonymous'>
+</head>
+<body>
+  <h1>All of the Toys!</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for toy in all_toys %}
+        <tr>
+          <td>{{ toy.id }}</td>
+          <td><a href="/toys/{{ toy.id }}">{{ toy.name }}</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="/toys/new">Create a Toy</a>
+  <a href="/">Dashboard</a>
+</body>
+</html>
