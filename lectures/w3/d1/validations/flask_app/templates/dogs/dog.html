@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>One Dog</h1>
+  <p>ID: {{ dog.id }}</p>
+  <p>Name: {{ dog.name }}</p>
+  <p>Age: {{ dog.age }}</p>
+  <p>Hair Color: {{ dog.hair_color }}</p>
+  <h3>Collars:</h3>
+  <ul>
+    {% for collar in dog.collars %}
+      {% if collar.id == None %}
+        <li>No Collars</li>
+      {% else %}
+        <li>{{ collar.color }}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <a href="/">Go Back</a>
+  <a href="/dogs/{{ dog.id }}/edit">Edit</a>
+  <a href="/dogs/{{ dog.id }}/delete">Delete</a>
+</body>
+</html>
