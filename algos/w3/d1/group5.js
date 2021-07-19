@@ -12,7 +12,22 @@ const expected1 = true;
 const nums2 = [1, 2, 4, 2, 1];
 const expected2 = false;
 
-function balancePoint(nums) {}
+function balancePoint(nums) {
+  let leftNums = nums[0];
+  let rightNums = 0;
+  for (var i = 1; i < nums.length; i++){
+    rightNums += nums[i];
+  }
+  for (var i = 1; i < nums.length; i++){
+    if (leftNums == rightNums)
+    return true;
+    rightNums -= nums[i];
+    leftNums += nums[i];
+  }
+  return false;
+}
+
+balancePoint(nums1)
 
 /*****************************************************************************/
 
@@ -31,4 +46,6 @@ const expected1 = 2;
 const nums2 = [9, 9];
 const expected2 = -1;
 
-function balanceIndex(nums) {}
+function balanceIndex(nums) {
+  
+}

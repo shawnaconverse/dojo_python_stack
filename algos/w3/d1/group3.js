@@ -12,7 +12,17 @@ const expected1 = true;
 const nums2 = [1, 2, 4, 2, 1];
 const expected2 = false;
 
-function balancePoint(nums) {}
+function balancePoint(nums) {
+  let sum = nums.reduce((acc, cur) => acc+cur)
+  let leftSum = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (leftSum == sum - leftSum){
+      return true
+    }
+    leftSum += nums[i];
+  }
+  return false
+}
 
 /*****************************************************************************/
 
@@ -31,4 +41,18 @@ const expected1 = 2;
 const nums2 = [9, 9];
 const expected2 = -1;
 
-function balanceIndex(nums) {}
+function balanceIndex(nums) {
+  // if length of nums is even or its length is 1, return -1
+  if (!(nums.length % 2) || nums.length == 1) return -1
+
+  let sum = nums.reduce((acc, cur) => acc + cur)
+  let leftSum = 0;
+  for (let i = 0; i < nums.length; i++) {
+    // minus nums[i] in the right part
+    if (leftSum == sum - leftSum - nums[i]) {
+      return i
+    }
+    leftSum += nums[i];
+  }
+  return -1
+}
