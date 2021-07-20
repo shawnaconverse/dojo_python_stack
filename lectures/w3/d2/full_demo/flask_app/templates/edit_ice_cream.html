@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Ice Cream</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Hello, {{ logged_in_user.first_name }}</h1>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/logout">Logout</a>
+    </div>
+    <div class="main">
+      <h3>Create an Ice Cream!</h3>
+      <form action="/ice_creams/{{ ice_cream.id }}/update" method="post">
+        <p>
+          Flavor:
+          <input type="text" name="flavor" id="" value="{{ ice_cream.flavor }}">
+        </p>
+        <p>
+          Cone:
+          <input type="text" name="cone" id="" value="{{ ice_cream.cone }}">
+        </p>
+        <p>
+          Topping:
+          <input type="text" name="topping" id="" value="{{ ice_cream.topping }}">
+        </p>
+        <button>Update!</button>
+      </form>
+    </div>
+    <div class="errors d-flex flex-column align-items-center">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p class="text-danger">{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+    </div>
+  </div>
+</body>
+</html>

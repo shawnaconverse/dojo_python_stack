@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Hello, {{ logged_in_user.first_name }}</h1>
+      <a href="/ice_creams/new">Create an Ice Cream</a>
+      <a href="/logout">Logout</a>
+    </div>
+    <div class="container">
+      <h3>All Ice Creams</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Flavor</th>
+            <th>Cone</th>
+            <th>Topping</th>
+            <th>Creator</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for ice_cream in all_ice_creams %}
+            <tr>
+              <td>{{ ice_cream.flavor }}</td>
+              <td>{{ ice_cream.cone }}</td>
+              <td>{{ ice_cream.topping }}</td>
+              <td>{{ ice_cream.user.first_name }} {{ ice_cream.user.last_name }}</td>
+              <td>
+                <a href="/ice_creams/{{ ice_cream.id }}">View</a>
+                {% if logged_in_user.id == ice_cream.user.id %}
+                  | <a href="/ice_creams/{{ ice_cream.id }}/edit">Edit</a> | 
+                  <a href="/ice_creams/{{ ice_cream.id }}/delete">Delete</a> 
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <h3>These are Your IceCreams</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Flavor</th>
+          <th>Cone</th>
+          <th>Topping</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ice_cream in logged_in_user.ice_creams %}
+          <tr>
+            <td>{{ ice_cream.flavor }}</td>
+            <td>{{ ice_cream.cone }}</td>
+            <td>{{ ice_cream.topping }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="errors d-flex flex-column align-items-center">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p class="text-danger">{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+    </div>
+  </div>
+</body>
+</html>

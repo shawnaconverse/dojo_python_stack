@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ice Cream!</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Hello, {{ logged_in_user.first_name }}</h1>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/logout">Logout</a>
+    </div>
+    <div class="main">
+      <h3>Here is the Ice Cream</h3>
+      <p>Flavor: {{ ice_cream.flavor }}</p>
+      <p>Cone: {{ ice_cream.cone }}</p>
+      <p>Topping: {{ ice_cream.topping }}</p>
+      <p>Creator: {{ ice_cream.user.first_name }} {{ ice_cream.user.last_name }}</p>
+      <p>Created at: {{ ice_cream.created_at }}</p>
+      <p>Updated at: {{ ice_cream.updated_at }}</p>
+    </div>
+  </div>
+</body>
+</html>
