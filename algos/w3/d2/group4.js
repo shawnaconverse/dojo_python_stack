@@ -17,4 +17,12 @@ const nums3 = [3, 4, 6, 8, 12];
 const searchNum3 = 3;
 const expected3 = true;
 
-function binarySearch(sortedNums, searchNum) {}
+function binarySearch(sortedNums, searchNum) {
+  high = sortedNums[length(sortedNums-1)];
+  low = sortedNums[0];
+  mid = (high+low)/2;
+
+  if (mid == serach)
+  
+
+}
