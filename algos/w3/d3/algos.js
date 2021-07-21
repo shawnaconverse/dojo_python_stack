@@ -14,7 +14,16 @@ const expected2 = [1, 2, 3];
 const nums3 = [1, 1, 2, 3, 3, 4];
 const expected3 = [1, 2, 3, 4];
 
-function dedupeSorted(nums) {}
+function dedupeSorted(nums) {
+  newArray = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    if (!newArray.includes(nums[i])) {
+      newArray.push(nums[i]);
+    }
+  }
+  return newArray;
+}
 
 /*****************************************************************************/
 
@@ -45,4 +54,32 @@ const nums5 = [5, 1, 4, 1, 5];
 const expected5 = [5, 1];
 //  - order doesn't matter
 
-function mode(nums) {}
+function mode(nums) {
+  if (nums.length === 1) {
+    return [nums[0]];
+  }
+
+  const modes = [];
+  const freq = {};
+  let maxFreq = 0;
+  let allSameFreq = true;
+
+  for (const n of nums) {
+    freq.hasOwnProperty(n) ? freq[n]++ : (freq[n] = 1);
+
+    if (freq[n] > maxFreq) {
+      maxFreq = freq[n];
+    }
+  }
+
+  for (const key in freq) {
+    if (freq[key] === maxFreq) {
+      // keys are strings, convert back to int
+      modes.push(parseInt(key));
+    } else {
+      allSameFreq = false;
+    }
+  }
+  // return empty array if allSameFreq, else return modes
+  return allSameFreq ? [] : modes;
+}

@@ -14,7 +14,36 @@ const expected2 = [1, 2, 3];
 const nums3 = [1, 1, 2, 3, 3, 4];
 const expected3 = [1, 2, 3, 4];
 
-function dedupeSorted(nums) {}
+function dedupeSorted(nums) {
+   let nums = []
+   for (let i = 0; i < nums.length; i++) {
+     if () 
+   }
+}
+
+//took me forever but i think i got it lol
+// oh nice!!!
+function dedupeSorted(nums) {
+  let output = []
+
+  for(var i = 0; i < nums.length; i++) {
+    output.push(nums[i]) ///////
+    for(var j = i+1; j < nums.length; j++) {
+      if(nums[j] !== nums[i]) {
+        output.push(nums[j])
+        i = j
+      } else {
+         i = j
+      }
+    }
+  }
+  return output
+}
+
+console.log(dedupeSorted(nums1))
+console.log(dedupeSorted(nums2))
+console.log(dedupeSorted(nums3))
+
 
 /*****************************************************************************/
 
@@ -45,4 +74,6 @@ const nums5 = [5, 1, 4, 1, 5];
 const expected5 = [5, 1];
 //  - order doesn't matter
 
-function mode(nums) {}
+function mode(nums) {
+
+}

@@ -14,7 +14,15 @@ const expected2 = [1, 2, 3];
 const nums3 = [1, 1, 2, 3, 3, 4];
 const expected3 = [1, 2, 3, 4];
 
-function dedupeSorted(nums) {}
+function dedupeSorted(nums) {
+  let newArray = []
+
+  for(let i = 0; i < nums.length; i ++){
+    if(!nums.includes(nums[i])){
+      (newArray.push(nums[i]))
+  }
+  return newArray
+}
 
 /*****************************************************************************/
 
@@ -45,4 +53,15 @@ const nums5 = [5, 1, 4, 1, 5];
 const expected5 = [5, 1];
 //  - order doesn't matter
 
-function mode(nums) {}
+function mode(nums) {
+  newArray = []
+  counter = 0
+
+  for(let i = 0; i < nums.length; i++){
+    for(let j = i + 1; j < nums.length; j++){
+      if(nums[i] = nums[j]){
+        counter +=
+      }
+    }
+  }
+}
