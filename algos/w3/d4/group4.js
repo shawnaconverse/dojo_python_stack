@@ -34,4 +34,16 @@ const nums2 = [3, 0, 1, 2];
 const expected2 = null;
 // Explanation: nothing is missing
 
-function missingValue(unorderedNums) {}
+function missingValue(unorderedNums) {
+  let missing = []
+  for (let i = 0; i < unorderedNums; i++){
+    if (unorderedNums.includes(orderedNums[i+1] || unorderedNums.includes(orderedNums[i-1]))){
+
+    }
+    else{
+      missing.append[i+1]
+    }
+    }
+  }
+  return missing
+}
