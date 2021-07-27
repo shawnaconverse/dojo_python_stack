@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users</title>
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x' crossorigin='anonymous'>
+</head>
+<body>
+  <div class="container">
+    <h1>Users!</h1>
+    <div class="main">
+      <div class="display">
+        <h2>All Users</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody id="users">
+            <tr>
+              <td>User</td>
+              <td>Email</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="form">
+        <h2>Add A User</h2>
+        <form onsubmit="event.preventDefault(); handleSubmit();">
+          <p>
+            Username:
+            <input type="text" name="username" id="" oninput="setUsername(this);">
+          </p>
+          <p>
+            Email:
+            <input type="email" name="email" id="" oninput="setEmail(this);">
+          </p>
+          <button>Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
