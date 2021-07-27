@@ -23,7 +23,20 @@ const expected2 = 720;
 const num3 = 0;
 const expected3 = 1;
 
-function factorial(n) {}
+function factorial(n) {
+  const num = parseInt(n); // convert floats to integers
+  if (isNaN(num)) return null; // if the num was not a number, return null
+
+  // BASE CASE
+  if (num == 0) return 1;
+  else if (num < 0) return 1;
+
+  // FORWARD PROGRESS
+  // RECURSIVE CALL
+  return num * factorial(n - 1)
+}
+
+
 
 /*****************************************************************************/
 
@@ -34,6 +47,7 @@ function factorial(n) {}
   The next number is found by adding up the two numbers before it,
   starting with 0 and 1 as the first two numbers of the sequence.
 */
+
 
 const num1 = 0;
 const expected1 = 0;
@@ -53,4 +67,31 @@ const expected5 = 3;
 const num6 = 8;
 const expected6 = 21;
 
-function fibonacci(num) {}
+function fibonacci(num) {
+  n = parseInt(num)
+  if (n < 0 || isNaN(num))  return null
+
+  // basecase
+  if (n <= 1) return n
+
+  return fibonacci(num - 1) + fibonacci(num - 2)
+}
+
+
+console.log(fibonacci(num1))
+console.log(fibonacci(num2))
+console.log(fibonacci(num3))
+console.log(fibonacci(num4))
+console.log(fibonacci(num5))
+console.log(fibonacci(num6))
+
+
+
+function fibonacci(num, memo) {
+  memo = memo || {};
+
+  if (memo[num]) return memo[num];
+  if (num <= 1) return 1;
+
+  return memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo);
+}

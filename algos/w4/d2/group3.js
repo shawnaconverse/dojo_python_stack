@@ -23,7 +23,18 @@ const expected2 = 720;
 const num3 = 0;
 const expected3 = 1;
 
-function factorial(n) {}
+function factorial(n) {
+  const num = parseInt(n) // convert floats to integers
+  if (isNaN(num)) return null; // if the num was not a number, return null
+
+  //Base Case
+  if (num <= 0) return 1
+
+  // recursion
+  return num * factorial(n-1)
+}
+
+console.log(factorial(num2))
 
 /*****************************************************************************/
 
@@ -53,4 +64,19 @@ const expected5 = 3;
 const num6 = 8;
 const expected6 = 21;
 
-function fibonacci(num) {}
+let arr = [0, 1]
+
+function fibonacci(num) {
+    
+    if (arr[num] != undefined){
+        let n = arr[num]
+        arr = [0, 1]
+        return n
+    }
+
+    arr.push(arr[arr.length-1] + arr[arr.length-2])
+    //console.log(arr)
+    return fibonacci(num)
+}
+
+console.log(fibonacci(num6))

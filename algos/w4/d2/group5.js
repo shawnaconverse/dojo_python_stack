@@ -23,8 +23,31 @@ const expected2 = 720;
 const num3 = 0;
 const expected3 = 1;
 
-function factorial(n) {}
+function factorial(n) {
+  //Base case
+  if (n == 0){
+    return 1
+  }
+  //floats
+  if (n % 1 != 0){
+    n = Math.floor(n);
+  }
+  //Negative nums
+  if (n < 0){
+    return null;
+  }
+  return (n) * factorial(n-1);
+}
 
+factorial(num1)
+factorial(num2)
+factorial(num3)
+
+
+function factorial(n, fac = Math.floor(n)) {
+  if (n <= 1) return 1
+  return (n -= 1, fac * factorial(n))
+}
 /*****************************************************************************/
 
 /* 
@@ -53,4 +76,23 @@ const expected5 = 3;
 const num6 = 8;
 const expected6 = 21;
 
-function fibonacci(num) {}
+function fibonacci(num) {
+  return (num < 2) ? num : fibonacci(num - 1) + fibonacci(num - 2)
+}
+console.log(fibonacci(num1));
+console.log(fibonacci(num2));
+console.log(fibonacci(num3));
+console.log(fibonacci(num4));
+console.log(fibonacci(num5));
+console.log(fibonacci(num6));
+
+
+function fibonacci(num) {
+  if (num <= 1){
+    return num
+  }
+  else{
+    return fibonacci(num-1) + fibonacci(num-2)
+  }
+}
+console.log(fibonacci(8))

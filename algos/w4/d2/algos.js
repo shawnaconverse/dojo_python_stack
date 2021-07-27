@@ -23,7 +23,15 @@ const expected2 = 720;
 const num3 = 0;
 const expected3 = 1;
 
-function factorial(n) {}
+function factorial(n) {
+  n = parseInt(num);
+  if (n < 0 || isNaN(num)) return null;
+
+  // basecase
+  if (n <= 1) return n;
+
+  return fibonacci(num - 1) + fibonacci(num - 2);
+}
 
 /*****************************************************************************/
 
@@ -53,4 +61,21 @@ const expected5 = 3;
 const num6 = 8;
 const expected6 = 21;
 
-function fibonacci(num) {}
+function fibonacci(num) {
+  if (num <= 1) {
+    return num;
+  }
+  return fibonacci(num - 1) + fibonacci(num - 2);
+}
+
+function fibMemo(n, memo = { 0: 0, 1: 1 }) {
+  // EDGE CASE
+  if (n < 0) return null;
+
+  // BASE CASE
+  if (memo[n] !== undefined) return memo[n];
+
+  memo[n] = fibMemo(n - 1, memo) + fibMemo(n - 2, memo);
+
+  return memo[n];
+}
