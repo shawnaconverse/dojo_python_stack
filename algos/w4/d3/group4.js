@@ -20,4 +20,54 @@ const nums3 = [3, 4, 6, 8, 12];
 const searchNum3 = 3;
 const expected3 = true;
 
-function binarySearch(sortedNums, searchNum) {}
+function binarySearch(sortedNums, searchNum) {
+  start = 0
+  end = sortedNums.length-1
+  middle = Math.floor((start + end)/2)
+  console.log(sortedNums)
+  if(sortedNums.length < 1){
+    return false
+  }
+  if (searchNum == sortedNums[middle]){
+    return true
+  }
+  else if (searchNum < sortedNums[middle]){
+    sortedNums = sortedNums.slice(start, middle)
+  }
+  else{
+    sortedNums = sortedNums.slice(middle+1)
+  }
+  return binarySearch(sortedNums, searchNum)
+}
+console.log(binarySearch(nums1,searchNum1))
+console.log(binarySearch(nums2,searchNum2))
+console.log(binarySearch(nums3,searchNum3))
+
+
+
+function binarySearch(sortedNums, searchNum) {
+  start = 0
+  end = sortedNums.length-1
+  middle = Math.floor((start + end)/2)
+  console.log(sortedNums)
+  while (start < end){
+    if (searchNum == sortedNums[middle]){
+      return true
+    }
+    else if (searchNum < sortedNums[middle]){
+      sortedNums = sortedNums.slice(start, middle-1)
+      return binarySearch(sortedNums, searchNum)
+    }
+    else{
+      sortedNums = sortedNums.slice(middle+1)
+      return binarySearch(sortedNums, searchNum)
+    }
+  }
+  if(searchNum == sortedNums[middle]){
+    return true
+  }
+  return false
+}
+console.log(binarySearch(nums1,searchNum1))
+console.log(binarySearch(nums2,searchNum2))
+console.log(binarySearch(nums3,searchNum3))
