@@ -11,7 +11,14 @@ const expected1 = "cba";
 const str2 = "";
 const expected2 = "";
 
-function reverseStr(str) {}
+function reverseStr(str) {
+  // if (str.length === 0) return "";
+  // if (str.length === 1) return str;
+  if (str.length <= 1) return str;
+
+  // return str[str.length - 1] + reverseStr(str.slice(0, str.length - 1))
+  return reverseStr(str.slice(1)) + str[0]
+}
 
 /*****************************************************************************/
 
@@ -36,4 +43,46 @@ const expected2 = 1;
 const num3 = 25;
 const expected3 = 7;
 
-function sumToOneDigit(num) {}
+const num4 = 57;
+const expected4 = 3;
+
+const num5 = 888;
+const expected5 = 6;
+
+const num7 = 9999;
+const expected7 = 9;
+
+const num6 = "hello there";
+const expected6 = null;
+
+function sumToOneDigit(num) {
+  //Base case
+  if (num.toString().length == 1){
+    return num
+  }
+  let x = num.toString()[0];
+  let y = num.toString()[1];
+  let z = parseInt(x) + parseInt(y)
+  // if (num.toString().length > 2 || z.toString().length == 2){
+  if (num.toString().length >= 2){
+    let str = z.toString() + num.toString().slice(2)
+    return sumToOneDigit(parseInt(str))
+  }
+  return z 
+}
+
+function sumToOne(n) {
+  if (isNaN(parseInt(n))) return null;
+
+  // BASE CASE
+  if (n < 10) return n;
+
+  const strNum = n.toString();
+  let sum = 0;
+
+  for (const strDigit of strNum) {
+    sum += parseInt(strDigit)
+  }
+
+  return sumToOne(sum);
+}
